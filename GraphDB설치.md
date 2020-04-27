@@ -2,6 +2,8 @@
 
 저장용도로 카산드라를, 빠른조회 및 색인을 위해 elasticsearch를 사용하고, 쿼리를 위해 gremlin을 사용한다.
 
+test.
+
 
 1. docker run --name jg-cassandra --rm -d -e CASSANDRA_START_RPC=true -v /Users/imac/tmp/janusgraph/cassandra:/var/lib/cassandra -p 9160:9160 -p 9042:9042 -p 7199:7199 -p 7001:7001 -p 7000:7000 cassandra:3.11
 
