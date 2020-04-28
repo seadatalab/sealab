@@ -3,7 +3,7 @@
 > docker run --rm --name janusgraph-default -p 8182:8182 -v /Users/imac/tmp:/airroutes janusgraph/janusgraph:latest
 
 
-신규데이터는 아래처럼 해서 저장한다.
+신규데이터는 아래처럼 해서 저장한다....
 
 > docker exec -it <container-ID> bash 
 
