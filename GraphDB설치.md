@@ -1,4 +1,4 @@
-# GraphDB - JanusGraph 설치 및 테스트 5555
+# GraphDB - JanusGraph 설치 및 테스트 55555
 
 저장용도로 카산드라를, 빠른조회 및 색인을 위해 elasticsearch를 사용하고, 쿼리를 위해 gremlin을 사용한다.
 
