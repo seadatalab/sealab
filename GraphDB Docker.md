@@ -21,6 +21,7 @@ commit 은 필요없는것 같음.
 
 >> graph.tx().commit()
 
+![텍스트](bus.jpeg "bus")
 
 데이터를 파이썬으로 조회할수 있다.
 
