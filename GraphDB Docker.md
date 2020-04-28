@@ -1,5 +1,4 @@
-# GraphDB - JanusGraph docker 설치방법 test2
-
+# GraphDB - JanusGraph docker 설치방법 
 > docker run --rm --name janusgraph-default -p 8182:8182 -v /Users/imac/tmp:/airroutes janusgraph/janusgraph:latest
 
 
