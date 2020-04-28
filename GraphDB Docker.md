@@ -36,3 +36,5 @@ connection = DriverRemoteConnection('ws://localhost:8182/gremlin', 'g')
 g = graph.traversal().withRemote(connection)
 print(g.V().toList())
 ```
+
+![텍스트](bus.jpeg "bus")
