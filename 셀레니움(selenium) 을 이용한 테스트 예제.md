@@ -4,7 +4,7 @@
 - 더 많이 테스트한다
 - 더 견고한 테스트가 만들어 질것이다.
 
-₩₩₩
+'''
 from selenium import webdriver
 import sys
 import time
@@ -46,4 +46,4 @@ driver.find_element_by_id('login').click()
 
 time.sleep(2)
 driver.close()
-₩₩₩
+'''
