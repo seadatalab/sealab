@@ -1,6 +1,6 @@
 # selenium 자동화 테스트
 
-![test](bus.jpeg)
+![test](bus.jpeg "BUS")
 - 반복적인 테스트 수행의 시간절약
 - 지치지 않는다
 - 더 많이 테스트한다
