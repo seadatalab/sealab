@@ -13,6 +13,7 @@
 >> :remote console
 
 ![텍스트](bus.jpeg "bus")
+!(bus.jpeg "bus")
 
 >> graph.io(graphml()).readGraph('/airroutes/air-routes.graphml')
 
