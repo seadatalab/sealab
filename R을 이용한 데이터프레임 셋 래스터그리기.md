@@ -176,8 +176,14 @@ p <- ggplot(cobe_yearly, aes(x=`lon`, y=`lat`, z=SST)) +
 animate(p, 
         # 초당 프레임수 지정
         fps=1, 
+        # 너비, 높이 지정
+        width= 1000, height=1000,
+        # 애니메이션에 사용할 래스터 프레임 수(기본값:100)
+        nframe= 170,
+        # 되감기 여부 (기본값:False)
+        rewind= F,
         # 저장할 파일 경로 및 파일명 지정
-        renderer = gifski_renderer("C:/Users/User/Documents/R/test.gif"))
+        renderer = gifski_renderer("C:/Users/User/Documents/R/raster_animation.gif"))
 ```
 
 이상으로 “R을 이용한 데이터프레임 셋 데이터 래스터그리기” 튜토리얼을 마치도록 하겠다.
