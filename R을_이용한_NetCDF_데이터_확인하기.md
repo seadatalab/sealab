@@ -28,7 +28,7 @@ NetCDF파일이란
 시계열자료, 그리드자료, 위성 및 레이더 관측자료 등 사용자가 원하는
 다양한 유형으로 데이터를 저장할 수 있다.
 
-![](C:/Users/User/Documents/R/관할해역/2단계5차년도/Git/sealab/nc파일도식화_캡션2.png)
+![](images/ncfile_img.png)
 
 <table>
 <colgroup>
@@ -305,4 +305,4 @@ for(i in 1501:1601){  # i : lon 행 범위(120˚~140˚)에 해당하는 배열 �
 View(copernicus_nc)
 ```
 
-![](C:/Users/User/Documents/R/관할해역/2단계5차년도/Git/sealab/데이터테이블_결과.png)
+![](images/dat_table.png)
