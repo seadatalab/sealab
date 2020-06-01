@@ -197,7 +197,7 @@ ggplot(cobe_yearly, aes(x=`lon`, y=`lat`, z=SST)) +
   enter_fade()
 ```
 
-![](sst_raster_animation.gif)
+![](images/sst_raster_animation.gif)
 
 래스터 이미지를 확인해보면 1850년에서 2019년으로 갈수록 수온이 조금씩
 상승하는것을 알 수 있다.
