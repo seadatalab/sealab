@@ -168,7 +168,7 @@ ggplot(cobe_yearly, aes(x=`lon`, y=`lat`, z=SST)) +
   facet_wrap(~ year)
 ```
 
-![](F:/01.관할해역개인정리/05.2단계5차년도/02.콘텐츠제작/R튜토리얼/래스터그리기/래스터그리기.jpg)
+![](images/sst_raster.jpg)
 
 이제 연도별로 표출된 래스터 그래프를 애니메이션으로 제작해보도록 하자.
 우선, 애니메이션 제작을 위해서는
@@ -197,7 +197,7 @@ ggplot(cobe_yearly, aes(x=`lon`, y=`lat`, z=SST)) +
   enter_fade()
 ```
 
-![](R을_이용한_데이터프레임_셋_래스터그리기_files/figure-markdown_github/unnamed-chunk-11-1.gif)
+![](sst_raster_animation.gif)
 
 래스터 이미지를 확인해보면 1850년에서 2019년으로 갈수록 수온이 조금씩
 상승하는것을 알 수 있다.
