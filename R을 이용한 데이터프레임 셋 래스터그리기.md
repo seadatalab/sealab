@@ -199,7 +199,34 @@ ggplot(cobe_yearly, aes(x=`lon`, y=`lat`, z=SST)) +
 
 ![](images/sst_raster_animation.gif)
 
-래스터 이미지를 확인해보면 1850년에서 2019년으로 갈수록 수온이 조금씩
+방금 만든 애니메이션을 저장하고자 할 때에는
+[`gifski`](https://www.rdocumentation.org/packages/gifski/versions/0.8.6/topics/gifski)패키지의
+설치와 선언을 해야한다. 먼저, `p`라는 변수에 앞서 만든 ggplot
+애니메이션을 저장 후
+[`animate`](https://www.rdocumentation.org/packages/gganimate/versions/1.0.5/topics/animate)
+함수를 실행시킨다.
+
+``` r
+install.packages("gifski")
+library(gifski)
+
+p <- ggplot(cobe_yearly, aes(x=`lon`, y=`lat`, z=SST)) +
+  geom_raster(aes(fill=SST), interpolate=TRUE) +
+  scale_fill_gradientn(colours = blue2red(50))+
+  borders(fill="grey",colour="grey", xlim = xlims, ylim=ylims) +
+  coord_fixed(xlim = xlims,ylim=ylims) +
+  labs(title='{frame_time}년', x = "lon", y = "lat") +
+  transition_time(year) +
+  enter_fade()
+
+animate(p, 
+        # 초당 프레임수 지정
+        fps=1, 
+        # 저장할 파일 경로 및 파일명 지정
+        renderer = gifski_renderer("C:/Users/User/Documents/R/test.gif"))
+```
+
+래스터 이미지를 확인해보면 1850년에서 2019년으로 갈수록 한반도의 수온이 조금씩
 상승하는것을 알 수 있다.
 
 이상으로 “R을 이용한 데이터프레임 셋 데이터 래스터그리기” 튜토리얼을
