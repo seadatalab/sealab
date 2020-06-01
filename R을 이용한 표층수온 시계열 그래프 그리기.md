@@ -122,7 +122,7 @@ ggplot(subset(coastal_daily, SST != "NaN"), aes(`yyyy-mm-dd hh:mm:ss`, SST)) +
   geom_point() 
 ```
 
-![](images/timeseries1.png)
+![](images/timeseries1.jpg)
 
 이번엔 그래프 제목, x축, y축, 기울기선 등 설정을 추가해보자. 이 때, 축의
 틱 레이블 설정 함수를 사용하기 위해서는
@@ -170,7 +170,7 @@ ggplot(subset(coastal_daily, SST != "NaN"), aes(`yyyy-mm-dd hh:mm:ss`, SST)) +
   )
 ```
 
-![](images/timeseries2.png)
+![](images/timeseries2.jpg)
 
 시계열 그래프를 확인해보면 연안정지관측자료의 2017년도 수온은 8월에 가장
 높게 나타나고 1월 말에 가장 낮게 나타나는것을 알 수 있다.
