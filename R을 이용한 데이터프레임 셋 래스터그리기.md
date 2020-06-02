@@ -77,47 +77,44 @@ cobe_yearly
 
 ### 래스터 그리기
 
-래스터를 그리기 위해서는 우선
-[`ggplot2`](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.0) 함수의 패키지를 설치하고 선언해야 한다. 그 밖에 래스터에 색을 추가하기 위한 [`colorRamps`](https://www.rdocumentation.org/packages/colorRamps/versions/2.3) 패키지와, 지도를 표시하기 위한 [`maps`](https://www.rdocumentation.org/packages/maps/versions/3.3.0), [`mapdata`](https://www.rdocumentation.org/packages/mapdata/versions/2.3.0)패키지의 설치와 선언을 해야한다.
+래스터를 그리기 위해서는 우선 [`ggplot2`](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.0) 함수의 패키지를 설치하고 선언해야 한다. 그 밖에 래스터에 색을 추가하기 위한 [`colorRamps`](https://www.rdocumentation.org/packages/colorRamps/versions/2.3) 패키지와, 지도를 표시하기 위한 [`maps`](https://www.rdocumentation.org/packages/maps/versions/3.3.0), [`mapdata`](https://www.rdocumentation.org/packages/mapdata/versions/2.3.0)패키지의 설치와 선언을 해야한다.
 
-``` r
+본 튜토리얼에서는 연평균 표층수온 시계열 그래프를 그리기 때문에 연평균 표층수온값을 구해야 한다. 이 때 `ggplot` 함수에서 `subset` 기능을 사용하면 데이터마다 새로운 데이터 셋을 생성해야 하는 번거로움을 줄일 수 있다. 
+평균값 계산시 [`dplyr`](https://www.rdocumentation.org/packages/dbplyr/versions/1.4.2)패키지의 설치와 선언을 하고, [`group_by`](https://www.rdocumentation.org/packages/dplyr/versions/0.7.8/topics/group_by) 를 사용하여 계산조건을 지정한다.
+
+```{r message=FALSE, warning=FALSE, eval = FALSE}
 install.packages("ggplot2")
 install.packages("colorRamps")
 install.packages("maps")
 install.packages("mapdata")
+install.packages("dplyr")
 ```
-
-``` r
+```{r message=FALSE, warning=FALSE}
 library(ggplot2)
 library(colorRamps)
 library(maps)
 library(mapdata)
 ```
 
-래스터를 그리에 앞서 `xlims`, `ylims` 변수에 표출 범위 값을 저장한다.
+래스터를 그리에 앞서 `xlims`, `ylims` 변수에 표출 범위 값을 저장한다. 
 위경도를 임의로 지정할 때에는 `xlims <- c(lon, lon)` 를 입력하여 사용할 수 있다. 본 튜토리얼에서는 [`range`](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/range)함수를 사용하여 데이터 프레임에 저장된 데이터의 위경도의 최댓값, 최솟값 범위를 사용하겠다.
 
-``` r
-xlims <- range(cobe_yearly$lon)
-ylims <- range(cobe_yearly$lat)
+```{r message=FALSE, warning=FALSE}
+xlims <- range(cobe$lon)
+ylims <- range(cobe$lat)
 
 xlims
-```
-
-    ## [1] 117.5 142.5
-
-``` r
 ylims
 ```
 
-    ## [1] 23.5 53.5
 
-이제, 래스터를 그려보자.
-[`ggplot`](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.0/topics/ggplot) 함수에 사용할 데이터 프레임 이름과 x축, y축, z축을 각각 지정한다.
-래스터를 그리기 위해서는 [`geom_raster`](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.0/topics/geom_raster) 함수를 사용하며 표출할 데이터, 내삽의 유무 등을 선택할 수 있다. 래스터의 색을 지정할 때에는 [`scale_fill_gradientn`](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.0/topics/scale_colour_gradient) 함수를 사용하며 튜토리얼에서 사용한 `blue2red` 외에 다양한 색을 지정할 수 있다. `borders`함수를 사용하면 지도를 표출할 수 있으며 `fill`, `colour` 함수를 사용하여 채우기 색, 테두리 색을 지정할 수 있다. 이때, 지도 표출 범위를 설정할 수 있는데, 위에서 저장한 `xlims`, `ylims`변수를 지정하여 표출범위를 제한한다. [`coord_fixed`](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.0/topics/coord_fixed) 함수는 래스터 그래프의 표출범위를 제한할 때 사용한다. 마지막으로, [`facet_wrap`](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.0/topics/facet_wrap)함수를 사용하면 연별로 도시화 할 수 있다.
+이제, 래스터를 그려보자. `ggplot` 함수에 사용할 데이터 프레임 이름과 x축, y축, z축을 각각 지정한다. 래스터를 그리기 위해서는 [`geom_raster`](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.0/topics/geom_raster) 함수함수를 사용하며 표출할 데이터, 내삽의 유무 등을 선택할 수 있다. 래스터의 색을 지정할 때에는 [`scale_fill_gradientn`](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.0/topics/scale_colour_gradient) 함수를 사용하며 튜토리얼에서 사용한 `blue2red` 외에 다양한 색을 지정할 수 있다.
+`borders`함수를 사용하면 지도를 표출할 수 있으며 `fill`, `colour` 함수를 사용하여 채우기 색, 테두리 색을 지정할 수 있다. 이때, 지도 표출 범위를 설정할 수 있는데, 위에서 저장한 `xlims`, `ylims`변수를 지정하여 표출범위를 제한한다. [`coord_fixed`](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.0/topics/coord_fixed) 함수는 래스터 그래프의 표출범위를 제한할 때 사용한다. 마지막으로, [`facet_wrap`](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.0/topics/facet_wrap)함수를 사용하면 연별로 도시화 할 수 있다.
 
-``` r
-ggplot(cobe_yearly, aes(x=`lon`, y=`lat`, z=SST)) +
+```{r message=FALSE, warning=FALSE, eval = FALSE}
+ggplot(subset(cobe %>% group_by(as.integer(format(cobe$date, "%Y")), lon, lat) %>% 
+                summarise_at(.vars = "SST", .funs=mean)), 
+       aes(x=`lon`, y=`lat`, z=SST)) +
   #geom_raster에서는 선형보간법이 사용됨
   geom_raster(aes(fill=SST), interpolate=TRUE) +
   #래스터 색 지정
@@ -127,9 +124,8 @@ ggplot(cobe_yearly, aes(x=`lon`, y=`lat`, z=SST)) +
   #래스터 표출 범위 제한
   coord_fixed(xlim = xlims, ylim=ylims) +
   #연도 별 그래프 표출
-  facet_wrap(~ year)
+  facet_wrap(~ `as.integer(format(cobe$date, "%Y"))`)
 ```
-
 ![](images/sst_raster.jpg)
 
 이제 연도별로 표출된 래스터 그래프를 애니메이션으로 제작해보도록 하자.
@@ -143,13 +139,15 @@ install.packages("gganimate")
 
 ``` r
 library(gganimate)
-ggplot(cobe_yearly, aes(x=`lon`, y=`lat`, z=SST)) +
+ggplot(subset(cobe %>% group_by(as.integer(format(cobe$date, "%Y")), lon, lat) %>% 
+                summarise_at(.vars = "SST", .funs=mean)),
+       aes(x=`lon`, y=`lat`, z=SST)) +
   geom_raster(aes(fill=SST), interpolate=TRUE) +
   scale_fill_gradientn(colours = blue2red(50))+
   borders(fill="grey",colour="grey", xlim = xlims, ylim=ylims) +
   coord_fixed(xlim = xlims,ylim=ylims) +
   labs(title='{frame_time}년', x = "lon", y = "lat") +
-  transition_time(year) +
+  transition_time(`as.integer(format(cobe$date, "%Y"))`) +
   enter_fade()
 ```
 
@@ -164,13 +162,15 @@ ggplot(cobe_yearly, aes(x=`lon`, y=`lat`, z=SST)) +
 install.packages("gifski")
 library(gifski)
 
-p <- ggplot(cobe_yearly, aes(x=`lon`, y=`lat`, z=SST)) +
+p <- ggplot(subset(cobe %>% group_by(as.integer(format(cobe$date, "%Y")), lon, lat) %>% 
+                summarise_at(.vars = "SST", .funs=mean)),
+       aes(x=`lon`, y=`lat`, z=SST)) +
   geom_raster(aes(fill=SST), interpolate=TRUE) +
   scale_fill_gradientn(colours = blue2red(50))+
   borders(fill="grey",colour="grey", xlim = xlims, ylim=ylims) +
   coord_fixed(xlim = xlims,ylim=ylims) +
   labs(title='{frame_time}년', x = "lon", y = "lat") +
-  transition_time(year) +
+  transition_time(`as.integer(format(cobe$date, "%Y"))`) +
   enter_fade()
 
 animate(p, 
