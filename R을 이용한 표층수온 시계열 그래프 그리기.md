@@ -48,15 +48,29 @@ coastal <- coastal[, grepl("_flag", colnames(coastal)) == F]
 coastal
 ```
 
-데이터프레임 형태로 변환하는 작업이 끝났다면, 표층수온 시계열 그래프를
-그리기 위해 각 정점별 표층수온의 평균값을 구하는 작업을 한다.
+csv 파일을 데이터 프레임 형태로 변환이 완료되었으면 각 컬럼의 문자형식을
+확인하여야 한다. 이때, 날짜 형식이 문자(chr)형태로 지정되어 있다면
+[`as.POSIXct`](https://www.rdocumentation.org/packages/dwtools/versions/0.8.3.9/topics/as.POSIXct)
+함수를 사용하여 날짜 형식으로 변환시킨다.
 
-날짜 별 모든 정점의 표층수온 평균값을 계산한 새로운 데이터 프레임을
-생성한다. 평균값 계산시
-[`group_by`](https://www.rdocumentation.org/packages/dplyr/versions/0.7.8/topics/group_by)
-를 사용하여 조건을 지정할 때는
+``` r
+coastal$`yyyy-mm-dd hh:mm:ss` <- as.POSIXct(coastal$`yyyy-mm-dd hh:mm:ss`, format="%Y-%m-%d")
+```
+
+### 시계열 그래프 그리기
+
+이제, 표층수온 시계열 그래프를 그려보자. 시계열 그래프를 그리기 위해서는
+[`ggplot2`](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.0)
+함수의 패키지를 설치하고 선언해야 한다. 본 튜토리얼에서는 월평균
+표층수온 시계열 그래프를 그리기 때문에 월평균 표층수온값을 구해야 한다.
+이 때 `ggplot` 함수에서 `subset` 기능을 사용하면 데이터마다 새로운
+데이터 셋을 생성해야 하는 번거로움을 줄일 수 있다. 평균값 계산시
 [`dplyr`](https://www.rdocumentation.org/packages/dbplyr/versions/1.4.2)패키지의
-설치와 선언을 해야한다.
+설치와 선언을 하고,
+[`group_by`](https://www.rdocumentation.org/packages/dplyr/versions/0.7.8/topics/group_by)
+를 사용하여 계산조건을 지정한다. 라인 그래프를 그릴때에는 데이터에
+null값을 제외시키지 않으면 시계열 그래프가 끊기게 표현될 수 있기 때문에
+subset 에서 null값도 제외시켜준다.
 
 ``` r
 install.packages("dplyr")
@@ -64,62 +78,14 @@ install.packages("dplyr")
 
 ``` r
 library(dplyr)
-
-coastal_daily <- coastal %>% 
-                group_by(`yyyy-mm-dd hh:mm:ss`) %>% 
-                dplyr::summarize(SST = mean(`수온[℃]`, na.rm=TRUE))
-
-coastal_daily
-```
-
-    ## # A tibble: 365 x 2
-    ##    `yyyy-mm-dd hh:mm:ss`    SST
-    ##    <chr>                  <dbl>
-    ##  1 2017-01-01 0:00       NaN   
-    ##  2 2017-01-02 0:00         9.64
-    ##  3 2017-01-03 0:00         9.37
-    ##  4 2017-01-04 0:00         9.79
-    ##  5 2017-01-05 0:00         9.87
-    ##  6 2017-01-06 0:00         9.89
-    ##  7 2017-01-07 0:00       NaN   
-    ##  8 2017-01-08 0:00       NaN   
-    ##  9 2017-01-09 0:00        10   
-    ## 10 2017-01-10 0:00         9.44
-    ## # ... with 355 more rows
-
-새로운 데이터 프레임 생성이 완료되었다면 각 컬럼의 문자형식을 확인하여야
-한다. 이때, 날짜 형식이 문자(chr)형태로 지정되어 있다면
-[`as.POSIXct`](https://www.rdocumentation.org/packages/dwtools/versions/0.8.3.9/topics/as.POSIXct)
-함수를 사용하여 날짜 형식으로 변환시킨다.
-
-``` r
-coastal_daily$`yyyy-mm-dd hh:mm:ss` <- as.POSIXct(coastal_daily$`yyyy-mm-dd hh:mm:ss`, format="%Y-%m-%d")
-```
-
-### 시계열 그래프 그리기
-
-데이터 전처리가 완료되었다면 시계열 그래프를 그려보자. 시계열 그래프를
-그리기 위해서는
-[`ggplot2`](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.0)
-함수의 패키지를 설치하고 선언해야 한다.
-
-시계열 그래프를 그릴 때
-[`subset`](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/subset)을
-이용하여 데이터의 null값은 제외시킨다. null값을 제외시키지 않으면 시계열
-그래프가 끊기게 표현될 수 있다. null값 제외 외에도 `subset`기능을
-활용하면 데이터프레임을 새로 생성하지 않고 조건에 따라 데이터셋을 임의로
-만들어 그래프를 그릴 수 있다.
-
-``` r
-install.packages("ggplot2")
-```
-
-``` r
 library(ggplot2)
-
-ggplot(subset(coastal_daily, SST != "NaN"), aes(`yyyy-mm-dd hh:mm:ss`, SST)) +
+ggplot(subset(coastal %>% 
+                group_by(`yyyy-mm-dd hh:mm:ss`) %>% 
+                dplyr::summarize(SST = mean(`수온[℃]`, na.rm=TRUE)),
+              SST != "NaN"), 
+       aes(`yyyy-mm-dd hh:mm:ss`, SST)) +
   geom_line() +
-  geom_point() 
+  geom_point()
 ```
 
 ![](images/timeseries1.jpg)
@@ -139,7 +105,11 @@ install.packages("scales")
 
 ``` r
 library(scales)
-ggplot(subset(coastal_daily, SST != "NaN"), aes(`yyyy-mm-dd hh:mm:ss`, SST)) +
+ggplot(subset(coastal %>% 
+                group_by(`yyyy-mm-dd hh:mm:ss`) %>% 
+                dplyr::summarize(SST = mean(`수온[℃]`, na.rm=TRUE)),
+              SST != "NaN"),
+       aes(`yyyy-mm-dd hh:mm:ss`, SST)) +
   # 그래프 제목, 부제목, 축제목, 캡션 설정 (\n=줄바꿈)
   labs(title="연안정지관측자료 2017년도 \n표층수온 시계열 그래프", 
        subtitle="표층수온(ºC)", x="날짜", y="", caption="http://joiss.kr") +
