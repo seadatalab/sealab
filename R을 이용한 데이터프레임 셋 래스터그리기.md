@@ -36,6 +36,7 @@ cobe
     ## 10 1850-10-01 00:00:00  118.  23.5  25.3
     ## # ... with 852,710 more rows
 
+cobe 자료를 확인해보면, 1도 간격 그리드 자료이며 월평균 표층수온 값을 제공하고 있는것을 확인할 수 있다.
 
 ### 래스터 그리기
 
@@ -52,7 +53,7 @@ ylims
 
 이제, 래스터를 그려보자. 래스터를 그리기 위해서는 우선 [`ggplot2`](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.0) 함수의 패키지를 설치하고 선언해야 한다. 그 밖에 래스터에 색을 추가하기 위한 [`colorRamps`](https://www.rdocumentation.org/packages/colorRamps/versions/2.3) 패키지와, 지도를 표시하기 위한 [`maps`](https://www.rdocumentation.org/packages/maps/versions/3.3.0), [`mapdata`](https://www.rdocumentation.org/packages/mapdata/versions/2.3.0)패키지의 설치와 선언을 해야한다.
 
-본 튜토리얼에서는 연평균 표층수온 시계열 그래프를 그리기 때문에 연평균 표층수온값을 구해야 한다. 이 때 `ggplot` 함수에서 `subset` 기능을 사용하면 데이터마다 새로운 데이터 셋을 생성해야 하는 번거로움을 줄일 수 있다. 
+본 튜토리얼에서는 연평균 표층수온 시계열 그래프를 그리기 때문에 월 평균 자료를 사용하여 연평균 표층수온값을 구해야 한다. 이 때 `ggplot` 함수에서 `subset` 기능을 사용하면 데이터마다 새로운 데이터 셋을 생성해야 하는 번거로움을 줄일 수 있다. 
 평균값 계산시 [`dplyr`](https://www.rdocumentation.org/packages/dbplyr/versions/1.4.2)패키지의 설치와 선언을 하고, [`group_by`](https://www.rdocumentation.org/packages/dplyr/versions/0.7.8/topics/group_by) 를 사용하여 계산조건을 지정한다.
 
 ```{r message=FALSE, warning=FALSE, eval = FALSE}
