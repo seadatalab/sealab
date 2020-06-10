@@ -116,7 +116,7 @@ ggplot(subset(cobe %>% group_by(as.integer(format(cobe$date, "%Y")), lon, lat) %
 
 ![](images/sst_raster_animation.gif)
 
-래스터 이미지를 확인해보면 1850년에서 2019년으로 갈수록 한반도의 수온이 조금씩상승하는것을 알 수 있다.
+래스터 이미지를 확인해보면 1850년에서 2019년으로 갈수록 한반도의 수온이 조금씩 상승하는 것을 알 수 있다.
 
 방금 만든 애니메이션을 저장하고자 할 때에는 [`gifski`](https://www.rdocumentation.org/packages/gifski/versions/0.8.6/topics/gifski)패키지의
 설치와 선언을 해야한다. 먼저, `p`라는 변수에 앞서 만든 ggplot 애니메이션을 저장 후 [`animate`](https://www.rdocumentation.org/packages/gganimate/versions/1.0.5/topics/animate) 함수에 원하는 조건을 입력 후 실행시키면 저장할 수 있다.
