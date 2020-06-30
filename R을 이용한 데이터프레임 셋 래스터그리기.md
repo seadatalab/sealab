@@ -89,64 +89,8 @@ ggplot(subset(cobe %>% group_by(as.integer(format(cobe$date, "%Y")), lon, lat) %
   #연도 별 그래프 표출
   facet_wrap(~ `as.integer(format(cobe$date, "%Y"))`)
 ```
-![](images/sst_raster.jpg)
+![](images/sst_raster_v2.jpg)
 
-이제 연도별로 표출된 래스터 그래프를 애니메이션으로 제작해보도록 하자.
-우선, 애니메이션 제작을 위해서는 [`gganimate`](https://www.rdocumentation.org/packages/gganimate/versions/1.0.5) 패키지의 설치와 선언을 해야한다.
+다음 튜토리얼에서는 제작한 래스터 파일을 애니메이션으로 제작하는 방법을 소개하겠다.
 
-```{r message=FALSE, warning=FALSE, eval = FALSE}
-install.packages("gganimate")
-```
-
-애니메이션으로 만들 때에는 앞서서 작성한 `ggplot`래스터 코드에 `facet_wrap`함수 대신 [`labs`](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.0/topics/labs), [`transition_time`](https://www.rdocumentation.org/packages/gganimate/versions/1.0.5/topics/transition_time), `enter_fade` 함수를 추가하여 실행시킬 수 있다. 
-
-```{r message=FALSE, warning=FALSE}
-library(gganimate)
-ggplot(subset(cobe %>% group_by(as.integer(format(cobe$date, "%Y")), lon, lat) %>% 
-                summarise_at(.vars = "SST", .funs=mean)),
-       aes(x=`lon`, y=`lat`, z=SST)) +
-  geom_raster(aes(fill=SST), interpolate=TRUE) +
-  scale_fill_gradientn(colours = blue2red(50))+
-  borders(fill="grey",colour="grey", xlim = xlims, ylim=ylims) +
-  coord_fixed(xlim = xlims,ylim=ylims) +
-  labs(title='{frame_time}년', x = "lon", y = "lat") +
-  transition_time(`as.integer(format(cobe$date, "%Y"))`) +
-  enter_fade()
-```
-
-![](images/sst_raster_animation.gif)
-
-래스터 이미지를 확인해보면 1850년에서 2019년으로 갈수록 한반도의 수온이 조금씩 상승하는 것을 알 수 있다.
-
-방금 만든 애니메이션을 저장하고자 할 때에는 [`gifski`](https://www.rdocumentation.org/packages/gifski/versions/0.8.6/topics/gifski)패키지의
-설치와 선언을 해야한다. 먼저, `p`라는 변수에 앞서 만든 ggplot 애니메이션을 저장 후 [`animate`](https://www.rdocumentation.org/packages/gganimate/versions/1.0.5/topics/animate) 함수에 원하는 조건을 입력 후 실행시키면 저장할 수 있다.
-
-``` r
-install.packages("gifski")
-library(gifski)
-
-p <- ggplot(subset(cobe %>% group_by(as.integer(format(cobe$date, "%Y")), lon, lat) %>% 
-                summarise_at(.vars = "SST", .funs=mean)),
-       aes(x=`lon`, y=`lat`, z=SST)) +
-  geom_raster(aes(fill=SST), interpolate=TRUE) +
-  scale_fill_gradientn(colours = blue2red(50))+
-  borders(fill="grey",colour="grey", xlim = xlims, ylim=ylims) +
-  coord_fixed(xlim = xlims,ylim=ylims) +
-  labs(title='{frame_time}년', x = "lon", y = "lat") +
-  transition_time(`as.integer(format(cobe$date, "%Y"))`) +
-  enter_fade()
-
-animate(p, 
-        # 초당 프레임수 지정
-        fps=1, 
-        # 너비, 높이 지정
-        width= 1000, height=1000,
-        # 애니메이션에 사용할 래스터 프레임 수(기본값:100)
-        nframe= 170,
-        # 되감기 여부 (기본값:False)
-        rewind= F,
-        # 저장할 파일 경로 및 파일명 지정
-        renderer = gifski_renderer("C:/Users/User/Documents/R/raster_animation.gif"))
-```
-
-이상으로 “R을 이용한 데이터프레임 셋 데이터 래스터그리기” 튜토리얼을 마치도록 하겠다.
+이상으로 "R을 이용한 데이터프레임 셋 데이터 래스터그리기" 튜토리얼을 마치도록 하겠다.
