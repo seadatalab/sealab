@@ -107,7 +107,7 @@ NetCDF4 포맷으로 제공하는 자료로, 이 중 일부 항목 데이터를 
 
 R Studio에서 nc파일을 불러오기 위해서는
 [`ncdf4`](https://www.rdocumentation.org/packages/ncdf4/versions/1.17/topics/ncdf4-package)
-패키지를 설치하고 선언해야한다. 그리고 `setwd`함수를 이용하여 예제
+패키지를 설치하고 선언해야한다. 그리고 `setwd()`함수를 이용하여 예제
 nc파일이 저장된 경로를 설정 후
 [`nc_open`](https://www.rdocumentation.org/packages/ncdf4/versions/1.17/topics/nc_open)함수로
 예제 nc파일을 불러와 변수`nc_cop`에 저장한다. 변수 `nc_cop`에 저장된
@@ -125,7 +125,7 @@ install.packages("ncdf4")
 library(ncdf4) 
 #파일이 저장되어있는 경로 설정
 setwd("C:/Users/User/Desktop/copernicus/")
-# nc_open함수를 이용하여 변수 nc_cop에 nc파일 저장
+# 'nc_open()'함수를 이용하여 변수 'nc_cop'에 nc파일 저장
 nc_cop <- nc_open("global-reanalysis-wav-001-032_all_20180101.nc")
 #변수항목 확인
 attributes(nc_cop$var)
@@ -144,12 +144,11 @@ attributes(nc_cop$var)
 시간)의 크기와 범위, 33개의 부가정보를 보여준다.
 
 ``` r
-#ncdf4 패키지 설치
 print(nc_cop)
 ```
 
 nc파일의 데이터를 가져올때는
-[`ncvar_get`](https://www.rdocumentation.org/packages/ncdf4/versions/1.17/topics/ncvar_get)함수를
+[`ncvar_get()`](https://www.rdocumentation.org/packages/ncdf4/versions/1.17/topics/ncvar_get)함수를
 이용하여 nc파일의 위도, 경도, 시간, 파고 등 가져올 항목을 지정할 수
 있다.  
 `lat`, `lon` 변수에 nc파일의 위도, 경도 데이터를 저장하여 확인해보자.
@@ -177,13 +176,13 @@ nc_time
     ## [1] 596088 596091 596094 596097 596100 596103 596106 596109
 
 nc파일의 시간을 UTC날짜 형식으로 변환하는
-[`utcal.nc`](https://www.rdocumentation.org/packages/RNetCDF/versions/2.1-1/topics/utcal.nc)함수를
+[`utcal.nc()`](https://www.rdocumentation.org/packages/RNetCDF/versions/2.1-1/topics/utcal.nc)함수를
 사용하기 위해
 [`RNetCDF`](https://www.rdocumentation.org/packages/RNetCDF/versions/2.1-1)패키지를
 설치하고 선언해야한다. `utcal.nc`함수는 time과
-[`ncatt_get`](https://www.rdocumentation.org/packages/ncdf4/versions/1.17/topics/ncatt_get)함수를
+[`ncatt_get()`](https://www.rdocumentation.org/packages/ncdf4/versions/1.17/topics/ncatt_get)함수를
 이용해 불러온 time변수항목의 속성인 units을 이용하여 날짜를 변환한다.
-`utcal.nc`함수의 `type`을 변경하면 날짜 표출 방식을 변경할 수 있다.
+`utcal.nc()`함수의 `type`을 변경하면 날짜 표출 방식을 변경할 수 있다.
 
 ``` r
 #RNetCDF 패키지 설치
@@ -194,7 +193,7 @@ install.packages("RNetCDF")
 library(RNetCDF)
 #시간 변수 내 units 저장
 time_unit <- ncatt_get(nc_cop, "time")$units 
-# utcal.nc함수를 이용하여 nc파일의 날짜형식 변경
+# 'utcal.nc()'함수를 이용하여 nc파일의 날짜형식 변경
 time_cop <- utcal.nc(time_unit, nc_time, type= "c")
 time_cop
 ```
@@ -256,11 +255,11 @@ lon[1601] # 1601번째 배열 경도 확인하기
 30˚N, 50˚N에 해당하는 nc파일의 위도배열은 각각 300행과 200행이고, 120˚E,
 140˚E에 해당하는 위도배열은 1501행, 1601행임을 알 수 있다.
 
-확인한 위도, 경도 배열을 가지고 `for`문을 이용하여 nc파일의 데이터를
+확인한 위도, 경도 배열을 가지고 `for()`문을 이용하여 nc파일의 데이터를
 데이터프레임에 저장해보자. 데이터 테이블을 생성하기 위해서는
 [`dplyr`](https://www.rdocumentation.org/packages/dplyr/versions/0.7.8/topics/dplyr-package)패키지를
 설치하고 선언 해야하며
-[`data_frame`](https://www.rdocumentation.org/packages/functionMap/versions/1.0.0/topics/data_frame)
+[`data_frame()`](https://www.rdocumentation.org/packages/functionMap/versions/1.0.0/topics/data_frame)
 함수를 이용하여 데이터 테이블의 프레임을 만든 후 데이터를 저장할 수
 있다. nc파일의 데이터를 불러올 시에는 dimension에 맞춰 불러와야하며
 dimension은 nc파일 메타정보의 short 변수명 옆에 적혀있다. dimension이
