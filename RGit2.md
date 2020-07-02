@@ -27,4 +27,4 @@ plot(pressure)
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
-!(images/tmp/docker-survey.png "도커 !!!!")
+![screen-shot](images/tmp/docker-survey.png "도커 !!!!")
