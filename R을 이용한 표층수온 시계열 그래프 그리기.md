@@ -65,7 +65,7 @@ coastal$`yyyy-mm-dd hh:mm:ss` <- as.POSIXct(coastal$`yyyy-mm-dd hh:mm:ss`, forma
 표층수온 시계열 그래프를 그리기 때문에 월평균 표층수온값을 구해야 한다.
 이 때 `ggplot()` 함수에서 `subset()` 기능을 사용하면 데이터마다 새로운
 데이터 셋을 생성해야 하는 번거로움을 줄일 수 있다. 평균값 계산시
-[`dplyr`](https://www.rdocumentation.org/packages/dbplyr/versions/1.4.2)패키지의
+[`dplyr`](https://www.rdocumentation.org/packages/dbplyr/versions/1.4.2)패키지
 설치와 선언을 하고,
 [`group_by()`](https://www.rdocumentation.org/packages/dplyr/versions/0.7.8/topics/group_by)
 를 사용하여 계산조건을 지정한다. 라인 그래프를 그릴때에는 데이터에
@@ -122,7 +122,7 @@ ggplot(subset(coastal %>%
   scale_x_datetime(breaks = date_breaks("1 month"), minor_breaks=date_breaks("1 month"), 
                    # 표출할 날짜 형식 및 timezone 지정
                    labels=date_format("%B", tz="Asia/Seoul"), 
-                   # limits를 사용하여 표츨할 날짜 범위 지정
+                   # 'limits()'를 사용하여 표츨할 날짜 범위 지정
                    limits = as.POSIXct(c("2017-01-01 00:00:00", "2017-12-31 11:59:59")))+
   theme(
         # 범례 표출 여부 및 위치 지정
