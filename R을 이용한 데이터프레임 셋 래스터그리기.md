@@ -72,7 +72,7 @@ library(mapdata)
 ```
 
 라이브러리 선언까지 끝났다면, `ggplot()` 함수에 사용할 데이터 프레임 이름과 x축, y축, z축을 각각 지정한다. 래스터를 그리기 위해서는 [`geom_raster()`](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.0/topics/geom_raster) 함수를 사용하며 표출할 데이터, 내삽의 유무 등을 선택할 수 있다. 래스터의 색을 지정할 때에는 [`scale_fill_gradientn()`](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.0/topics/scale_colour_gradient) 함수를 사용하며 튜토리얼에서 사용한 `blue2red` 외에 다양한 색을 지정할 수 있다.
-`borders`함수를 사용하면 지도를 표출할 수 있으며 `fill`, `colour` 함수를 사용하여 채우기 색, 테두리 색을 지정할 수 있다. 이때, 지도 표출 범위를 설정할 수 있는데, 위에서 저장한 `xlims`, `ylims`변수를 지정하여 표출범위를 제한한다. [`coord_fixed()`](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.0/topics/coord_fixed) 함수는 래스터 그래프의 표출범위를 제한할 때 사용한다. 마지막으로, [`facet_wrap()`](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.0/topics/facet_wrap)함수를 사용하면 연별로 도시화 할 수 있다.
+`borders()`함수를 사용하면 지도를 표출할 수 있으며 `fill()`, `colour()` 함수를 사용하여 채우기 색, 테두리 색을 지정할 수 있다. 이때, 지도 표출 범위를 설정할 수 있는데, 위에서 저장한 `xlims`, `ylims`변수를 지정하여 표출범위를 제한한다. [`coord_fixed()`](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.0/topics/coord_fixed) 함수는 래스터 그래프의 표출범위를 제한할 때 사용한다. 마지막으로, [`facet_wrap()`](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.0/topics/facet_wrap)함수를 사용하면 연별로 도시화 할 수 있다.
 
 ```{r message=FALSE, warning=FALSE, eval = FALSE}
 ggplot(subset(cobe %>% group_by(as.integer(format(cobe$date, "%Y")), lon, lat) %>% 
