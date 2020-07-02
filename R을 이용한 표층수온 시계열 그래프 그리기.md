@@ -50,7 +50,7 @@ coastal
 
 csv 파일을 데이터 프레임 형태로 변환이 완료되었으면 각 컬럼의 문자형식을
 확인하여야 한다. 이때, 날짜 형식이 문자(chr)형태로 지정되어 있다면
-[`as.POSIXct`](https://www.rdocumentation.org/packages/dwtools/versions/0.8.3.9/topics/as.POSIXct)
+[`as.POSIXct()`](https://www.rdocumentation.org/packages/dwtools/versions/0.8.3.9/topics/as.POSIXct)
 함수를 사용하여 날짜 형식으로 변환시킨다.
 
 ``` r
@@ -61,13 +61,13 @@ coastal$`yyyy-mm-dd hh:mm:ss` <- as.POSIXct(coastal$`yyyy-mm-dd hh:mm:ss`, forma
 
 이제, 표층수온 시계열 그래프를 그려보자. 시계열 그래프를 그리기 위해서는
 [`ggplot2`](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.0)
-함수의 패키지를 설치하고 선언해야 한다. 본 튜토리얼에서는 월평균
+패키지를 설치하고 선언해야 한다. 본 튜토리얼에서는 월평균
 표층수온 시계열 그래프를 그리기 때문에 월평균 표층수온값을 구해야 한다.
-이 때 `ggplot` 함수에서 `subset` 기능을 사용하면 데이터마다 새로운
+이 때 `ggplot()` 함수에서 `subset()` 기능을 사용하면 데이터마다 새로운
 데이터 셋을 생성해야 하는 번거로움을 줄일 수 있다. 평균값 계산시
 [`dplyr`](https://www.rdocumentation.org/packages/dbplyr/versions/1.4.2)패키지의
 설치와 선언을 하고,
-[`group_by`](https://www.rdocumentation.org/packages/dplyr/versions/0.7.8/topics/group_by)
+[`group_by()`](https://www.rdocumentation.org/packages/dplyr/versions/0.7.8/topics/group_by)
 를 사용하여 계산조건을 지정한다. 라인 그래프를 그릴때에는 데이터에
 null값을 제외시키지 않으면 시계열 그래프가 끊기게 표현될 수 있기 때문에
 subset 에서 null값도 제외시켜준다.
@@ -95,7 +95,7 @@ ggplot(subset(coastal %>%
 [`scales`](https://www.rdocumentation.org/packages/scales/versions/0.4.1)
 패키지의 설치와 선언을 해야한다. 제목, 범례등의 색을 변경하고 싶을
 때에는
-[`theme`](https://www.rdocumentation.org/packages/ggplot2/versions/2.0.0/topics/theme)
+[`theme()`](https://www.rdocumentation.org/packages/ggplot2/versions/2.0.0/topics/theme)
 함수를 사용하며 색 지정시에는 R color cheatsheet를 참고하거나, html컬러
 코드를 사용한다.
 
