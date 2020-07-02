@@ -29,12 +29,12 @@ output:
 이전 포스팅 "R을 이용한 퇴적물 입도조성 자료 시각화 하기(1)"에서는 [`rysgran`](https://www.rdocumentation.org/packages/rysgran/versions/2.1.0)을 사용해서 해양저질 퇴적물 자료의 입도조성을 분류했다. 분류방법은 `shepard`, `pejrup`, `flemming`으로 **그림 1**과 같다.    
 <br>
 
-<img src="images/01__ggtern_1rysgran_shepard.png" alt="그림 1. rysgran pakage에 내장된 저질분류 기준" border="3px" width="1000px" height="1000px" align="center"><img src="images/01_ggtern_2rysgran_pejrup.png" alt="그림 1. rysgran pakage에 내장된 저질분류 기준" border="3px" width="1000px" height="1000px" align="center"><img src="images/01_ggtern_3rysgran_flemming.png" alt="그림 1. rysgran pakage에 내장된 저질분류 기준" border="3px" width="1000px" height="1000px" align="center">__그림 1. rysgran pakage에 내장된 저질분류 기준__
+<img src="images/01_ggtern_1rysgran_shepard.png" alt="그림 1. rysgran pakage에 내장된 저질분류 기준" border="3px" width="1000px" height="1000px" align="center"><img src="images/01_ggtern_2rysgran_pejrup.png" alt="그림 1. rysgran pakage에 내장된 저질분류 기준" border="3px" width="1000px" height="1000px" align="center"><img src="images/01_ggtern_3rysgran_flemming.png" alt="그림 1. rysgran pakage에 내장된 저질분류 기준" border="3px" width="1000px" height="1000px" align="center">__그림 1. rysgran pakage에 내장된 저질분류 기준__
 
 그러나 이 분류방법은 우리나라 국가법령정보센터에서 제공하는 **수로측량 업무규정 제 49조(자료이 해석)**의 "저질 분류 Diagram"와 다르다(**그림 2**). "저질 분류 Diagram"은 *"자갈(Gravel)이 포함된 경우"*와 *"자갈이 포함되지 않은 경우"*로 나누어 분류한다.    
 <br>    
 
-<img src="images/02_ggtern_korea classified_sediment.png" alt="그림 2.수로측량 업구규정에 정의된 우리나라 저질 분류 다이어그램" border="3px" width="1000px" height="1000px" align="center">__그림 2.수로측량 업구규정에 정의된 우리나라 저질 분류 다이어그램__    
+<img src="images/02_ggtern_korea_classified_sediment.png" alt="그림 2.수로측량 업구규정에 정의된 우리나라 저질 분류 다이어그램" border="3px" width="1000px" height="1000px" align="center">__그림 2.수로측량 업구규정에 정의된 우리나라 저질 분류 다이어그램__    
     
 <br>    
 해양저질 퇴적물의 입도조성 자료를 우리나라 기준에 맞추어 도시화 할 수 있도록 이번 포스팅에서는  [`ggtern`](https://www.rdocumentation.org/packages/ggtern/versions/2.2.0)과 [`dyply`](https://www.rdocumentation.org/packages/plyr/versions/1.8.6)를 사용해서 우리나라 저질 분류 Diagram을 만들었다. 튜토리얼 순서는 아래와 같다.        
@@ -421,18 +421,15 @@ View(data02)
 `ggtern`함수를 사용하여 'Mud', 'Gravel', 'Sand'를 꼭지점으로 하는 삼각 Diagram을 "Label"로 나누어 도시화 하였다(**그림 3**).    
 <br>
 
-<img src="images/02_ggtern_korea classified_sediment.png" alt="그림 3. 퇴적물 조성비 삼각다이어그램(자갈이 포함된 경우)" border="3px" width="1000px" height="1000px" align="center">__그림 3. 퇴적물 조성비 삼각다이어그램(자갈이 포함된 경우)__    
+<img src="images/03_ggtern_Textural_Classification_Chart(with gravel).png" alt="그림 3. 퇴적물 조성비 삼각다이어그램(자갈이 포함된 경우)" border="3px" width="1000px" height="1000px" align="center">__그림 3. 퇴적물 조성비 삼각다이어그램(자갈이 포함된 경우)__    
 
 <br>
 저질기준 분류표(자갈이 포함되지 않은 경우)도 위와 같은 방법으로 **그림 4**와 같이 도시화 하였다.    
 <br>    
 
+<img src="images/04_ggtern_Textural_Classification_Chart(without gravel).png" alt="그림 4. 퇴적물 조성비 삼각다이어그램(자갈이 포함되지 않은 경우)" border="3px" width="1000px" height="1000px" align="center">__그림 4. 퇴적물 조성비 삼각다이어그램(자갈이 포함되지 않은 경우)__    
 
-
-<div class="figure" style="text-align: left">
-<img src="R을_이용한_우리나라_저질구분_Diaram_만들기_v1_files/figure-html/unnamed-chunk-10-1.png" alt="__그림 4. 퇴적물 조성비 삼각다이어그램(자갈이 포함되지 않은 경우)__"  />
-<p class="caption">__그림 4. 퇴적물 조성비 삼각다이어그램(자갈이 포함되지 않은 경우)__</p>
-</div>
+<br>
 
 <br>
 다음 포스팅에서는 이번 튜토리얼에서 만든 우리나라 저질구분 Diagram과 함께 해저 저질 자료를 도시화하고 문서로 저장하는 방법을 설명하도록 하겠다.
