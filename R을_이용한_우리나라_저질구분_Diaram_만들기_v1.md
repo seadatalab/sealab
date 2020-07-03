@@ -36,7 +36,8 @@ output:
 <img src="images/02_ggtern_korea_classified_sediment.PNG" alt="그림 2.수로측량 업구규정에 정의된 우리나라 저질 분류 다이어그램" border="3px" width="1000px" height="350px" align="center">__그림 2.수로측량 업구규정에 정의된 우리나라 저질 분류 다이어그램__    
     
 <br>    
-해양저질 퇴적물의 입도조성 자료를 우리나라 기준에 맞추어 도시화 할 수 있도록 이번 포스팅에서는 [`ggtern`](https://www.rdocumentation.org/packages/rysgran/versions/2.1.0) 과 [`plyr`](https://www.rdocumentation.org/packages/plyr/versions/1.8.6) 를 사용해서 우리나라 저질 분류 Diagram을 만들었다. 튜토리얼 순서는 아래와 같다.        
+해양저질 퇴적물의 입도조성 자료를 우리나라 기준에 맞추어 도시화 할 수 있도록 이번 포스팅에서는 [`ggtern`](https://www.rdocumentation.org/packages/rysgran/versions/2.1.0) 과 [`plyr`](https://www.rdocumentation.org/packages/plyr/versions/1.8.6) 를 사용해서 우리나라 저질 분류 Diagram을 만들었다. 튜토리얼 순서는 아래와 같다.    
+
 <br>   
 
 __[목차]__  
