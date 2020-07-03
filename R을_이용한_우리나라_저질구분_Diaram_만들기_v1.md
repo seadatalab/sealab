@@ -29,12 +29,12 @@ output:
 이전 포스팅 "R을 이용한 퇴적물 입도조성 자료 시각화 하기(1)"에서는 [`rysgran`](https://www.rdocumentation.org/packages/rysgran/versions/2.1.0)을 사용해서 해양저질 퇴적물 자료의 입도조성을 분류했다. 분류방법은 `shepard`, `pejrup`, `flemming`으로 **그림 1**과 같다.    
 <br>
 
-<img src="images/01_ggtern_1rysgran_shepard.png" alt="그림 1. rysgran pakage에 내장된 저질분류 기준" border="10px" width="330px" height="300px"><img src="images/01_ggtern_2rysgran_pejrup.png" alt="그림 1. rysgran pakage에 내장된 저질분류 기준" border="10px" width="330px" height="300px"><img src="images/01_ggtern_3rysgran_flemming.png" alt="그림 1. rysgran pakage에 내장된 저질분류 기준" border="10px" width="330px" height="300px">__그림 1. rysgran pakage에 내장된 저질분류 기준__
+<img src="images/01_ggtern_1rysgran_shepard.png" alt="그림 1. rysgran pakage에 내장된 저질분류 기준" border="10px" width="333px" height="333px"><img src="images/01_ggtern_2rysgran_pejrup.png" alt="그림 1. rysgran pakage에 내장된 저질분류 기준" border="10px" width="333px" height="333px"><img src="images/01_ggtern_3rysgran_flemming.png" alt="그림 1. rysgran pakage에 내장된 저질분류 기준" border="10px" width="333px" height="333px">__그림 1. rysgran pakage에 내장된 저질분류 기준__
 
 그러나 이 분류방법은 우리나라 국가법령정보센터에서 제공하는 **수로측량 업무규정 제 49조(자료이 해석)**의 "저질 분류 Diagram"와 다르다(**그림 2**). "저질 분류 Diagram"은 *"자갈(Gravel)이 포함된 경우"*와 *"자갈이 포함되지 않은 경우"*로 나누어 분류한다.    
 <br>    
 
-<img src="images/02_ggtern_korea_classified_sediment.PNG" alt="그림 2.수로측량 업구규정에 정의된 우리나라 저질 분류 다이어그램" border="3px" width="1000px" height="1000px" align="center">__그림 2.수로측량 업구규정에 정의된 우리나라 저질 분류 다이어그램__    
+<img src="images/02_ggtern_korea_classified_sediment.PNG" alt="그림 2.수로측량 업구규정에 정의된 우리나라 저질 분류 다이어그램" border="3px" width="1000px" height="500px" align="center">__그림 2.수로측량 업구규정에 정의된 우리나라 저질 분류 다이어그램__    
     
 <br>    
 해양저질 퇴적물의 입도조성 자료를 우리나라 기준에 맞추어 도시화 할 수 있도록 이번 포스팅에서는  [`ggtern`](https://www.rdocumentation.org/packages/ggtern/versions/2.2.0)과 [`dyply`](https://www.rdocumentation.org/packages/plyr/versions/1.8.6)를 사용해서 우리나라 저질 분류 Diagram을 만들었다. 튜토리얼 순서는 아래와 같다.        
