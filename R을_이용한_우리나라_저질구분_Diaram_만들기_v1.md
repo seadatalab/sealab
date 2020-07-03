@@ -265,10 +265,10 @@ View(data01)
     
 <br>
 같은 "Label" 값을 가진 데이터(점)끼리 그룹을 지어 polygon을 만들면 저질분류 Diagram에 표시될 각 구역을 구분지을 수 있다.    
+<br>    
     
-* `ddply` 함수를 사용해서 "Label"이라는 컬럼으로 데이터를 묶은 다음에 `df` 함수를 사용해서 데이터프레임을 만든다. `apply` 함수를 사용해서 열방향(2)으로 평균값(`maen` 함수)을 구한다.
-* 저질 분류 Diagram의 polygon에 표시될 "Label"의 각도를 표현하기 위해서 먼저 `swithch`함수를 사용해서 "Label" 값이  "M"인 경우는 "-10"을, "S"일 경우에는 "10"을, 이 두가지 경우에 해당하지 않을때는 "0"을 새롭게 생성된 "Angle"이라는 컬럼에 채우고
-, 이를  `sapply` 함수를 사용해서 벡터로 반환한다.    
+* `ddply` 함수를 사용해서 "Label"이라는 컬럼으로 데이터를 묶은 다음에 `df` 함수를 사용해서 데이터프레임을 만든다. `apply` 함수를 사용해서 열방향(2)으로 평균값(`maen` 함수)을 구한다.    
+* 저질 분류 Diagram의 polygon에 표시될 "Label"의 각도를 표현하기 위해서 먼저 `swithch` 함수를 사용해서 "Label" 값이  "M"인 경우는 "-10"을, "S"일 경우에는 "10"을, 이 두가지 경우에 해당하지 않을때는 "0"을 새롭게 생성된 "Angle"이라는 컬럼에 채우고, 이를  `sapply` 함수를 사용해서 벡터로 반환한다.        
 
 <br>
 
@@ -281,7 +281,7 @@ View(data02)
 ```
 
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; "><table class="table table-striped" style="font-size: 12px; margin-left: auto; margin-right: auto;">
-<caption style="font-size: initial !important;">__표 2. 15개로 구분된 저질 구분표__</caption>
+<caption style="font-size: initial !important;">표 2. 15개로 구분된 저질 구분표</caption>
  <thead>
   <tr>
    <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">   </th>
@@ -419,13 +419,13 @@ View(data02)
 
 ## . 저질분류 삼각 Diagram 그리기    
 
-`ggtern`함수를 사용하여 'Mud', 'Gravel', 'Sand'를 꼭지점으로 하는 삼각 Diagram을 "Label"로 나누어 도시화 하였다(**그림 3**).    
+`ggtern` 함수를 사용하여 "Mud', "Gravel", "Sand"를 꼭지점으로 하는 삼각 Diagram을 "Label"로 나누어 도시화 하였다(**그림 3**).    
 <br>
 
 <img src="images/03_ggtern_Textural_Classification_Chart(with gravel).png" alt="그림 3. 퇴적물 조성비 삼각다이어그램(자갈이 포함된 경우)" border="3px" width="1000px" height="1000px" align="center">__그림 3. 퇴적물 조성비 삼각다이어그램(자갈이 포함된 경우)__    
 
 <br>
-저질기준 분류표(자갈이 포함되지 않은 경우)도 위와 같은 방법으로 **그림 4**와 같이 도시화 하였다.    
+저질기준 분류표(자갈이 포함되지 않은 경우)도 위와 같은 방법으로 __그림 4__와 같이 도시화 하였다.    
 <br>    
 
 <img src="images/04_ggtern_Textural_Classification_Chart(without gravel).png" alt="그림 4. 퇴적물 조성비 삼각다이어그램(자갈이 포함되지 않은 경우)" border="3px" width="1000px" height="1000px" align="center">__그림 4. 퇴적물 조성비 삼각다이어그램(자갈이 포함되지 않은 경우)__    
