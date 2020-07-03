@@ -31,12 +31,12 @@ output:
 
 <img src="images/01_ggtern_1rysgran_shepard.png" alt="그림 1. rysgran pakage에 내장된 저질분류 기준" border="5px" width="333px" height="333px"><img src="images/01_ggtern_2rysgran_pejrup.png" alt="그림 1. rysgran pakage에 내장된 저질분류 기준" border="5px" width="333px" height="333px"><img src="images/01_ggtern_3rysgran_flemming.png" alt="그림 1. rysgran pakage에 내장된 저질분류 기준" border="5px" width="333px" height="333px">__그림 1. rysgran pakage에 내장된 저질분류 기준__
 
-그러나 이 분류방법은 우리나라 국가법령정보센터에서 제공하는 **수로측량 업무규정 제 49조(자료이 해석)**의 "저질 분류 Diagram"와 다르다(**그림 2**). "저질 분류 Diagram"은 *"자갈(Gravel)이 포함된 경우"*와 *"자갈이 포함되지 않은 경우"*로 나누어 분류한다.    
+그러나 이 분류방법은 우리나라 국가법령정보센터에서 제공하는 __수로측량 업무규정 제 49조(자료이 해석)__ 의 "저질 분류 Diagram"와 다르다(__그림 2__). "저질 분류 Diagram"은 _"자갈(Gravel)이 포함된 경우"_ 와 _"자갈이 포함되지 않은 경우"_ 로 나누어 분류한다.    
 
 <img src="images/02_ggtern_korea_classified_sediment.PNG" alt="그림 2.수로측량 업구규정에 정의된 우리나라 저질 분류 다이어그램" border="3px" width="1000px" height="350px" align="center">__그림 2.수로측량 업구규정에 정의된 우리나라 저질 분류 다이어그램__    
     
 <br>    
-해양저질 퇴적물의 입도조성 자료를 우리나라 기준에 맞추어 도시화 할 수 있도록 이번 포스팅에서는  [`ggtern`](https://www.rdocumentation.org/packages/ggtern/versions/2.2.0)과 [`dyply`](https://www.rdocumentation.org/packages/plyr/versions/1.8.6)를 사용해서 우리나라 저질 분류 Diagram을 만들었다. 튜토리얼 순서는 아래와 같다.        
+해양저질 퇴적물의 입도조성 자료를 우리나라 기준에 맞추어 도시화 할 수 있도록 이번 포스팅에서는 [`ggtern`](https://www.rdocumentation.org/packages/ggtern/versions/2.2.0) 과 [`dyply`](https://www.rdocumentation.org/packages/plyr/versions/1.8.6)를 사용해서 우리나라 저질 분류 Diagram을 만들었다. 튜토리얼 순서는 아래와 같다.        
 <br>   
 
 __[목차]__  
@@ -50,7 +50,7 @@ __2. 우리나라 저질 분류 Diagram 만들기__
   
 ## . R Package “ggtern”, "dyply" 소개   
 
-[`ggtern`](https://www.rdocumentation.org/packages/ggtern/versions/2.2.0)는  [`ggplot2`](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.1)의 기능을 확장하여 'ggplot2' 지오메트리에 대한 3차 다이어그램을 그릴 수 있는 기능을 제공하면서 'ggtern'은 표준 'ggplot2'에서 사용할 수 없는 몇 가지 새로운 형상을 구현하는 확장판이다.    
+[`ggtern`](https://www.rdocumentation.org/packages/ggtern/versions/2.2.0)는 [`ggplot2`](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.1)의 기능을 확장하여 [`ggplot2`](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.1) 지오메트리에 대한 3차 다이어그램을 그릴 수 있는 기능을 제공하면서 [`ggtern`](https://www.rdocumentation.org/packages/ggtern/versions/2.2.0)은 표준 [`ggplot2`](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.1)에서 사용할 수 없는 몇 가지 새로운 형상을 구현하는 확장판이다.    
 <br>    
     
 ## . R Package “ggtern”, "dyply" 설치   
