@@ -41,11 +41,11 @@ __2. Rmd 파일 구조 및 작성__
      
 R Studio를 사용해서 R code와 함께 텍스트를 혼합해서 HTML, PDF, MS Word 등의 다양한 형태의 문서를 만들수 있다. 데이터, 통계분석 코드와 텍스트가 수미일관되게 하나의 문서 안에서 관리될 수 있다면 버전 관리의 어려움을 덜 수 있어서 재현가능한 연구(Reproducible Research) 관점에서 매우 유용하다. R Markdown은 무료이며 오픈 소스로 CRAN에서 R Markdown 패키지를 설치할 수 있다.   
     
-![__그림 1. R Markdown 소개__](G:\R\Rmarkdown\03.rmarkdown\01.fig\v1.0\rmarkdown intro.png)
+![__그림 1. R Markdown 소개__](images/markdown/rmarkdown_intro.PNG)
    
 R Markdown은 생성된 .rmd 파일을 ['knitr'](https://www.rdocumentation.org/packages/knitr/versions/1.28)에 공급하여 모든 코드 청크를 실행하고, 코드 및 출력을 포함하는 새 markdown(.md) 문서를 만든다. 이렇게 생성된 markdown(.md) 파일은 ['pandoc'](http://pandoc.org/)에 의해 처리 된다.   
    
-![__그림 2. R Markdown 처리순서__](G:\R\Rmarkdown\03.rmarkdown\01.fig\v1.0\rmarkdown workflow.png)
+![__그림 2. R Markdown 처리순서__](images/markdown/rmarkdown_workflow.png)
    
    
 ## . R Markdown 설치 및 설정
@@ -73,28 +73,28 @@ library(rmarkdown)
 * **"File > New File > R Markdown..." 메뉴를 선택**하거나 "File" 메뉴 아래의 **"New file" 아이콘을 선택하고 "R Markdown..." 선택**해서 .rmd 파일을 만든다.  
   
   
-![__그림 3. .rmd 파일 생성(1)__](G:\R\Rmarkdown\03.rmarkdown\01.fig\v1.0\rmarkdown create01.png)
+![__그림 3. .rmd 파일 생성(1)__](images/markdown/rmarkdown_create01.png)
   
 <br> 
 
 * 새롭게 만들어질 .rmd 파일의 **제목(Title)과 저자(Author)입력** 후 **기본 출력 포맷(Default Output Format)을 선택**한다.
   
   
-![__그림 4. .rmd 파일 생성(2)__](G:\R\Rmarkdown\03.rmarkdown\01.fig\v1.0\rmarkdown create02.png)
+![__그림 4. .rmd 파일 생성(2)__](images/markdown/rmarkdown_create02.PNG)
   
 <br> 
 
 * 아래와 같이 .rmd file이 만들어 지고, 저자는 **markdown 문법에 맞추어 작성**한다. .rmd 작성법 및 문법은 아래 *2. .rmd files 구조 및 작성*에서 다루도록 하겠다. 
   
   
-![__그림 5. .rmd 파일 생성(3)__](G:\R\Rmarkdown\03.rmarkdown\01.fig\v1.0\rmarkdown create03.png)
+![__그림 5. .rmd 파일 생성(3)__](images/markdown/rmarkdown_create03.png)
   
 <br> 
   
 * 작성된 .rmd 파일을 **"Knit" 아이콘**을 선택하여 .md 파일을 생성한다. 
   
   
-![__그림 6. R Markdown 실행__](G:\R\Rmarkdown\03.rmarkdown\01.fig\v1.0\rmarkdown knitr.png)
+![__그림 6. R Markdown 실행__](images/markdown/rmarkdown_knitr.png)
    
 * .md 파일을 생성시 `render` 함수를 사용할 수 있으며, **표 1**과 같이 출력값에 따라 다양한 포맷으로 생성할 수 있다.   
    
@@ -166,13 +166,13 @@ render("R Markdown report", "html_document")
   
 .rmd 파일은 크게 **YAML Header**, **Code chunk**, **Text**로 나뉜다.  
   
-![__그림 7. .rmd 파일 구조__](G:\R\Rmarkdown\03.rmarkdown\01.fig\v1.0\rmarkdown .rmd structure.png)
+![__그림 7. .rmd 파일 구조__](images/markdown/rmarkdown_.rmd structure.png)
 
 ### . YAML Header
   
 YAML(YAML Ain’t Markup Language)은 R markdown의 .rmd 파일 상단에 문서 형식을 설정한다.  
   
-![__그림 8. YAML head 설정방법__](G:\R\Rmarkdown\03.rmarkdown\01.fig\v1.0\YAML head define.png)   
+![__그림 8. YAML head 설정방법__](images/markdown/YAML_head_define.png)   
    
 <br>
   
@@ -182,12 +182,12 @@ YAML(YAML Ain’t Markup Language)은 R markdown의 .rmd 파일 상단에 문서
 
 .rmd 파일을 생성시 문서 전체에 적용할 수 있는 chunk 옵션이 "setup"이라는 **코드 묶음 명칭(code chunk label)**으로 최초 설정되었다. 
   
-<img src="G:/R/Rmarkdown/03.rmarkdown/01.fig/r setup_code chunk.png" width="100%" style="display: block; margin: auto auto auto 0;" />
+<img src="images/markdown/r_setup_code_chunk.PNG" width="100%" style="display: block; margin: auto auto auto 0;" />
   
   
 `knitr::opts_chunk$set()`을 사용해 작성자는 문서 전체에 대해 code chunk를 설정할 수 있으며 개별적인 code chunk에서 옵션을 반복할 필요가 없다.  
 
-<img src="G:/R/Rmarkdown/03.rmarkdown/01.fig/r setup_code chunk2.png" width="100%" style="display: block; margin: auto auto auto 0;" />
+<img src="images/markdown/r_setup_code_chunk2.png" width="100%" style="display: block; margin: auto auto auto 0;" />
 기본적으로 많이 사용하는 chunk 옵션은 **표 3**에 나타내었다.  
   
 <table class="table table-striped" style="font-size: 12px; margin-left: auto; margin-right: auto;">
@@ -300,16 +300,16 @@ R 코드 chunk 에서 Plot 또는 Image가 생성되지 않으면 아래 두가�
 * Markdown 구문 사용   
 
   * `![caption](path/to/image)`   
-<img src="G:/R/Rmarkdown/03.rmarkdown/01.fig/v1.0/image path.png" style="display: block; margin: auto auto auto 0;" />
-<img src="G:/R/Rmarkdown/03.rmarkdown/01.fig/v1.0/JOISS main1.png" style="display: block; margin: auto auto auto 0;" />
+<img src="images/markdown/image_path.png" style="display: block; margin: auto auto auto 0;" />
+<img src="images/markdown/JOISS_main1.PNG" style="display: block; margin: auto auto auto 0;" />
 <br>
 
 * `knitr` 함수 사용   
 
   * `knitr::include_graphics()` : `out.width`, `fig.align`등 chunk 옵션 사용
-<img src="G:/R/Rmarkdown/03.rmarkdown/01.fig/v1.0/knitr_include_graphics.png" style="display: block; margin: auto auto auto 0;" />
+<img src="images/markdown/knitr_include_graphics.PNG" style="display: block; margin: auto auto auto 0;" />
 <div class="figure" style="text-align: right">
-<img src="G:/R/Rmarkdown/03.rmarkdown/01.fig/v1.0/JOISS main.png" alt="__Figure 1. JOISS 메인화면__" width="50%" />
+<img src="images/markdown/JOISS_main.PNG" alt="__Figure 1. JOISS 메인화면__" width="50%" />
 <p class="caption">__Figure 1. JOISS 메인화면__</p>
 </div>
 
