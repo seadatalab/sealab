@@ -41,11 +41,11 @@ __2. Rmd 파일 구조 및 작성__
      
 R Studio를 사용해서 R code와 함께 텍스트를 혼합해서 HTML, PDF, MS Word 등의 다양한 형태의 문서를 만들수 있다. 데이터, 통계분석 코드와 텍스트가 수미일관되게 하나의 문서 안에서 관리될 수 있다면 버전 관리의 어려움을 덜 수 있어서 재현가능한 연구(Reproducible Research) 관점에서 매우 유용하다. R Markdown은 무료이며 오픈 소스로 CRAN에서 R Markdown 패키지를 설치할 수 있다.   
     
-![__그림 1. R Markdown 소개__](images/markdown/rmarkdown_intro.PNG)
+![__그림 1. R Markdown 소개__](images/markdown/rmarkdown_intro.PNG)__그림 1. R Markdown 소개__
    
 R Markdown은 생성된 .rmd 파일을 ['knitr'](https://www.rdocumentation.org/packages/knitr/versions/1.28)에 공급하여 모든 코드 청크를 실행하고, 코드 및 출력을 포함하는 새 markdown(.md) 문서를 만든다. 이렇게 생성된 markdown(.md) 파일은 ['pandoc'](http://pandoc.org/)에 의해 처리 된다.   
    
-![__그림 2. R Markdown 처리순서__](images/markdown/rmarkdown_workflow.png)
+![__그림 2. R Markdown 처리순서__](images/markdown/rmarkdown_workflow.png)__그림 2. R Markdown 처리순서__
    
    
 ## . R Markdown 설치 및 설정
@@ -73,28 +73,28 @@ library(rmarkdown)
 * **"File > New File > R Markdown..." 메뉴를 선택**하거나 "File" 메뉴 아래의 **"New file" 아이콘을 선택하고 "R Markdown..." 선택**해서 .rmd 파일을 만든다.  
   
   
-![__그림 3. .rmd 파일 생성(1)__](images/markdown/rmarkdown_create01.png)
+![__그림 3. .rmd 파일 생성(1)__](images/markdown/rmarkdown_create01.png)__그림 3. .rmd 파일 생성(1)__
   
 <br> 
 
 * 새롭게 만들어질 .rmd 파일의 **제목(Title)과 저자(Author)입력** 후 **기본 출력 포맷(Default Output Format)을 선택**한다.
   
   
-![__그림 4. .rmd 파일 생성(2)__](images/markdown/rmarkdown_create02.PNG)
+![__그림 4. .rmd 파일 생성(2)__](images/markdown/rmarkdown_create02.PNG)__그림 4. .rmd 파일 생성(2)__
   
 <br> 
 
 * 아래와 같이 .rmd file이 만들어 지고, 저자는 **markdown 문법에 맞추어 작성**한다. .rmd 작성법 및 문법은 아래 *2. .rmd files 구조 및 작성*에서 다루도록 하겠다. 
   
   
-![__그림 5. .rmd 파일 생성(3)__](images/markdown/rmarkdown_create03.png)
+![__그림 5. .rmd 파일 생성(3)__](images/markdown/rmarkdown_create03.png)__그림 5. .rmd 파일 생성(3)__
   
 <br> 
   
 * 작성된 .rmd 파일을 **"Knit" 아이콘**을 선택하여 .md 파일을 생성한다. 
   
   
-![__그림 6. R Markdown 실행__](images/markdown/rmarkdown_knitr.png)
+![__그림 6. R Markdown 실행__](images/markdown/rmarkdown_knitr.png)__그림 6. R Markdown 실행__
    
 * .md 파일을 생성시 `render` 함수를 사용할 수 있으며, **표 1**과 같이 출력값에 따라 다양한 포맷으로 생성할 수 있다.   
    
@@ -166,13 +166,13 @@ render("R Markdown report", "html_document")
   
 .rmd 파일은 크게 **YAML Header**, **Code chunk**, **Text**로 나뉜다.  
   
-![__그림 7. .rmd 파일 구조__](images/markdown/rmarkdown_.rmd structure.png)
+![__그림 7. .rmd 파일 구조__](images/markdown/rmarkdown_.rmd_structure.png)__그림 7. .rmd 파일 구조__
 
 ### . YAML Header
   
 YAML(YAML Ain’t Markup Language)은 R markdown의 .rmd 파일 상단에 문서 형식을 설정한다.  
   
-![__그림 8. YAML head 설정방법__](images/markdown/YAML_head_define.png)   
+![__그림 8. YAML head 설정방법__](images/markdown/YAML_head_define.png)__그림 7. .rmd 파일 구조__   
    
 <br>
   
