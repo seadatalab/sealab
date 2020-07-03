@@ -88,7 +88,7 @@ View(data01)
 ```
 
 <div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; "><table class="table table-striped" style="font-size: 12px; margin-left: auto; margin-right: auto;">
-<caption style="font-size: initial !important;">**표 1. 불러온 저질기준 분류표(자갈이 포함된 경우 상위20개)**</caption>
+<caption style="font-size: bold !important;">표 1. 불러온 저질기준 분류표(자갈이 포함된 경우 상위20개)</caption>
  <thead>
   <tr>
    <th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;">   </th>
