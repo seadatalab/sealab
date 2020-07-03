@@ -33,7 +33,7 @@ output:
 
 그러나 이 분류방법은 우리나라 국가법령정보센터에서 제공하는 **수로측량 업무규정 제 49조(자료이 해석)**의 "저질 분류 Diagram"와 다르다(**그림 2**). "저질 분류 Diagram"은 *"자갈(Gravel)이 포함된 경우"*와 *"자갈이 포함되지 않은 경우"*로 나누어 분류한다.    
 
-<img src="images/02_ggtern_korea_classified_sediment.PNG" alt="그림 2.수로측량 업구규정에 정의된 우리나라 저질 분류 다이어그램" border="3px" width="1000px" height="800px" align="center">__그림 2.수로측량 업구규정에 정의된 우리나라 저질 분류 다이어그램__    
+<img src="images/02_ggtern_korea_classified_sediment.PNG" alt="그림 2.수로측량 업구규정에 정의된 우리나라 저질 분류 다이어그램" border="3px" width="1000px" height="350px" align="center">__그림 2.수로측량 업구규정에 정의된 우리나라 저질 분류 다이어그램__    
     
 <br>    
 해양저질 퇴적물의 입도조성 자료를 우리나라 기준에 맞추어 도시화 할 수 있도록 이번 포스팅에서는  [`ggtern`](https://www.rdocumentation.org/packages/ggtern/versions/2.2.0)과 [`dyply`](https://www.rdocumentation.org/packages/plyr/versions/1.8.6)를 사용해서 우리나라 저질 분류 Diagram을 만들었다. 튜토리얼 순서는 아래와 같다.        
