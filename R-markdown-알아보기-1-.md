@@ -45,7 +45,7 @@ R Studio를 사용해서 R code와 함께 텍스트를 혼합해서 HTML, PDF, M
    
 R Markdown은 생성된 .rmd 파일을 ['knitr'](https://www.rdocumentation.org/packages/knitr/versions/1.28)에 공급하여 모든 코드 청크를 실행하고, 코드 및 출력을 포함하는 새 markdown(.md) 문서를 만든다. 이렇게 생성된 markdown(.md) 파일은 ['pandoc'](http://pandoc.org/)에 의해 처리 된다.   
    
-![__그림 2. R Markdown 처리순서__](images/markdown/rmarkdown_workflow_2.png)__그림 2. R Markdown 처리순서__
+![__그림 2. R Markdown 처리순서__](images/markdown/rmarkdown_workflow_2.PNG)__그림 2. R Markdown 처리순서__
    
    
 ## . R Markdown 설치 및 설정
