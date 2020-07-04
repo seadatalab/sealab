@@ -166,7 +166,7 @@ render("R Markdown report", "html_document")
   
 .rmd 파일은 크게 **YAML Header**, **Code chunk**, **Text**로 나뉜다.  
   
-![__그림 7. .rmd 파일 구조__](images/markdown/rmarkdown_rmd_structure.png)__그림 7. .rmd 파일 구조__
+![__그림 7. .rmd 파일 구조__](images/markdown/rmarkdown_.rmd_structure.png)__그림 7. .rmd 파일 구조__
 
 ### . YAML Header
   
