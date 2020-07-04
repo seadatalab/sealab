@@ -290,9 +290,12 @@ YAML(YAML Ain’t Markup Language)은 R markdown의 .rmd 파일 상단에 문서
 
 
 ### . Markdown Syntax   
+[R markdown Gallery](https://rmarkdown.rstudio.com/articles.html)의 다양한 문서들중 
+[Cheat Sheet](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf)
+[Reference Guide](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf?_ga=2.166048702.1072460106.1593844062-326479530.1590640653)를 통해 더 정확하고 자세한 작성문법을 제공한다.    
 
-~~문법정리~~https://heropy.blog/2017/09/30/markdown/   
-       
+<br>
+
 ### . Plot & Image   
 R로 작성된 Plot의 물리적 크기는 chunk 옵션의 `fig.width`과 `fig.height`로 제어할 수 있다. 그리고  `fig.dim` 을 사용하여 너비(width)와 높이(height)를 한번에 정의 할 수도 있다(예 : `fig.dim = c(8, 6)`은 `fig.width = 8`및 `fig.height = 6`을 말한다.).   
 또 chunk 옵션의 `out.width`및 `out.height`을 사용해서 출력되는 plot의 크기를 다른크기로 제어할 수 있다(예: `out.width = "50%"`).    
