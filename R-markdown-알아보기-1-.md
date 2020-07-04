@@ -304,7 +304,7 @@ R 코드 chunk 에서 Plot 또는 Image가 생성되지 않으면 아래 두가�
 
   * `![caption](path/to/image)`   
 <img src="images/markdown/image_path.png" style="display: block; margin: auto auto auto 0;" />
-<img src="images/markdown/JOISS_main1.PNG" style="display: block; margin: auto auto auto 0;" />
+<img src="images/markdown/JOISS_main01.PNG" style="display: block; margin: auto auto auto 0;" />
 <br>
 
 * `knitr` 함수 사용   
@@ -312,7 +312,7 @@ R 코드 chunk 에서 Plot 또는 Image가 생성되지 않으면 아래 두가�
   * `knitr::include_graphics()` : `out.width`, `fig.align`등 chunk 옵션 사용
 <img src="images/markdown/knitr_include_graphics.PNG" style="display: block; margin: auto auto auto 0;" />
 <div class="figure" style="text-align: right">
-<img src="images/markdown/JOISS_main.PNG" alt="__Figure 1. JOISS 메인화면__" width="50%" />
+<img src="images/markdown/JOISS_main02.PNG" alt="__Figure 1. JOISS 메인화면__" width="50%" />
 <p class="caption">__Figure 1. JOISS 메인화면__</p>
 </div>
 
