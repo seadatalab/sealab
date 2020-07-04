@@ -182,7 +182,7 @@ YAML(YAML Ain’t Markup Language)은 R markdown의 .rmd 파일 상단에 문서
   
  > 전체 code chunk 설정      
 
-.rmd 파일을 생성시 문서 전체에 적용할 수 있는 chunk 옵션이 "setup"이라는 **코드 묶음 명칭(code chunk label)**으로 최초 설정되었다. 
+.rmd 파일을 생성시 문서 전체에 적용할 수 있는 chunk 옵션이 "setup"이라는 **코드 묶음 명칭(code chunk label)** 으로 최초 설정되었다. 
   
 <img src="images/markdown/r_setup_code_chunk.PNG" width="100%" style="display: block; margin: auto auto auto 0;" />
   
@@ -190,11 +190,12 @@ YAML(YAML Ain’t Markup Language)은 R markdown의 .rmd 파일 상단에 문서
 `knitr::opts_chunk$set()`을 사용해 작성자는 문서 전체에 대해 code chunk를 설정할 수 있으며 개별적인 code chunk에서 옵션을 반복할 필요가 없다.  
 
 <img src="images/markdown/r_setup_code_chunk2.PNG" width="100%" style="display: block; margin: auto auto auto 0;" />
-기본적으로 많이 사용하는 chunk 옵션은 __표 3__ 에 나타내었다.    
+기본적으로 많이 사용하는 chunk 옵션은 **표 2** 에 나타내었다.    
 
-<br>  
+<br>    
+    
 <table class="table table-striped" style="font-size: 12px; margin-left: auto; margin-right: auto;">
-<caption style="font-size: initial !important;">표 3. code chunk에서 많이 사용되는 옵션</caption>
+<caption style="font-size: initial !important;">표 2. code chunk에서 많이 사용되는 옵션</caption>
  <thead>
   <tr>
    <th style="text-align:center;"> 선택옵션 </th>
