@@ -191,9 +191,8 @@ YAML(YAML Ain’t Markup Language)은 R markdown의 .rmd 파일 상단에 문서
 
 <img src="images/markdown/r_setup_code_chunk2.PNG" width="100%" style="display: block; margin: auto auto auto 0;" />
 기본적으로 많이 사용하는 chunk 옵션은 **표 2** 에 나타내었다.    
-
-<br>    
     
+<br>    
 <table class="table table-striped" style="font-size: 12px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">표 2. code chunk에서 많이 사용되는 옵션</caption>
  <thead>
