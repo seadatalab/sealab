@@ -167,7 +167,9 @@ render("R Markdown report", "html_document")
 .rmd 파일은 크게 **YAML Header**, **Code chunk**, **Text**로 나뉜다.  
   
 ![__그림 7. .rmd 파일 구조__](images/markdown/rmarkdown_.rmd_structure.png)__그림 7. .rmd 파일 구조__
-
+   
+<br>
+  
 ### . YAML Header
   
 YAML(YAML Ain’t Markup Language)은 R markdown의 .rmd 파일 상단에 문서 형식을 설정한다.  
@@ -188,8 +190,9 @@ YAML(YAML Ain’t Markup Language)은 R markdown의 .rmd 파일 상단에 문서
 `knitr::opts_chunk$set()`을 사용해 작성자는 문서 전체에 대해 code chunk를 설정할 수 있으며 개별적인 code chunk에서 옵션을 반복할 필요가 없다.  
 
 <img src="images/markdown/r_setup_code_chunk2.PNG" width="100%" style="display: block; margin: auto auto auto 0;" />
-기본적으로 많이 사용하는 chunk 옵션은 **표 3**에 나타내었다.  
-  
+기본적으로 많이 사용하는 chunk 옵션은 __표 3__ 에 나타내었다.    
+
+<br>  
 <table class="table table-striped" style="font-size: 12px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">표 3. code chunk에서 많이 사용되는 옵션</caption>
  <thead>
