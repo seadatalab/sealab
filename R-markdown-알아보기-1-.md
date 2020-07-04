@@ -187,10 +187,10 @@ YAML(YAML Ain’t Markup Language)은 R markdown의 .rmd 파일 상단에 문서
 <img src="images/markdown/r_setup_code_chunk.PNG" width="100%" style="display: block; margin: auto auto auto 0;" />
   
   
-`knitr::opts_chunk$set()`을 사용해 작성자는 문서 전체에 대해 code chunk를 설정할 수 있으며 개별적인 code chunk에서 옵션을 반복할 필요가 없다.  
+`knitr::opts_chunk$set()`을 사용해 작성자는 문서 전체에 대해 code chunk를 설정할 수 있으며 개별적인 code chunk에서 옵션을 반복할 필요가 없다. 기본적으로 많이 사용하는 chunk 옵션은 **표 2** 에 나타내었다.    
 
 <img src="images/markdown/r_setup_code_chunk2.PNG" width="100%" style="display: block; margin: auto auto auto 0;" />
-기본적으로 많이 사용하는 chunk 옵션은 **표 2** 에 나타내었다.    
+
     
 <br>    
 <table class="table table-striped" style="font-size: 12px; margin-left: auto; margin-right: auto;">
