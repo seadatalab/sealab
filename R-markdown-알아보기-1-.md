@@ -45,7 +45,7 @@ R Studio를 사용해서 R code와 함께 텍스트를 혼합해서 HTML, PDF, M
    
 R Markdown은 생성된 .rmd 파일을 ['knitr'](https://www.rdocumentation.org/packages/knitr/versions/1.28)에 공급하여 모든 코드 청크를 실행하고, 코드 및 출력을 포함하는 새 markdown(.md) 문서를 만든다. 이렇게 생성된 markdown(.md) 파일은 ['pandoc'](http://pandoc.org/)에 의해 처리 된다.   
    
-![__그림 2. R Markdown 처리순서__](images/markdown/rmarkdown_workflow.png)__그림 2. R Markdown 처리순서__
+![__그림 2. R Markdown 처리순서__](images/markdown/rmarkdown_workflow_2.PNG)__그림 2. R Markdown 처리순서__
    
    
 ## . R Markdown 설치 및 설정
@@ -80,7 +80,7 @@ library(rmarkdown)
 * 새롭게 만들어질 .rmd 파일의 **제목(Title)과 저자(Author)입력** 후 **기본 출력 포맷(Default Output Format)을 선택**한다.
   
   
-![__그림 4. .rmd 파일 생성(2)__](images/markdown/rmarkdown_create02.PNG)__그림 4. .rmd 파일 생성(2)__
+![__그림 4. .rmd 파일 생성(2)__](images/markdown/rmarkdown_create02_2.png)__그림 4. .rmd 파일 생성(2)__
   
 <br> 
 
@@ -167,12 +167,14 @@ render("R Markdown report", "html_document")
 .rmd 파일은 크게 **YAML Header**, **Code chunk**, **Text**로 나뉜다.  
   
 ![__그림 7. .rmd 파일 구조__](images/markdown/rmarkdown_.rmd_structure.png)__그림 7. .rmd 파일 구조__
-
+   
+<br>
+  
 ### . YAML Header
   
 YAML(YAML Ain’t Markup Language)은 R markdown의 .rmd 파일 상단에 문서 형식을 설정한다.  
   
-![__그림 8. YAML head 설정방법__](images/markdown/YAML_head_define.png)__그림 7. .rmd 파일 구조__   
+![__그림 8. YAML head 설정방법__](images/markdown/YAML_head_define.png)__그림 8. YAML head 설정방법__  
    
 <br>
   
@@ -180,18 +182,19 @@ YAML(YAML Ain’t Markup Language)은 R markdown의 .rmd 파일 상단에 문서
   
  > 전체 code chunk 설정      
 
-.rmd 파일을 생성시 문서 전체에 적용할 수 있는 chunk 옵션이 "setup"이라는 **코드 묶음 명칭(code chunk label)**으로 최초 설정되었다. 
+.rmd 파일을 생성시 문서 전체에 적용할 수 있는 chunk 옵션이 "setup"이라는 **코드 묶음 명칭(code chunk label)** 으로 최초 설정되었다. 
   
 <img src="images/markdown/r_setup_code_chunk.PNG" width="100%" style="display: block; margin: auto auto auto 0;" />
   
   
-`knitr::opts_chunk$set()`을 사용해 작성자는 문서 전체에 대해 code chunk를 설정할 수 있으며 개별적인 code chunk에서 옵션을 반복할 필요가 없다.  
+`knitr::opts_chunk$set()`을 사용해 작성자는 문서 전체에 대해 code chunk를 설정할 수 있으며 개별적인 code chunk에서 옵션을 반복할 필요가 없다. 기본적으로 많이 사용하는 chunk 옵션은 **표 2** 에 나타내었다.    
 
-<img src="images/markdown/r_setup_code_chunk2.png" width="100%" style="display: block; margin: auto auto auto 0;" />
-기본적으로 많이 사용하는 chunk 옵션은 **표 3**에 나타내었다.  
-  
+<img src="images/markdown/r_setup_code_chunk2.PNG" width="100%" style="display: block; margin: auto auto auto 0;" />
+
+    
+<br>    
 <table class="table table-striped" style="font-size: 12px; margin-left: auto; margin-right: auto;">
-<caption style="font-size: initial !important;">표 3. code chunk에서 많이 사용되는 옵션</caption>
+<caption style="font-size: initial !important;">표 2. code chunk에서 많이 사용되는 옵션</caption>
  <thead>
   <tr>
    <th style="text-align:center;"> 선택옵션 </th>
@@ -287,9 +290,12 @@ YAML(YAML Ain’t Markup Language)은 R markdown의 .rmd 파일 상단에 문서
 
 
 ### . Markdown Syntax   
+[R markdown Gallery](https://rmarkdown.rstudio.com/articles.html)의 다양한 문서들중 
+[Cheat Sheet](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf)
+[Reference Guide](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf?_ga=2.166048702.1072460106.1593844062-326479530.1590640653)를 통해 더 정확하고 자세한 작성문법을 제공한다.    
 
-~~문법정리~~https://heropy.blog/2017/09/30/markdown/   
-       
+<br>
+
 ### . Plot & Image   
 R로 작성된 Plot의 물리적 크기는 chunk 옵션의 `fig.width`과 `fig.height`로 제어할 수 있다. 그리고  `fig.dim` 을 사용하여 너비(width)와 높이(height)를 한번에 정의 할 수도 있다(예 : `fig.dim = c(8, 6)`은 `fig.width = 8`및 `fig.height = 6`을 말한다.).   
 또 chunk 옵션의 `out.width`및 `out.height`을 사용해서 출력되는 plot의 크기를 다른크기로 제어할 수 있다(예: `out.width = "50%"`).    
@@ -300,18 +306,17 @@ R 코드 chunk 에서 Plot 또는 Image가 생성되지 않으면 아래 두가�
 * Markdown 구문 사용   
 
   * `![caption](path/to/image)`   
-<img src="images/markdown/image_path.png" style="display: block; margin: auto auto auto 0;" />
-<img src="images/markdown/JOISS_main1.PNG" style="display: block; margin: auto auto auto 0;" />
+<img src="images/markdown/JOISS_main01.PNG" style="display: block; margin: auto auto auto 0;" />
+
 <br>
 
 * `knitr` 함수 사용   
 
   * `knitr::include_graphics()` : `out.width`, `fig.align`등 chunk 옵션 사용
-<img src="images/markdown/knitr_include_graphics.PNG" style="display: block; margin: auto auto auto 0;" />
-<div class="figure" style="text-align: right">
-<img src="images/markdown/JOISS_main.PNG" alt="__Figure 1. JOISS 메인화면__" width="50%" />
-<p class="caption">__Figure 1. JOISS 메인화면__</p>
-</div>
+<img src="images/markdown/JOISS_main02.PNG" style="display: block; margin: auto auto auto 0;" />    
+  
+<br>    
+
 
 ### . Table   
    
