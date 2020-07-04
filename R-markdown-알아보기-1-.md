@@ -80,7 +80,7 @@ library(rmarkdown)
 * 새롭게 만들어질 .rmd 파일의 **제목(Title)과 저자(Author)입력** 후 **기본 출력 포맷(Default Output Format)을 선택**한다.
   
   
-![__그림 4. .rmd 파일 생성(2)__](images/markdown/rmarkdown_create02_2.PNG)__그림 4. .rmd 파일 생성(2)__
+![__그림 4. .rmd 파일 생성(2)__](images/markdown/rmarkdown_create02_2.png)__그림 4. .rmd 파일 생성(2)__
   
 <br> 
 
