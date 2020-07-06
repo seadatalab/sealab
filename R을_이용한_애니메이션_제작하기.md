@@ -67,8 +67,7 @@ ggplot(subset(cobe %>% group_by(as.integer(format(cobe$date, "%Y")), lon, lat) %
   #화면전환 방법
   enter_fade()
 ```
-
-![](R을_이용한_애니메이션_제작하기_files/figure-markdown_github/unnamed-chunk-3-1.gif)
+![래스터 애니메이션](images/sst_raster_ani_v2.gif)
 
 연도/월 별 래스터 애니메이션을 그리고 싶을 때에는 `subset()` 함수에서
 평균을 구하는 `group_by()`조건에 ’월’을 추가로 입력 후
@@ -98,7 +97,7 @@ ggplot(subset(cobe %>% group_by(as.integer(format(cobe$date, "%Y")),
   labs(title='{frame_time}년')
 ```
 
-![](R을_이용한_애니메이션_제작하기_files/figure-markdown_github/unnamed-chunk-4-1.gif)
+![래스터 월 별 애니메이션](images/raster_month_ani.gif)
 
 ### `ggplot()` 시계열 그래프 애니메이션으로 그리기
 
@@ -128,7 +127,7 @@ ggplot(subset(cobe %>% group_by(as.integer(format(cobe$date, "%Y"))) %>%
     transition_reveal(`as.integer(format(cobe$date, "%Y"))`)
 ```
 
-![](R을_이용한_애니메이션_제작하기_files/figure-markdown_github/unnamed-chunk-5-1.gif)
+![시계열그래프 애니메이션](images/timeseries_ani.gif)
 
 ### 애니메이션 저장하기
 
