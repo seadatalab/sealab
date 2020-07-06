@@ -69,8 +69,8 @@ coastal$`yyyy-mm-dd hh:mm:ss` <- as.POSIXct(coastal$`yyyy-mm-dd hh:mm:ss`, forma
 설치와 선언을 하고,
 [`group_by()`](https://www.rdocumentation.org/packages/dplyr/versions/0.7.8/topics/group_by)
 를 사용하여 계산조건을 지정한다. 라인 그래프를 그릴때에는 데이터에
-null값을 제외시키지 않으면 시계열 그래프가 끊기게 표현될 수 있기 때문에
-subset 에서 null값도 제외시켜준다.
+표현할 데이터의 null값을 제외시키지 않으면 시계열 그래프가 끊기게 표현될 수 있기 때문에
+subset 에서 SST데이터의 null값도 제외시켜준다.
 
 ``` r
 install.packages("dplyr")
