@@ -11,37 +11,31 @@
 \[목차\]  
 1.csv 불러오기
 
-2.데이터셋 전처리하기
-
-3.시계열 그래프 그리기
+2.시계열 그래프 그리기
 
 ------------------------------------------------------------------------
 
-### csv파일 불러오기
+### URL 데이터(.csv)파일 불러오기
 
-csv파일의 데이터를 데이터프레임 형태로 변환하기 위해 `dataset`이라는
-변수에 csv파일 경로와 이름을 저장한다.
+시계열 그래프를 그리기 위한 데이터는 JOISS GeoNetwork에서 제공하고 있는
+2017년도 연안정지관측자료 csv파일을 사용한다. 먼저, url을 이용하여
+데이터를 불러오기 위해서는
+[`readr`](https://www.rdocumentation.org/packages/readr/versions/1.3.1)
+패키지의 설치와 선언을 해야한다. 설치와 선언이 완료되었다면,
+`read_csv()`함수를 사용하여 JOISS GeoNetwork의 데이터를 불러와보자. 이
+때, JOISS에서 제공하고 있는 데이터의 경우 데이터셋 상단에 메타정보를
+함께 제공하고 있기 때문에 데이터프레임 형태로 변환하기 위해서는
+메타정보를 삭제해야 한다. 튜토리얼에서 사용된 데이터셋에서는 26행까지
+메타데이터이기 때문에 `skip()`함수를 이용하여 26행을 skip하였다.
 
 ``` r
-dataset <- "C:/Users/User/Documents/R/연안정지관측자료_2017_profile_meteorological_unknown.csv" 
+install.packages("readr")
 ```
 
-### 데이터셋 전처리하기
-
-불러온 csv 파일을 데이터프레임 형태로 변환하기 전에, JOISS에서 제공하고
-있는 데이터의 경우 데이터셋 상단에 메타정보를 함께 제공하고 있기 때문에
-데이터프레임 형태로 변환하기 위해서는 메타정보를 삭제하는 전처리를
-진행해야 한다. 아래 코드는 ‘/’ 기호가 포함된 메타정보 줄을 삭제하고
-컬럼명을 다시 매칭시키는 작업이다. 이 때, ’/’기호 포함여부에 따라
-삭제되는 행의 갯수가 조금씩 달라질 수 있으므로 행의 갯수를 확인하여야
-한다.
-
 ``` r
-removed_row <- length(grep("/.*", readLines(dataset)))
-coastal <- read.csv(dataset, skip = removed_row, header = F, stringsAsFactors=FALSE)
-coastal_colnames <- read.csv(dataset, skip = (removed_row-1), header = F, nrows = 1, as.is = T)
-colnames(coastal)  <-  coastal_colnames[1, 1:ncol(coastal)]
-coastal <- coastal[, grepl("_flag", colnames(coastal)) == F]
+library(readr)
+coastal <- read_csv("http://joiss.kr/geonetwork/srv/api/records/79e08dfc-527e-475a-9915-c51a4d965181/attachments/JOISS_Coastal_Oceanographic_Observation_2017_profile_meteorological_unknown.csv", 
+            col_names = T, skip=26)
 ```
 
 ``` r
