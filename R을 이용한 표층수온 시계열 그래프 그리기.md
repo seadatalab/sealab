@@ -17,8 +17,8 @@
 
 ### URL 데이터(.csv)파일 불러오기
 
-시계열 그래프를 그리기 위한 데이터는 JOISS GeoNetwork에서 제공하고 있는
-2017년도 연안정지관측자료 csv파일을 사용한다. 먼저, url을 이용하여
+시계열 그래프를 그리기 위한 데이터는 [JOISS GeoNetwork에서 제공하고 있는
+2017년도 연안정지관측자료](http://joiss.kr/geonetwork/srv/eng/catalog.search#/metadata/79e08dfc-527e-475a-9915-c51a4d965181) csv파일을 사용한다. 먼저, url을 이용하여
 데이터를 불러오기 위해서는
 [`readr`](https://www.rdocumentation.org/packages/readr/versions/1.3.1)
 패키지의 설치와 선언을 해야한다. 설치와 선언이 완료되었다면,
