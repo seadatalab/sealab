@@ -42,7 +42,7 @@ coastal <- read_csv("http://joiss.kr/geonetwork/srv/api/records/79e08dfc-527e-47
 coastal
 ```
 
-csv 파일을 데이터 프레임 형태로 변환이 완료되었으면 각 컬럼의 문자형식을
+csv 파일을 불러온 후에는 각 컬럼의 문자형식을
 확인하여야 한다. 이때, 날짜 형식이 문자(chr)형태로 지정되어 있다면
 [`as.POSIXct()`](https://www.rdocumentation.org/packages/dwtools/versions/0.8.3.9/topics/as.POSIXct)
 함수를 사용하여 날짜 형식으로 변환시킨다.
