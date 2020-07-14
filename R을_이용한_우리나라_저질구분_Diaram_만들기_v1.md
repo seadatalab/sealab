@@ -18,13 +18,14 @@ output:
     highlight: textmate
     df_print: kable
     keep_md: true
-'''
+''' #을 h1으로 인식해서 다른 주석으로 바꾸었습니다.
 output:
   md_document:
     variant: markdown_github
 '''
 ---  
-<h1>R을 이용한 우리나라 저질구분 Diaram 만들기</h1>
+<h1>R을 이용한 우리나라 저질구분 Diaram 만들기</h1> <!-- 첫 h1이 씨랩 글제목이 됩니다. -->
+<!-- 첫 h1 이전 라인은 씨랩 본문에서 보이지 않게 설정하였습니다. -->
 
 ***
    

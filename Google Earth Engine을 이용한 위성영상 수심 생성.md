@@ -1,4 +1,5 @@
-<h1>Google Earth Engine을 이용한 위성영상 수심 생산</h1>
+<h1>Google Earth Engine을 이용한 위성영상 수심 생산</h1> <!-- 첫 h1이 씨랩 글제목이 됩니다. -->
+<!-- 첫 h1 이전 라인은 씨랩 본문에서 보이지 않게 설정하였습니다. -->
 ===================================
 
 ## SDB(Satellite derived bathymetry)
