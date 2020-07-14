@@ -1,4 +1,4 @@
----
+<!--
 title: "R을 이용한 우리나라 저질구분 Diaram 만들기"
 author: "jiyoon Lee"
 date: "2020-07-02 오후 06:03 KST"
@@ -21,7 +21,7 @@ output:
 # output:
 #   md_document:
 #     variant: markdown_github
----    
+-->  
 <h1>R을 이용한 우리나라 저질구분 Diaram 만들기</h1>
 
 ***
