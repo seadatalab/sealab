@@ -18,9 +18,11 @@ output:
     highlight: textmate
     df_print: kable
     keep_md: true
+<!--
 # output:
 #   md_document:
 #     variant: markdown_github
+-->
 ---  
 <h1>R을 이용한 우리나라 저질구분 Diaram 만들기</h1>
 
