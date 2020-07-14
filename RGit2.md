@@ -1,3 +1,5 @@
+<h1>RGit2</h1>
+
 ---
 sdkfjhsdkfh
 title: "RStudio for Git"
