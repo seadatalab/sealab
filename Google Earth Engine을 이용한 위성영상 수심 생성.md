@@ -30,14 +30,14 @@ var globOptions = {
 ```    
 ### 구름제거
 구름제거는 SCL 밴드를 이용하였다. 'cloud_low’, ‘cloud_medium’, ‘cloud_high’, ‘shadow’ 픽셀을 모두 제거하였다.
-```
+~~~
 var cld = require('users/fitoprincipe/geetools:cloud_masks')
 
 var maskcloud = function(image) {
   var masked = cld.sclMask(['cloud_low', 'cloud_medium', 'cloud_high', 'shadow'])(image)
   return masked
 };
-```    
+~~~  
 ### 태양광 반사 보정
 해수면에서 발생하는 태양광 반사 보정 식은 다음과 같다.  
 <p align="center">
