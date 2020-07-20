@@ -8,7 +8,7 @@
 - 더 많이 테스트한다
 - 더 견고한 코드가 만들어질 것이다.
 
-![selenoum](images/selenium.jpg, 'selenium')
+![selenoum](images/selenium.jpg 'selenium')
 
 ```
 from selenium import webdriver
