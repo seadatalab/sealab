@@ -8,7 +8,7 @@
 - 더 많이 테스트한다
 - 더 견고한 코드가 만들어 질것이다.
 
-![selenoum](https://miro.medium.com/max/875/0*IhrZfeyU392cwegW, 'selenium')
+![selenoum](images/selenium.jpg, 'selenium')
 ```
 from selenium import webdriver
 import sys
