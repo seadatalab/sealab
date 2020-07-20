@@ -2,9 +2,11 @@
 #RGit2
 
 ---
+
 sdkfjhsdkfh
 title: "RStudio for Git"
 output: html_document
+
 ---
 
 ```{r setup, include=FALSE}
