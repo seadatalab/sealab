@@ -22,13 +22,13 @@
 
 ### 영상선정 조건
 
-제주도 인근 해역을 포함한 영상을 불러오기 위해 126E, 33N ~ 127E, 33.7N의 영역을 지정하였다. 이 영역은 코드에서 ‘site’라는 변수명으로 사용된다. 
+제주도 인근 해역을 포함한 영상을 불러오기 위해 126E, 33N ~ 127E, 33.7N의 영역을 지정하였다. 이 영역은 코드에서 `site`라는 변수명으로 사용된다. 
 
 ```
 var site = ee.Geometry.Polygon([126, 33.7, 126, 33, 127, 33, 127, 33.7], null, false);
 ```
 
-영상은 2019년 3월 24일 영상을 사용할 것이고, Sentinel-2가 갖고있는 밴드 중 ‘BLUE’, ‘GREEN’, ‘RED’, ‘NIR’, ‘SCL’ 밴드만 사용할 것이므로 해당 밴드만 조회할 수 있도록 'globOptions’ 변수를 만들어준다. 
+영상은 2019년 3월 24일 영상을 사용할 것이고, Sentinel-2가 갖고있는 밴드 중 `BLUE`, `GREEN`, `RED`, `NIR`, `SCL` 밴드만 사용할 것이므로 해당 밴드만 조회할 수 있도록 `globOptions` 변수를 만들어준다. 
 
 ```
 var globOptions = { 
@@ -41,7 +41,7 @@ var globOptions = {
 
 ### 구름제거
 
-구름제거는 SCL 밴드를 이용하였다. 'cloud_low’, ‘cloud_medium’, ‘cloud_high’, ‘shadow’ 픽셀을 모두 제거하였다.
+구름제거는 SCL 밴드를 이용하였다. `cloud_low`, `cloud_medium`, `cloud_high`, `shadow` 픽셀을 모두 제거하였다.
 
 ```
 var cld = require('users/fitoprincipe/geetools:cloud_masks')
@@ -90,7 +90,7 @@ var sampData = image.sample({
 var minNir = ee.Number(sampData.reduceColumns(ee.Reducer.min(), ['nir']).get('min'));
 ```
 
-BLUE 밴드의 b<sub>i</sub>는 아래와 같이 `ee.Reducer.linearRegression`을 이용하며, 변수 ‘slope_blue’가 BLUE 밴드의 b<sub>i</sub>가 된다.
+BLUE 밴드의 b<sub>i</sub>는 아래와 같이 `ee.Reducer.linearRegression`을 이용하며, 변수 `slope_blue`가 BLUE 밴드의 b<sub>i</sub>가 된다.
 
 ```
 // Linear regression - Blue
