@@ -18,6 +18,7 @@ output:
     highlight: textmate
     df_print: kable
     keep_md: true
+    
 <!-- #을 h1으로 인식해서 다른 주석으로 바꾸었습니다.
 output:
   md_document:
@@ -426,7 +427,8 @@ View(data02)
 `ggtern` 함수를 사용하여 "Mud', "Gravel", "Sand"를 꼭지점으로 하는 삼각 Diagram을 "Label"로 나누어 도시화 하였다(**그림 3**).    
 <br>
 
-<img src="images/03_ggtern_Textural_Classification_Chart(with gravel).png" alt="그림 3. 퇴적물 조성비 삼각다이어그램(자갈이 포함된 경우)" border="3px" width="1000px" height="1000px" align="center">__그림 3. 퇴적물 조성비 삼각다이어그램(자갈이 포함된 경우)__    
+![그림 3. 퇴적물 조성비 삼각다이어그램(자갈이 포함된 경우)](images/03_ggtern_Textural_Classification_Chart(with gravel).png)
+  
 
 <br>
 저질기준 분류표(자갈이 포함되지 않은 경우)도 위와 같은 방법으로 **그림 4** 와 같이 도시화 하였다.    
