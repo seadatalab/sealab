@@ -1,15 +1,11 @@
 # R을 이용한 표층수온 시계열 그래프 그리기
 
-<!-- 첫 h1 이전 라인은 씨랩 본문에서 보이지 않게 설정하였습니다. -->
 <!-- 첫 h1이 씨랩 글제목이 됩니다. 블럭 아닌 구간에서 샵(#) 하나 = 헤딩1(h1) -->
-
-------------------------------------------------------------------------
 
 이번 튜토리얼에서는 데이터프레임의 형태로 저장된 데이터로 표층수온
 시계열 그래프를 그려보고자 한다.
 
-본 튜토리얼에서는 예제파일로 [JOISS](http://joiss.kr) 에서 제공하고 있는
-국립수산과학원의 2018년도 연안정지관측자료 파일을 사용하였다.
+본 튜토리얼에서는 예제파일로 [JOISS](http://joiss.kr) 에서 제공하고 있는 국립수산과학원의 2018년도 연안정지관측자료 파일을 사용하였다.
 
 튜토리얼 순서는 아래와 같다.
 
@@ -23,16 +19,8 @@
 
 ### URL 데이터(.csv)파일 불러오기
 
-시계열 그래프를 그리기 위한 데이터는 [JOISS GeoNetwork에서 제공하고 있는
-2017년도 연안정지관측자료](http://joiss.kr/geonetwork/srv/eng/catalog.search#/metadata/79e08dfc-527e-475a-9915-c51a4d965181) csv파일을 사용한다. 먼저, url을 이용하여
-데이터를 불러오기 위해서는
-[`readr`](https://www.rdocumentation.org/packages/readr/versions/1.3.1)
-패키지의 설치와 선언을 해야한다. 설치와 선언이 완료되었다면,
-`read_csv()`함수를 사용하여 JOISS GeoNetwork의 데이터를 불러와보자. 이
-때, JOISS에서 제공하고 있는 데이터의 경우 데이터셋 상단에 메타정보를
-함께 제공하고 있기 때문에 데이터프레임 형태로 변환하기 위해서는
-메타정보를 삭제해야 한다. 튜토리얼에서 사용된 데이터셋은 26행까지
-메타데이터이기 때문에 `skip()`함수를 이용하여 26행을 삭제 후 `col_names()` 함수를 이용하여 첫 행을 제목줄로 지정하여 `coastal`이라는 변수에 저장하였다.
+시계열 그래프를 그리기 위한 데이터는 [JOISS GeoNetwork에서 제공하고 있는 2017년도 연안정지관측자료](http://joiss.kr/geonetwork/srv/eng/catalog.search#/metadata/79e08dfc-527e-475a-9915-c51a4d965181) csv파일을 사용한다. 먼저, url을 이용하여 데이터를 불러오기 위해서는 [`readr`](https://www.rdocumentation.org/packages/readr/versions/1.3.1)
+패키지의 설치와 선언을 해야한다. 설치와 선언이 완료되었다면, `read_csv()`함수를 사용하여 JOISS GeoNetwork의 데이터를 불러와보자. 이때, JOISS에서 제공하고 있는 데이터의 경우 데이터셋 상단에 메타정보를 함께 제공하고 있기 때문에 데이터프레임 형태로 변환하기 위해서는 메타정보를 삭제해야 한다. 튜토리얼에서 사용된 데이터셋은 26행까지 메타데이터이기 때문에 `skip()`함수를 이용하여 26행을 삭제 후 `col_names()` 함수를 이용하여 첫 행을 제목줄로 지정하여 `coastal`이라는 변수에 저장하였다.
 
 ``` r
 install.packages("readr")
@@ -48,10 +36,7 @@ coastal <- read_csv("http://joiss.kr/geonetwork/srv/api/records/79e08dfc-527e-47
 coastal
 ```
 
-csv 파일을 불러온 후에는 각 컬럼의 문자형식을
-확인하여야 한다. 이때, 날짜 형식이 문자(chr)형태로 지정되어 있다면
-[`as.POSIXct()`](https://www.rdocumentation.org/packages/dwtools/versions/0.8.3.9/topics/as.POSIXct)
-함수를 사용하여 날짜 형식으로 변환시킨다.
+csv 파일을 불러온 후에는 각 컬럼의 문자형식을 확인하여야 한다. 이때, 날짜 형식이 문자(chr)형태로 지정되어 있다면 [`as.POSIXct()`](https://www.rdocumentation.org/packages/dwtools/versions/0.8.3.9/topics/as.POSIXct) 함수를 사용하여 날짜 형식으로 변환시킨다.
 
 ``` r
 coastal$`yyyy-mm-dd hh:mm:ss` <- as.POSIXct(coastal$`yyyy-mm-dd hh:mm:ss`, format="%Y-%m-%d")
@@ -61,20 +46,9 @@ coastal$`yyyy-mm-dd hh:mm:ss` <- as.POSIXct(coastal$`yyyy-mm-dd hh:mm:ss`, forma
 
 이제, 표층수온 시계열 그래프를 그려보자. 
 
-시계열 그래프를 그리기 위해서는
-[`ggplot2`](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.0)
-패키지를 설치하고 선언해야 한다. 
+시계열 그래프를 그리기 위해서는 [`ggplot2`](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.0) 패키지를 설치하고 선언해야 한다. 
 
-본 튜토리얼에서는 월평균
-표층수온 시계열 그래프를 그리기 때문에 월평균 표층수온값을 구해야 한다.
-이 때 `ggplot()` 함수에서 `subset()` 기능을 사용하면 데이터마다 새로운
-데이터 셋을 생성해야 하는 번거로움을 줄일 수 있다. 평균값 계산시
-[`dplyr`](https://www.rdocumentation.org/packages/dbplyr/versions/1.4.2)패키지
-설치와 선언을 하고,
-[`group_by()`](https://www.rdocumentation.org/packages/dplyr/versions/0.7.8/topics/group_by)
-를 사용하여 계산조건을 지정한다. 라인 그래프를 그릴때에는 데이터에
-표현할 데이터의 null값을 제외시키지 않으면 시계열 그래프가 끊기게 표현될 수 있기 때문에
-subset 에서 SST데이터의 null값도 제외시켜준다.
+본 튜토리얼에서는 월평균 표층수온 시계열 그래프를 그리기 때문에 월평균 표층수온값을 구해야 한다. 이 때 `ggplot()` 함수에서 `subset()` 기능을 사용하면 데이터마다 새로운 데이터 셋을 생성해야 하는 번거로움을 줄일 수 있다. 평균값 계산시 [`dplyr`](https://www.rdocumentation.org/packages/dbplyr/versions/1.4.2)패키지 설치와 선언을 하고, [`group_by()`](https://www.rdocumentation.org/packages/dplyr/versions/0.7.8/topics/group_by) 를 사용하여 계산조건을 지정한다. 라인 그래프를 그릴때에는 데이터에 표현할 데이터의 null값을 제외시키지 않으면 시계열 그래프가 끊기게 표현될 수 있기 때문에 subset 에서 SST데이터의 null값도 제외시켜준다.
 
 ``` r
 install.packages("dplyr")
@@ -94,14 +68,9 @@ ggplot(subset(coastal %>%
 
 ![](images/timeseries1.jpg)
 
-이번엔 그래프 제목, x축, y축, 기울기선 등 설정을 추가해보자. 이 때, 축의
-틱 레이블 설정 함수를 사용하기 위해서는
-[`scales`](https://www.rdocumentation.org/packages/scales/versions/0.4.1)
-패키지의 설치와 선언을 해야한다. 제목, 범례등의 색을 변경하고 싶을
-때에는
-[`theme()`](https://www.rdocumentation.org/packages/ggplot2/versions/2.0.0/topics/theme)
-함수를 사용하며 색 지정시에는 R color cheatsheet를 참고하거나, html컬러
-코드를 사용한다.
+이번엔 그래프 제목, x축, y축, 기울기선 등 설정을 추가해보자. 이 때, 축의 틱 레이블 설정 함수를 사용하기 위해서는
+[`scales`](https://www.rdocumentation.org/packages/scales/versions/0.4.1) 패키지의 설치와 선언을 해야한다. 제목, 범례등의 색을 변경하고 싶을 때에는
+[`theme()`](https://www.rdocumentation.org/packages/ggplot2/versions/2.0.0/topics/theme) 함수를 사용하며 색 지정시에는 R color cheatsheet를 참고하거나, html컬러 코드를 사용한다.
 
 ``` r
 install.packages("scales")
@@ -146,8 +115,6 @@ ggplot(subset(coastal %>%
 
 ![](images/timeseries2.jpg)
 
-시계열 그래프를 확인해보면 연안정지관측자료의 2017년도 수온은 8월에 가장
-높게 나타나고 1월 말에 가장 낮게 나타나는것을 알 수 있다.
+시계열 그래프를 확인해보면 연안정지관측자료의 2017년도 수온은 8월에 가장 높게 나타나고 1월 말에 가장 낮게 나타나는것을 알 수 있다.
 
-이상으로 R을 이용한 표층수온 시계열그래프 그리기 튜토리얼을 마치도록
-하겠다.
+이상으로 R을 이용한 표층수온 시계열그래프 그리기 튜토리얼을 마치도록 하겠다.
