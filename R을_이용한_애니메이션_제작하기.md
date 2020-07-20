@@ -4,8 +4,7 @@
 [`gganimate`](https://www.rdocumentation.org/packages/gganimate/versions/1.0.5)
 패키지를 사용하여 `ggplot()` 그래프를 애니메이션으로 제작하는 방법을
 설명하고자 한다. 튜토리얼에 사용될 데이터는
-[COBE-SST2](https://psl.noaa.gov/data/gridded/data.cobe2.html) nc파일의
-표층수온 데이터이다.
+[COBE-SST2](https://psl.noaa.gov/data/gridded/data.cobe2.html) nc파일의 표층수온 데이터이다.
 
 튜토리얼의 목차는 아래와 같다.  
 1. `ggplot()` 래스터, 애니메이션으로 만들기  
