@@ -52,6 +52,7 @@ var maskcloud = function(image) {
 ### 태양광 반사 보정
 
 해수면에서 발생하는 태양광 반사 보정 식은 다음과 같다.  
+
 <p align="center">
 <img src="https://bit.ly/3f7irxK">   
 </p>
@@ -61,8 +62,11 @@ R<sub>NIR</sub> : NIR 밴드의 전체 픽셀값
 MIN<sub>NIR</sub> : 샘플영역 내 NIR 밴드의 최소값       
 
 각 영상에서 샘플 영역을 선택한 후, 위의 식을 적용하면 태양광 반사가 보정된 각 밴드의 픽셀값을 획득할 수 있다. 샘플 영역은 GEE의 사각형 그리기를 이용하여 설정하였다.
+
 ![](images/gee_sample.png)   
+
 샘플 영역내 5000개의 픽셀 값을 추출하여 b<sub>i</sub> 산출에 사용하였고, 이 값 중 최소 NIR을 구하였다.
+
 ```
 // Extract sample data
 var sampData = image.sample({
@@ -78,7 +82,9 @@ var sampData = image.sample({
 // Calculate minimum NIR
 var minNir = ee.Number(sampData.reduceColumns(ee.Reducer.min(), ['nir']).get('min'));
 ```
+
 BLUE 밴드의 b<sub>i</sub>는 아래와 같이 `ee.Reducer.linearRegression`을 이용하며, 변수 ‘slope_blue’가 BLUE 밴드의 b<sub>i</sub>가 된다.
+
 ```
 // Linear regression - Blue
 var linearRegression_blue = ee.Dictionary(sampData.reduceColumns({
@@ -96,7 +102,9 @@ var coefList_blue = ee.Array(linearRegression_blue.get('coefficients')).toList()
 var yInt_blue = ee.Number(ee.List(coefList_blue.get(0)).get(0)); // y-intercept
 var slope_blue = ee.Number(ee.List(coefList_blue.get(1)).get(0)); // slope
 ```
+
 최종적으로 태양광 반사보정은 다음과 같이 수행되었다.
+
 ```
 // Deglint
 var degBlue = image.expression("b('blue')-slope_blue*(b('nir')-minNir)", {
@@ -106,7 +114,9 @@ var degBlue = image.expression("b('blue')-slope_blue*(b('nir')-minNir)", {
 ```
 
 ### 영상 불러오기
+
 위의 영상선정 조건, 구름제거, 태양광 반사 보정이 수행된 영상을 불러온다. 영상은 Sentinel-2의 Level2 자료를 이용하였으며, 구름량이 10% 미만인 영상만을 조회하였다.
+
 ```
 var data = ee.ImageCollection("COPERNICUS/S2_SR")
       .filterDate(globOptions.startDate, globOptions.endDate)
@@ -123,6 +133,7 @@ Map.addLayer(data, {bands:['red', 'green', 'blue'], min:0, max:2000}, 'RGB')
 ### 육상 마스킹
 육지부 마스킹은 해당영역의 영상을 병합한 후 NDWI>0인 부분을 육상으로 가정하여 제거하였다.
 NDWI(Normalized difference water index)는 수분지수 중 하나로 Green 밴드와 NIR 밴드를 이용하여 산출한다.
+
 ```
 // Calculate NDWI
 var applyNDWI = function(image) {
@@ -141,7 +152,9 @@ var data_mosaic = data.mosaic()
 ```
 
 ### Ratio 알고리즘 적용
+
 수심은 Blue 밴드와 Green 밴드의 각각에 자연로그를 취한 영상과 실제 수심자료와 비교를 통해 선형 관계식을 아래와 같이 작성할 수 있다.   
+
 <p align="center">
 <img src="https://bit.ly/37hTYmB">   
 </p>
@@ -192,10 +205,13 @@ var depth = ratio.expression(
 // Display
 Map.addLayer(depth, {min:0, max:50}, 'Depth');
 ```
+
 ![](images/gee_depth.png)
 
 ### 내보내기
+
 생산된 수심은 Tiff  포맷으로 저장할 수 있다.
+
 ```
 // Export TIFF
 Export.image.toDrive({
@@ -204,7 +220,9 @@ Export.image.toDrive({
   maxPixels: 1e10
 });
 ```     
+
 ![](images/gee_tiff.png)
 
 ## Code
+
 [제주지역의 수심을 생산하는 GEE 전체 코드](https://bit.ly/3f7irxK)
