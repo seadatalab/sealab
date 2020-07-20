@@ -1,4 +1,5 @@
 #R을 이용한 NetCDF 데이터 확인하기
+
 <!-- 첫 h1 이전 라인은 씨랩 본문에서 보이지 않게 설정하였습니다. -->
 <!-- 첫 h1이 씨랩 글제목이 됩니다. 블럭 아닌 구간에서 샵(#) 하나 = 헤딩1(h1) -->
 ------------------------------------------------------------------------
@@ -10,6 +11,7 @@
 튜토리얼의 순서는 아래와 같다.
 
 \[목차\]  
+
 1. NetCDF파일이란  
 2. R Studio에서 nc파일 열기  
 3. 데이터 프레임에 nc파일 데이터 저장하기
@@ -17,6 +19,7 @@
 ------------------------------------------------------------------------
 
 NetCDF파일이란
+
 --------------
 
 우선, NetCDF(이하 nc)파일이란 Network Common Data Form의 약자로,
@@ -34,58 +37,58 @@ NetCDF파일이란
 ![](images/ncfile_img.png)
 
 <table>
-<colgroup>
-<col style="width: 17%" />
-<col style="width: 41%" />
-<col style="width: 41%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">nc파일 유형</th>
-<th style="text-align: left;">기술</th>
-<th style="text-align: left;">해양 데이터 예시</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">point</td>
-<td style="text-align: left;">단일 포인트 데이터<br>(다른 포인트와의 암시적 좌표 관계가 없음)</td>
-<td style="text-align: left;">- 시간적 또는 공간적 관계가 없는 하나 이상의 관측데이터</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">timeSeries</td>
-<td style="text-align: left;">시간의 경과에 따라 동일한 위치에서 관측된 데이터</td>
-<td style="text-align: left;">- 시간의 경과에 따라 하나 이상의 고정 플랫폼에서 관측된 데이터</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">trajectory</td>
-<td style="text-align: left;">일정한 시간동안 궤적을 따라 이동하는 포인트 데이터</td>
-<td style="text-align: left;">- 진행중(underway)인 플랫폼에 설치된 TSG(Thermosalinograph)로 부터 측정된 데이터</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">profile</td>
-<td style="text-align: left;">고정된 위치 및 시간에서 수직으로 관측된 데이터</td>
-<td style="text-align: left;">- 동일한 깊이 (z) 값을 갖거나 갖지 않는 CTD데이터 또는 XBT 캐스트 데이터 (같은 깊이 레벨을 가질 필요는 없음).</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">trajectoryProfile</td>
-<td style="text-align: left;">궤적을 따라 정렬된 지점에 위치한 프로파일 데이터 셋</td>
-<td style="text-align: left;">- 수심이 입력된 글라이더, Argo floats</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">swath</td>
-<td style="text-align: left;">센서 좌표의 데이터 배열</td>
-<td style="text-align: left;">- 레벨 2 극궤도 위성 데이터</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">grid</td>
-<td style="text-align: left;">규칙적 또는 불규칙적인 그리드에 표현되거나 투영된 데이터 셋</td>
-<td style="text-align: left;">- 1도의 해상도를 갖는 염분 분석 데이터 등</td>
-</tr>
-</tbody>
+    <colgroup>
+        <col style="width: 17%" />
+        <col style="width: 41%" />
+        <col style="width: 41%" />
+    </colgroup>
+    <thead>
+        <tr class="header">
+            <th style="text-align: center;">nc파일 유형</th>
+            <th style="text-align: left;">기술</th>
+            <th style="text-align: left;">해양 데이터 예시</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="odd">
+            <td style="text-align: center;">point</td>
+            <td style="text-align: left;">단일 포인트 데이터<br>(다른 포인트와의 암시적 좌표 관계가 없음)</td>
+            <td style="text-align: left;">- 시간적 또는 공간적 관계가 없는 하나 이상의 관측데이터</td>
+        </tr>
+            <tr class="even">
+            <td style="text-align: center;">timeSeries</td>
+            <td style="text-align: left;">시간의 경과에 따라 동일한 위치에서 관측된 데이터</td>
+            <td style="text-align: left;">- 시간의 경과에 따라 하나 이상의 고정 플랫폼에서 관측된 데이터</td>
+        </tr>
+        <tr class="odd">
+            <td style="text-align: center;">trajectory</td>
+            <td style="text-align: left;">일정한 시간동안 궤적을 따라 이동하는 포인트 데이터</td>
+            <td style="text-align: left;">- 진행중(underway)인 플랫폼에 설치된 TSG(Thermosalinograph)로 부터 측정된 데이터</td>
+        </tr>
+        <tr class="even">
+            <td style="text-align: center;">profile</td>
+            <td style="text-align: left;">고정된 위치 및 시간에서 수직으로 관측된 데이터</td>
+            <td style="text-align: left;">- 동일한 깊이 (z) 값을 갖거나 갖지 않는 CTD데이터 또는 XBT 캐스트 데이터 (같은 깊이 레벨을 가질 필요는 없음).</td>
+        </tr>
+        <tr class="odd">
+            <td style="text-align: center;">trajectoryProfile</td>
+            <td style="text-align: left;">궤적을 따라 정렬된 지점에 위치한 프로파일 데이터 셋</td>
+            <td style="text-align: left;">- 수심이 입력된 글라이더, Argo floats</td>
+        </tr>
+        <tr class="even">
+            <td style="text-align: center;">swath</td>
+            <td style="text-align: left;">센서 좌표의 데이터 배열</td>
+            <td style="text-align: left;">- 레벨 2 극궤도 위성 데이터</td>
+        </tr>
+        <tr class="odd">
+            <td style="text-align: center;">grid</td>
+            <td style="text-align: left;">규칙적 또는 불규칙적인 그리드에 표현되거나 투영된 데이터 셋</td>
+            <td style="text-align: left;">- 1도의 해상도를 갖는 염분 분석 데이터 등</td>
+        </tr>
+    </tbody>
 </table>
 
-\<출처 : [NODC NetCDF
+<출처 : [NODC NetCDF
 Templates](https://www.nodc.noaa.gov/data/formats/netcdf/v1.1/)\>
 
 ------------------------------------------------------------------------
