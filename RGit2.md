@@ -1,13 +1,7 @@
 
 # RGit2
 
----
-
-sdkfjhsdkfh
-title: "RStudio for Git"
-output: html_document
-
----
+<!-- 첫 h1이 씨랩 글제목이 됩니다. 블럭 아닌 구간에서 샵(#) 하나 = 헤딩1(h1) -->
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
