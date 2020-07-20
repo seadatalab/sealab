@@ -1,32 +1,3 @@
----
-title: "R을 이용한 우리나라 저질구분 Diaram 만들기"
-author: "jiyoon Lee"
-date: "2020-07-02 오후 06:03 KST"
-meta: Tutorials
-subtitle: "'ggtern' 패키지를 사용한 저질구분 삼각다이어그램 그리기"
-layout: post
-tags: intro_to_r
-output:
-  html_document:
-    toc: yes
-    toc_float:
-      collapsed: no
-      smooth_scroll: no
-    number_sections: yes
-    code_folding: show
-    theme: readable
-    highlight: textmate
-    df_print: kable
-    keep_md: true
-    
-<!-- #을 h1으로 인식해서 다른 주석으로 바꾸었습니다.
-output:
-  md_document:
-    variant: markdown_github
--->
----  
-<!-- 첫 h1 이전 라인은 씨랩 본문에서 보이지 않게 설정하였습니다. -->
-<!-- 첫 h1이 씨랩 글제목이 됩니다. 블럭 아닌 구간에서 샵(#) 하나 = 헤딩1(h1) -->
 #R을 이용한 우리나라 저질구분 Diaram 만들기
 
 ***
@@ -47,8 +18,11 @@ output:
 <br>   
 
 __[목차]__  
-__1. R Package “ggtern”, "dyply" 소개 및 설치__   
+
+__1. R Package “ggtern”, "dyply" 소개 및 설치__  
+ 
 __2. 우리나라 저질 분류 Diagram 만들기__    
+
 <br>
      
 ***    
@@ -80,6 +54,7 @@ library(plyr)
 
 
 # . 저질 분류 Diagram 만들기
+
 ## . 저질기준 분류표 불러오기    
 
 `setwd`함수로 "저질기준 분류표(자갈이 포함된 경우)"가 저장된 경로로 설정하고 `read.table` 함수로 데이터를 불러왔다.    
