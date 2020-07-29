@@ -10,7 +10,7 @@
 
 크롬 웹 드라이버가 필요합니다. 본인이 사용하는 크롬 브라우저의 버전에 맞는 드라이버를 설치하면 됩니다. 크롬 웹 드라이버를 다운 받을 수 있는 주소입니다. 
 
-[`chrome_webdirver`](https://chromedriver.chromium.org/downloads)
+[`chrome_webdirver 다운로드 주소`](https://chromedriver.chromium.org/downloads)
 
 
 
@@ -68,9 +68,8 @@ soup = BeautifulSoup(html, 'html.parser') #BeautifulSoup 사용
 
 드래그한 검색어가 span 태그의 item_title인것을 확인할 수 있습니다.
 
-
-
 실시간 검색어를 저장할 data 리스트를 생성하고 저장한뒤 브라우저를 종료합니다.
+
 ```python
 data = []
 i = 1
