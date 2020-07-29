@@ -26,13 +26,13 @@ __2. 우리나라 저질 분류 Diagram 만들기__
 
 ***    
 
-# . R Package “ggtern”, "dyply" 소개 및 설치  
+# R Package “ggtern”, "dyply" 소개 및 설치  
   
-## . R Package “ggtern”, "dyply" 소개   
+## R Package “ggtern”, "dyply" 소개   
 
 [`ggtern`](https://www.rdocumentation.org/packages/ggtern/versions/2.2.0)는 [`ggplot2`](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.1)의 기능을 확장하여 [`ggplot2`](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.1) 지오메트리에 대한 3차 다이어그램을 그릴 수 있는 기능을 제공하면서 [`ggtern`](https://www.rdocumentation.org/packages/ggtern/versions/2.2.0)은 표준 [`ggplot2`](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.1)에서 사용할 수 없는 몇 가지 새로운 형상을 구현하는 확장판이다.
     
-## . R Package “ggtern”, "dyply" 설치   
+## R Package “ggtern”, "dyply" 설치   
 
 [`ggtern`](https://www.rdocumentation.org/packages/rysgran/versions/2.1.0), [`plyr`](https://www.rdocumentation.org/packages/plyr/versions/1.8.6)패키지를 설치하고 선언하였다.
 
@@ -51,9 +51,9 @@ library(plyr)
 ```
 
 
-# . 저질 분류 Diagram 만들기
+# 저질 분류 Diagram 만들기
 
-## . 저질기준 분류표 불러오기    
+## 저질기준 분류표 불러오기    
 
 `setwd`함수로 "저질기준 분류표(자갈이 포함된 경우)"가 저장된 경로로 설정하고 `read.table` 함수로 데이터를 불러왔다.    
 
@@ -392,7 +392,7 @@ View(data02)
   </table>
 </div>
 
-## . 저질분류 삼각 Diagram 그리기    
+## 저질분류 삼각 Diagram 그리기    
 
 `ggtern` 함수를 사용하여 "Mud', "Gravel", "Sand"를 꼭지점으로 하는 삼각 Diagram을 "Label"로 나누어 도시화 하였다(**그림 3**).    
 
