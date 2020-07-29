@@ -234,6 +234,8 @@ Export.image.toDrive({
 
 ## Code
 
+제주지역의 수심을 생산하는 GEE 전체 코드
+
 <p align="center">
-<img src="https://bit.ly/3f7irxK">   
+<img src="https://bit.ly/37hTYmB" alt="제주지역의 수심을 생산하는 GEE 전체 코드">   
 </p>
