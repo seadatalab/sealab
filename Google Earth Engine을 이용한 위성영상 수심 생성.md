@@ -28,6 +28,8 @@
 var site = ee.Geometry.Polygon([126, 33.7, 126, 33, 127, 33, 127, 33.7], null, false);
 ```
 
+![](images/gee_area.png)
+
 영상은 2019년 3월 24일 영상을 사용할 것이고, Sentinel-2가 갖고있는 밴드 중 `BLUE`, `GREEN`, `RED`, `NIR`, `SCL` 밴드만 사용할 것이므로 해당 밴드만 조회할 수 있도록 `globOptions` 변수를 만들어준다. 
 
 ```
