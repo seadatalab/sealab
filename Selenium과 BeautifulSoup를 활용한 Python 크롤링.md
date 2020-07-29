@@ -23,7 +23,8 @@ pip3 install selenium
 
 Beautifulsoup는 html/xml parser로써 원하는 태그정보를 쉽게 추출할 수 있습니다.
 
-Beautifulsoup 설치 방법 
+Beautifulsoup 설치 방법
+
 ```python
 pip3 install Beautifulsoup4
 ```
