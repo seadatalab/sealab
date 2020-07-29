@@ -6,11 +6,16 @@
 
 프로그래밍으로 브라우저 동작을 제어하여 프로그램을 통한 접근을 허용하지 않는 경우, 동적 웹 페이지로 구성되어 있는 경우에도 웹 페이지를 요청하고 응답받아올 수 있습니다.
 
-셀레니움 설치 방법 :  `pip3 install selenium`
+셀레니움 설치 방법  
+
+```python
+pip3 install selenium
+```
+
 
 크롬 웹 드라이버가 필요합니다. 본인이 사용하는 크롬 브라우저의 버전에 맞는 드라이버를 설치하면 됩니다. 크롬 웹 드라이버를 다운 받을 수 있는 주소입니다. 
 
-[`chrome_webdirver 다운로드 주소`](https://chromedriver.chromium.org/downloads)
+[`chrome_webdirver 다운로드 링크`](https://chromedriver.chromium.org/downloads)
 
 
 
@@ -18,7 +23,10 @@
 
 Beautifulsoup는 html/xml parser로써 원하는 태그정보를 쉽게 추출할 수 있습니다.
 
-Beautifulsoup 설치 방법 `pip3 install Beautifulsoup4`
+Beautifulsoup 설치 방법 
+```python
+pip3 install Beautifulsoup4
+```
 
 
 
