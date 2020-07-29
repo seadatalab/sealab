@@ -57,7 +57,7 @@ soup = BeautifulSoup(html, 'html.parser') #BeautifulSoup 사용
 
 실시간 검색어의 태그가 무엇인지 확인해보겠습니다.
 
-![](images/craw_img1.png)
+!['실시간 검색어'](images/craw_img1.png)
 
 
 
