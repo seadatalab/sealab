@@ -10,7 +10,7 @@
 
 크롬 웹 드라이버가 필요합니다. 본인이 사용하는 크롬 브라우저의 버전에 맞는 드라이버를 설치하면 됩니다. 크롬 웹 드라이버를 다운 받을 수 있는 주소입니다. 
 
-https://chromedriver.chromium.org/downloads
+[`chrome_webdirver`](https://chromedriver.chromium.org/downloads)
 
 
 
@@ -27,7 +27,7 @@ Beautifulsoup 설치 방법 `pip3 install Beautifulsoup4`
 설치한 selenium과 beautifulsoup 그리고 결과를 csv 파일로 저장하기 위한 pandas 라이브러리를 import 합니다.
 
 ```python
-from selenium import webdriver 
+from selenium import webdriver
 from bs4 import BeautifulSoup
 import pandas as pd
 ```
