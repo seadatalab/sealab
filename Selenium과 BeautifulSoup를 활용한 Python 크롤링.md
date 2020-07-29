@@ -83,6 +83,7 @@ driver.quit()
 
 
 data를 dataframe형태로 변환한 뒤 csv 파일로 저장하겠습니다.
+
 ```python
 df = pd.DataFrame(data)
 df.columns = ['keywords']
