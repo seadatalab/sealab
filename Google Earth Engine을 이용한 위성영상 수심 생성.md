@@ -265,4 +265,12 @@ Export.image.toDrive({
 
 *-* Code *-* 
 
+<<<<<<< HEAD
 [제주지역의 수심을 생산하는 GEE 전체 코드](https://code.earthengine.google.com/?scriptPath=users%2Fmalji527%2Ftest%3ASBD_Jeju)
+=======
+제주지역의 수심을 생산하는 GEE 전체 코드
+
+<p align="center">
+<img src="https://bit.ly/37hTYmB" alt="제주지역의 수심을 생산하는 GEE 전체 코드">   
+</p>
+>>>>>>> 880e17088e3b4cffda8e074c408a26e39289c588
