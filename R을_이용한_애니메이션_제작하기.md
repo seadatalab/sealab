@@ -1,6 +1,4 @@
-# ggplot() 래스터 이미지 애니메이션으로 만들기
-
-<!-- 첫 h1이 씨랩 글제목이 됩니다. 블럭 아닌 구간에서 샵(#) 하나 = 헤딩1(h1) -->
+# `ggplot()` 래스터 이미지 애니메이션으로 만들기
 
 이번 튜토리얼에서는
 [`gganimate`](https://www.rdocumentation.org/packages/gganimate/versions/1.0.5)
