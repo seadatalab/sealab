@@ -1,4 +1,4 @@
-# ggplot() 래스터 이미지 애니메이션으로 만들기
+# R을 이용한 ggplot 래스터 이미지 애니메이션으로 제작하기
 
 이번 튜토리얼에서는
 [`gganimate`](https://www.rdocumentation.org/packages/gganimate/versions/1.0.5)
