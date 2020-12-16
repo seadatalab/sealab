@@ -18,18 +18,18 @@ __그림 2.수로측량 업구규정에 정의된 우리나라 저질 분류__
 
 해양저질 퇴적물의 입도조성 자료를 우리나라 기준에 맞추어 도시화 할 수 있도록 이번 포스팅에서는 [`ggtern`](https://www.rdocumentation.org/packages/rysgran/versions/2.1.0) 과 [`plyr`](https://www.rdocumentation.org/packages/plyr/versions/1.8.6) 를 사용해서 우리나라 저질 분류 Diagram을 만들었다. 튜토리얼 순서는 아래와 같다.
 
-__[목차]__  
+__[목차]__
 
 __1. R Package “ggtern”, "dyply" 소개 및 설치__<br/>
 __2. 우리나라 저질 분류 Diagram 만들기__
 
 ------------------------------------------------------------------------
 
-# R Package “ggtern”, "dyply" 소개 및 설치  
+# R Package “ggtern”, "dyply" 소개 및 설치
 
 ------------------------------------------------------------------------
 
-## R Package “ggtern”, "dyply" 소개   
+## R Package “ggtern”, "dyply" 소개
 
 [`ggtern`](https://www.rdocumentation.org/packages/ggtern/versions/2.2.0)는 [`ggplot2`](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.1)의 기능을 확장하여 [`ggplot2`](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.1) 지오메트리에 대한 3차 다이어그램을 그릴 수 있는 기능을 제공하면서 [`ggtern`](https://www.rdocumentation.org/packages/ggtern/versions/2.2.0)은 표준 [`ggplot2`](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.1)에서 사용할 수 없는 몇 가지 새로운 형상을 구현하는 확장판이다.
 
