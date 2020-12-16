@@ -322,3 +322,4 @@ swchl <- xtracto(xpos, ypos, tpos, "swchla8day", xrad, yrad)
     ## [1] "length of tpos: 1"
 
 ### `xtracto_3D` 이용하기
+
