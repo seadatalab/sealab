@@ -49,7 +49,7 @@
 
 | 이미지  | 설명                                                                       |
 | ------- | -------------------------------------------------------------------------- |
-| 웹이미지 |![이미지 예시](http://13.209.16.95:5000/static/upload/161836253014635.JPG) |
+| 웹이미지 |![이미지 예시](https://github.com/seadatalab/sealab/blob/master/tysong/use_xtractomatic_files/figure-gfm/unnamed-chunk-11-1.png) |
 | PC이미지 |![기획팀 월별 업무계획](images/기획팀 월별 업무계획.jpg)|
 
 
