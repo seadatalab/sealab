@@ -47,6 +47,15 @@
 
 <!--이미지 삽입-->
 
+
+First Header | Second Header
+------------ | -------------
+Content from cell 1 | Content from cell 2
+Content in the first column | Content in the second column
+
+
+
+
 이미지|설명                                                                       
 ------|-------------------------------------------------------------------------- 
 웹이미지|![이미지 예시](https://github.com/seadatalab/sealab/raw/master/tysong/use_xtractomatic_files/figure-gfm/unnamed-chunk-11-1.png) 
