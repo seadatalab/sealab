@@ -47,10 +47,10 @@
 
 <!--이미지 삽입-->
 
-| 이미지  | 설명                                                                       |
-| ------- | -------------------------------------------------------------------------- |
-| 웹이미지 |![이미지 예시](https://github.com/seadatalab/sealab/raw/master/tysong/use_xtractomatic_files/figure-gfm/unnamed-chunk-11-1.png) |
-| PC이미지 |![기획팀 월별 업무계획](images/기획팀 월별 업무계획.jpg)|
+ 이미지  | 설명                                                                       
+ ------- | -------------------------------------------------------------------------- 
+ 웹이미지 |![이미지 예시](https://github.com/seadatalab/sealab/raw/master/tysong/use_xtractomatic_files/figure-gfm/unnamed-chunk-11-1.png) 
+ PC이미지 |![기획팀 월별 업무계획](images/기획팀 월별 업무계획.jpg)
 
 
 
