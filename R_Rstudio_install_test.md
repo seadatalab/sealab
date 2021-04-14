@@ -4,6 +4,6 @@
 **R**과 **R studio** 설치
 ---
 
-![설치방법](/image/R_install.jpg)
+![설치방법](/images/R_install.jpg)
 
 
