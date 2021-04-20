@@ -1,0 +1,167 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "565b179b",
+   "metadata": {},
+   "source": [
+    "import numpy as np\n",
+    "import pandas as pd\n",
+    "import csv\n",
+    "import os\n",
+    "import glob\n",
+    "import datetime"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0182f169",
+   "metadata": {
+    "scrolled": true
+   },
+   "source": [
+    "sorted(os.listdir('../data/'))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "17618935",
+   "metadata": {},
+   "source": [
+    "file_list = glob.glob(\"../data/*.csv\")\n",
+    "\n",
+    "list_of_dataframes = []\n",
+    "for filename in file_list:\n",
+    "    list_of_dataframes.append(pd.read_csv(filename, encoding = 'euc-kr', skiprows = 26))\n",
+    "    \n",
+    "merged_df = pd.concat(list_of_dataframes)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7a1f48d7",
+   "metadata": {},
+   "source": [
+    "merged_df"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "584198e7",
+   "metadata": {},
+   "source": [
+    "merged_df['yyyy-mm-dd hh:mm:ss'] = pd.to_datetime(merged_df['yyyy-mm-dd hh:mm:ss'], format='%Y-%m-%d %H:%M:%S', errors='raise')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a57b9c8f",
+   "metadata": {},
+   "source": [
+    "merged_df['mon/day/yr'] = merged_df['yyyy-mm-dd hh:mm:ss'].dt.strftime('%m-%d-%Y')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "4b213508",
+   "metadata": {},
+   "source": [
+    "merged_df['hh:mm'] = merged_df['yyyy-mm-dd hh:mm:ss'].dt.strftime('%H:%M')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6838ffea",
+   "metadata": {},
+   "source": [
+    "merged_df['PCBs[μg/kg]'] = (merged_df['폴리염화바이페닐-28[μg/kg]'] + merged_df['폴리염화바이페닐-52[μg/kg]'] + \n",
+    "                            merged_df['폴리염화바이페닐-101[μg/kg]'] + merged_df['폴리염화바이페닐-118[μg/kg]'] +\n",
+    "                            merged_df['폴리염화바이페닐-138[μg/kg]'] + merged_df['폴리염화바이페닐-153[μg/kg]'] +\n",
+    "                            merged_df['폴리염화바이페닐-180[μg/kg]'])"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ffb4a861",
+   "metadata": {},
+   "source": [
+    "merged_df.rename(columns = {\"project_name\":\"Cruise\", \"station\":\"Station\", \"bot.depth[m]\":\"Bot. Depth [m]\", \"수심(m)\":\"Depth [m]\",\n",
+    "                    \"수온[℃]\":\"Temperature [℃]\", \"염분[‰]\":\"Salinity [PSU]\", \"용존산소[mg/L]\":\"DO[ml/l]\", \"클로로필-a[mg/m3]\":\"Chl.a[mg/m3]\",\n",
+    "                    \"수소이온농도[무단위]\":\"pH\", \"총질소[wt.%]\":\"TN\", \"총인[mg/L]\":\"TP\", \"구리[μg/kg]\":\"Cu[μg/kg]\", \"납[μg/kg]\":\"Pb[μg/kg]\",\n",
+    "                    \"아연[μg/kg]\":\"Zn[μg/kg]\", \"카드뮴[μg/kg]\":\"Cd[μg/kg]\", \"6가크롬[μg/kg]\":\"Cr6+[μg/kg]\", \"비소[μg/kg]\":\"As[μg/kg]\",\n",
+    "                    \"부유물질 농도[mg/L]\":\"SS[mg/L]\", \"화학적산소요구량[mg/L]\":\"COD[mg/L]\", \"총유기탄소[mg/L]\":\"TOC[mg/L]\",\n",
+    "                            \"총수은[mg/L]\":\"Hg[mg/L]\", \"투명도[m]\":\"Transparency[m]\"}, inplace = True)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3c3d8016",
+   "metadata": {},
+   "source": [
+    "df = merged_df.reindex(columns = merged_df.columns.tolist() + ['DO saturation(%)', 'NO3-[μmol/kg]', 'SiO4-[μmol/kg]', 'Type', 'NH4+[μmol/kg]', \n",
+    "                                                 'DIC[μmol/kg]', 'Sigma-t [kg/m3]', 'PAR[μE/ cm2s1]', 'Potential', 'NO2-[μmol/kg]', \n",
+    "                                                 'POC', 'Fluorescence[mg/m3]', 'PO4-[μmol/kg]', 'Alk[μmol/kg]', 'ISUS nitrate[μmol/kg]', \n",
+    "                                                 'DO titration[μmol/kg]', 'TEP', 'PON', 'DO[μmol/kg]', 'Cond[S/m]'])"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b5eb51cd",
+   "metadata": {},
+   "source": [
+    "JOISS_dataset = df[['Cruise','Station','Type','mon/day/yr','hh:mm','Longitude [degrees_east]','Latitude [degrees_south]',\n",
+    "                          'Bot. Depth [m]','Depth [m]','Temperature [℃]','Salinity [PSU]','Potential','Sigma-t [kg/m3]',\n",
+    "                          'DO[μmol/kg]','DO[ml/l]','DO saturation(%)','DO titration[μmol/kg]','Fluorescence[mg/m3]','PAR[μE/ cm2s1]',\n",
+    "                          'Cond[S/m]','Chl.a[mg/m3]','DIC[μmol/kg]','Alk[μmol/kg]','pH','TEP','PO4-[μmol/kg]','NH4+[μmol/kg]',\n",
+    "                           'NO2-[μmol/kg]','NO3-[μmol/kg]','SiO4-[μmol/kg]','TN','TP','ISUS nitrate[μmol/kg]','POC',\n",
+    "                          'PON','PCBs[μg/kg]','Cu[μg/kg]','Pb[μg/kg]','Zn[μg/kg]','Cd[μg/kg]','Cr6+[μg/kg]','As[μg/kg]',\n",
+    "                          'SS[mg/L]','COD[mg/L]','TOC[mg/L]','Hg[mg/L]','Transparency[m]']]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "20f472a2",
+   "metadata": {},
+   "source": [
+    "df = pd.DataFrame(JOISS_dataset)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "96a012b5",
+   "metadata": {},
+   "source": [
+    "df = df.fillna(0)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "fa940007",
+   "metadata": {},
+   "source": [
+    "df.to_csv(\"../data/JOISS_dataset.csv\", encoding='euc-kr')"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.9.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
