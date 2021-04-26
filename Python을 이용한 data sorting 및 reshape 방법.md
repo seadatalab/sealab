@@ -57,13 +57,13 @@ Link: [JOISS](http://JOISS.kr "JOISS link")
 <br>
 
 
-![data_collection_5](./images/data_collection_.png)
+![data_collection_5](./images/data_collection_5.png)
 <br>
 <br>
-![data_collection_6](./images/data_collection_.png)
+![data_collection_6](./images/data_collection_6.png)
 <br>
 
-#### 8. 주제분야에서 [Chemical Oceanography]-[Carbonate system]과 [Carbon, nitrogen and phosphorus]를 클릭합니다. 
+#### 8. 주제분야에서 [Chemical Oceanography]-[Carbon, nitrogen and phosphorus]과 [Carbonate system]를 클릭합니다. 
 #### 9. 위 사진에 [빨간색 박스]로 표기된 [EAST-1] 자료를 클릭하여 장바구니로 보냅니다.
     이는 다양한 해양과학자료를 한 곳에 모아 data mining을 하기 위해 서로 다른 index를 한 dataset에 모으는 과정입니다.
     [EAST-1] 자료 중 profile_chemical_rossete 형식으로 된 파일만 다운 받습니다.
