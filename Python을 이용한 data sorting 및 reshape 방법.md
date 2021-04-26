@@ -171,6 +171,30 @@ merged_df['hh:mm'] = merged_df['yyyy-mm-dd hh:mm:ss'].dt.strftime('%H:%M')
 
 <pre>
 <code>
+merged_df['Salinity [PSU]'] = (merged_df['염분'] + merged_df['염분[psu]'] + merged_df['염분[‰]'])
+</code>
+</pre>
+
+
+<pre>
+<code>
+merged_df['Chl.a[mg/m3]'] = (merged_df['클로로필-a[μg/L]'] + merged_df['클로로필-a[mg/m3]'])
+</code>
+</pre>
+
+
+<pre>
+<code>
+merged_df['PCBs[μg/kg]'] = (merged_df['폴리염화바이페닐-28[μg/kg]'] + merged_df['폴리염화바이페닐-52[μg/kg]'] + 
+                            merged_df['폴리염화바이페닐-101[μg/kg]'] + merged_df['폴리염화바이페닐-118[μg/kg]'] +
+                            merged_df['폴리염화바이페닐-138[μg/kg]'] + merged_df['폴리염화바이페닐-153[μg/kg]'] +
+                            merged_df['폴리염화바이페닐-180[μg/kg]'])
+</code>
+</pre>
+
+
+<pre>
+<code>
 merged_df.shape
 </code>
 </pre>
