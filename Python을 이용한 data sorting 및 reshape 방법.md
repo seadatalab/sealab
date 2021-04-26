@@ -17,6 +17,42 @@
 ## Data collection
 <br>
 
+![data_collection_1](./images/data_collection_1.png)
+<br>
+<br>
+
+![data_collection_2](./images/data_collection_2.png)
+<br>
+<br>
+
+![data_collection_3](./images/data_collection_3.png)
+<br>
+<br>
+
+![data_collection_4](./images/data_collection_4.png)
+<br>
+<br>
+
+![data_collection_5](./images/data_collection_5.png)
+<br>
+<br>
+
+![data_collection_6](./images/data_collection_6.png)
+<br>
+<br>
+
+![data_collection_7](./images/data_collection_7.png)
+<br>
+<br>
+
+![data_collection_8](./images/data_collection_8.png)
+<br>
+<br>
+
+![data_collection_9](./images/data_collection_9.png)
+
+
+
 ## Coding
 <br>
 
