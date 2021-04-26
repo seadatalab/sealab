@@ -360,11 +360,35 @@ df.to_csv("../data/JOISS_data_collection.csv", encoding = 'euc-kr')
 <br>
 <br>
 
+#### 1. 지정한 경로에 새로운 csv 파일이 잘 저장되었는지 확인해보도록 하겠습니다.
+#### 2. C:\Users\admin\Documents\jupyter notebook\data 라는 경로에 JOISS_data_collection이란 파일이 생겼습니다.
+<br>
+<br>
+<br>
+
 ![data_collection_14](./images/data_collection_14.png)
 <br>
 <br>
 
+#### 3. data mining을 하기 전에 재배열한 항목이 제대로 추출되었는지 등을 확인해보겠습니다.
+#### 4. 1열의 column명은 모두 header로 잘 들어와있습니다.
+#### 5. 결측값 또한 모두 NaN으로 잘 변환되어 추출되었습니다.
+<br>
+<br>
+<br>
+
+
 ![data_collection_15](./images/data_collection_15.png)
 <br>
 <br>
+
+#### 6. JOISS_data_collection 파일의 array는 5020 row x 49 columns 입니다.
+#### 7. 첫 번째 row는 header로, 첫 번째 column은 index로 작용하니 실제로 5019 row x 48 columns에 data가 들어있는 것입니다.
+    - 성공적으로 DB에서 원하는 형태로 추출한 dataset을 어떻게 data mining을 할까요?
+    - SEALAB에서는 ODV, R, Python 프로그램으로 시각화하여 보여드릴 예정입니다.
+    - 조만간 업데이트 될 'Data mining'편도 기대해주세요:)
+
+<br>
+<br>
+
 
