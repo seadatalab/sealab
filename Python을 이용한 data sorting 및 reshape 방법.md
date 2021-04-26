@@ -245,7 +245,7 @@ merged_df.shape
 ![data_collection_11](./images/data_collection_11.PNG)
 <br>
 #### 8. 기존 5019 row x 121 columns 배열을 갖고 있는 data frame에 새로운 항목이 잘 추가되었는지 df.shape를 통해 중간 중간 확인해줍시다.
-#### 9. 3번부터 7 과정에서 5개의 column이 새로 생성되었으므로 5019 row x 126 columns이 맞습니다.
+#### 9. 3번부터 7 과정에서 5개의 column이 새로 생성되었으므로 (5019, 126)이 맞습니다.
 <br>
 <br>
 <br>
@@ -303,11 +303,6 @@ df = df.fillna('NaN')
 <br>
 
 ```python
-df.shape
-```
-
-
-```python
 df = df[['Cruise', 'Station', 'Type', 'mon/day/yr', 'hh:mm', 'Longitude [degrees_east]', 'Latitude [degrees_south]', 'Bot. Depth [m]', 
         'Depth [m]', 'Temperature [℃]', 'Salinity [PSU]', 'Pontential temperature [℃]', 'Sigma-t [kg/m3]', 'DO[μmol/kg]', 
         'DO[ml/l]', 'DO saturation(%)', 'DO titration[μmol/kg]', 'Fluorescence[mg/m3]', 'PAR[μE/ cm2s1]', 'Cond[S/m]', 'Chl.a[mg/m3]', 
@@ -316,21 +311,51 @@ df = df[['Cruise', 'Station', 'Type', 'mon/day/yr', 'hh:mm', 'Longitude [degrees
         'Transparency[m]', 'PCBs[μg/kg]', 'Cu[μg/kg]', 'Pb[μg/kg]', 'Zn[μg/kg]', 'Cd[μg/kg]', 'Cr6+[μg/kg]', 'As[μg/kg]']]
 ```
 
+#### 17. 기존 data frame에서 원하는 항목명만 추출하여 새로운 data frame을 만들고 싶습니다. 어떻게 해야할까요?
+#### 18. 새로운 data frame을 할당한 후에 기존 data frame에서 원하는 칼럼명('header')를 추출하면 됩니다.
+#### 19. Column 명은 본 튜토리얼을 보며 직접 입력하다가 오타가 발생할 수 있으니, 복사-붙여넣기를 해주세요!
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ```python
 df = pd.DataFrame(df)
 ```
 
+#### 20. pd.DataFrame()를 이용하여 data frame 형태로 저장해줍니다.
+    - Further study에서 그래프화, 시각화를 할 예정이므로 data frame 형태로의 저장이 필수입니다.
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ```python
 df.shape
 ```
-
+![data_collection_12](./images/data_collection_12.PNG)
+<br>
+#### 21. 기존의 data frame에서 총 48개의 항목을 추출하였기에 (5019, 48)로 나오면 이상이 없다는 뜻입니다.
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ```python
 df.to_csv("../data/JOISS_data_collection.csv", encoding = 'euc-kr')
 ```
+#### 22. df.to_csv("경로 및 파일명", encoding)을 통해 csv 파일로 export 해줍니다.
+<br>
+<br>
+<br>
+<br>
 
 
-test
+## Result
+* ### __Further study__
+
+<br>
 
