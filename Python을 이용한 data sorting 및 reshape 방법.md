@@ -4,6 +4,7 @@
  ### 오늘은 Pyhon을 이용하여 JOISS DB에서 받은 data를 sorting하고 reshape하는 방법을 알아보겠습니다.
  	*본 튜토리얼의 순서는 다음과 같습니다.
  <br>
+ 
 > ### Data collection
 >	> Dataset download from JOISS<br>
 >	> Identifying format of dataset
