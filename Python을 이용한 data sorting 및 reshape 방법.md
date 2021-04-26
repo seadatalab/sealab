@@ -14,8 +14,12 @@
 >	> Data reshape
 > ### Result
 >	> Further study<br>
-## Data collection<br>
-## Coding<br>
+## Data collection
+<br>
+
+## Coding
+<br>
+
 <pre>
 <code>
 import numpy as np
