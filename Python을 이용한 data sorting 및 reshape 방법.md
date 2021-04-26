@@ -140,11 +140,16 @@ sorted(os.listdir('../data/'))
 
 #### 3. os.listdir method로 지정한 디렉토리 내 모든 파일과 리스트를 리턴합니다.
 #### 4. sorted 함수로 파일을 오름차순으로 정렬합니다. 이는 사업연도별로 raw data를 정리하기 위함입니다.
-_sorted 함수는 숫자, 영어, 한글순으로 파일 이름을 자동 정렬합니다._
-_listdir의 괄호안 경로는 JOISS에서 다운로드 한 csv 파일이 있는 경로로 설정해주시면 됩니다._
-_본 튜토리얼의 경로인 '../data/'는  code가 있는 파일의 상위폴더와 data 파일이 속한 폴더의 상위폴더가 서로 같음을 의미합니다._
-_code파일의 경로 -> C:\Users\admin\Documents\jupyter notebook\code_
-_data 파일의 경로 -> C:\Users\admin\Documents\jupyter notebook\data_
+<br>
+
+    sorted 함수는 숫자, 영어, 한글순으로 파일 이름을 자동 정렬합니다.
+    listdir의 괄호안 경로는 JOISS에서 다운로드 한 csv 파일이 있는 경로로 설정해주시면 됩니다.
+    본 튜토리얼의 경로인 '../data/'는  code가 있는 파일의 상위폴더와 data 파일이 속한 폴더의 상위폴더가 서로 같음을 의미합니다.
+    code파일의 경로 -> C:\Users\admin\Documents\jupyter notebook\code
+    data 파일의 경로 -> C:\Users\admin\Documents\jupyter notebook\data
+<br>
+<br>
+<br>
 <br>
 <br>
 
@@ -166,11 +171,16 @@ merged_df = pd.concat(list_of_dataframes, join = 'outer')
     본 튜토리얼은 pd.read_csv('파일경로', encoding = 'euc-kr', skiprows = 26)를 이용하여 csv 파일을 불러왔습니다.
     여기서 encoding은 한글의 경우 UTF-8과 EUC-KR을 사용하여 불러올 수 있으며, 둘 중 error code가 안나는 것을 사용하면 됩니다.
     skiprows는 Identifying format of dataset에서 언급한것 처럼 26열까지 메타 데이터이므로 이를 생략하고 27열부터 불러오는 기능입니다.
+<br>
+
 #### 8. list.append 함수를 통해 for문에서 불러온 data frame을 list 형태로 저장해줍니다.
 #### 9. pd.concat을 통해 여러 data frame을 하나의 합집합 형태의 data frame으로 만들어줍니다.
     list.append를 지정하지 않으면 for문에서 작업이 끝난 마지막 1개의 data frame만 추출됩니다.
     이를 방지하기 위해 for문 앞에 빈 리스트를 설정해주고, for문을 돌며 리스트안에 저장되도록 하는 것입니다.
     pandas는 concat 기능을 통해 data frame들을 합칠 수 있으며, join = 'outer'를 통해 합집합 형태로 만들 수 있습니다.
+<br>
+<br>
+<br>
 <br>
 <br>
 
