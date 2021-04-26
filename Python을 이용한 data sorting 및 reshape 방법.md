@@ -8,7 +8,9 @@
 >	> Dataset download from JOISS<br>
 >	> Identifying format of dataset
 > ### Coding
->	> Data preprocessing, Data sorting, Data reshape
+>	> Data preprocessing<br> 
+>	> Data sorting<br>
+>	> Data reshape
 > ### Result
 >	> Further study
 
