@@ -134,11 +134,9 @@ Link: [Python library install](http://sealab.kesti.info/view/80 "python library 
 <br>
 <br>
 
-<pre>
-<code>
+```python
 sorted(os.listdir('../data/'))
-</code>
-</pre>
+```
 
 #### 3. os.listdir method로 지정한 디렉토리 내 모든 파일과 리스트를 리턴합니다.
 #### 4. sorted 함수로 파일을 오름차순으로 정렬합니다. 이는 사업연도별로 raw data를 정리하기 위함입니다.
@@ -153,8 +151,7 @@ sorted(os.listdir('../data/'))
 <br>
 <br>
 
-<pre>
-<code>
+```python
 file_list = glob.glob("../data/*.csv")
 
 list_of_dataframes = []
@@ -162,8 +159,7 @@ for filename in file_list:
     list_of_dataframes.append(pd.read_csv(filename, encoding = 'euc-kr', skiprows = 26))
     
 merged_df = pd.concat(list_of_dataframes, join = 'outer')
-</code>
-</pre>
+```
 
 #### 5. glob.glob 모듈을 이용하여 경로 내 특정확장자(csv 형식)를 가진 파일을 모두 불러옵니다.
 #### 6. pandas는 pd.read_csv, pd.read_excel 등을 통해 data frame 형식으롤 불러올 수 있습니다.
@@ -183,56 +179,43 @@ merged_df = pd.concat(list_of_dataframes, join = 'outer')
 <br>
 <br>
 
-<pre>
-<code>
+```python
 merged_df
-</code>
-</pre>
+```
 
 
-<pre>
-<code>
+```python
 merged_df['yyyy-mm-dd hh:mm:ss'] = pd.to_datetime(merged_df['yyyy-mm-dd hh:mm:ss'], format='%Y-%m-%d %H:%M:%S', errors='raise')
 
 merged_df['mon/day/yr'] = merged_df['yyyy-mm-dd hh:mm:ss'].dt.strftime('%m-%d-%Y')
 merged_df['hh:mm'] = merged_df['yyyy-mm-dd hh:mm:ss'].dt.strftime('%H:%M')
-</code>
-</pre>
+```
 
 
-<pre>
-<code>
+```python
 merged_df['Salinity [PSU]'] = (merged_df['염분'] + merged_df['염분[psu]'] + merged_df['염분[‰]'])
-</code>
-</pre>
+```
 
 
-<pre>
-<code>
+```python
 merged_df['Chl.a[mg/m3]'] = (merged_df['클로로필-a[μg/L]'] + merged_df['클로로필-a[mg/m3]'])
-</code>
-</pre>
+```
 
 
-<pre>
-<code>
+```python
 merged_df['PCBs[μg/kg]'] = (merged_df['폴리염화바이페닐-28[μg/kg]'] + merged_df['폴리염화바이페닐-52[μg/kg]'] + 
                             merged_df['폴리염화바이페닐-101[μg/kg]'] + merged_df['폴리염화바이페닐-118[μg/kg]'] +
                             merged_df['폴리염화바이페닐-138[μg/kg]'] + merged_df['폴리염화바이페닐-153[μg/kg]'] +
                             merged_df['폴리염화바이페닐-180[μg/kg]'])
-</code>
-</pre>
+```
 
 
-<pre>
-<code>
+```python
 merged_df.shape
-</code>
-</pre>
+```
 
 
-<pre>
-<code>
+```python
 merged_df.rename(columns = {"project_name":"Cruise", "station":"Station", "bot.depth[m]":"Bot. Depth [m]", "수심(m)":"Depth [m]",
                     "수온[℃]":"Temperature [℃]", "potential density-1000[kg/m3]":"Sigma-t [kg/m3]", "용존산소[mg/L]":"DO[ml/l]",
                             "알칼리도[μmol/kg]":"Alk[μmol/kg]", "수소이온농도[무단위]":"pH", "아질산성 질소 + 질산성 질소[μmol/kg]":
@@ -242,65 +225,50 @@ merged_df.rename(columns = {"project_name":"Cruise", "station":"Station", "bot.d
                              "투명도[m]":"Transparency[m]", "구리[μg/kg]":"Cu[μg/kg]", "납[μg/kg]":"Pb[μg/kg]", "아연[μg/kg]":
                             "Zn[μg/kg]", "카드뮴[μg/kg]":"Cd[μg/kg]", "6가크롬[μg/kg]":"Cr6+[μg/kg]", "비소[μg/kg]": "As[μg/kg]"},
                             inplace = True)
-</code>
-</pre>
+```
 
 
-<pre>
-<code>
+```python
 df = merged_df.reindex(columns = merged_df.columns.tolist() + ['Type', 'Pontential temperature [℃]', 'DO[μmol/kg]', 'DO saturation(%)'
                                                                , 'DO titration[μmol/kg]' , 'Fluorescence[mg/m3]' , 'PAR[μE/ cm2s1]' , 
                                                                'Cond[S/m]' , 'DIC[μmol/kg]' , 'TEP' , 'PO4-[μmol/kg]' , 'NH4+[μmol/kg]'
                                                                , 'NO2-[μmol/kg]' , 'NO3-[μmol/kg]' , 'SiO4-[μmol/kg]'])
-</code>
-</pre>
+```
 
 
-<pre>
-<code>
+```python
 df = df.fillna(0)
-</code>
-</pre>
+```
 
 
-<pre>
-<code>
+```python
 df.shape
-</code>
-</pre>
+```
 
 
-<pre>
-<code>
+```python
 df = df[['Cruise', 'Station', 'Type', 'mon/day/yr', 'hh:mm', 'Longitude [degrees_east]', 'Latitude [degrees_south]', 'Bot. Depth [m]', 
         'Depth [m]', 'Temperature [℃]', 'Salinity [PSU]', 'Pontential temperature [℃]', 'Sigma-t [kg/m3]', 'DO[μmol/kg]', 
         'DO[ml/l]', 'DO saturation(%)', 'DO titration[μmol/kg]', 'Fluorescence[mg/m3]', 'PAR[μE/ cm2s1]', 'Cond[S/m]', 'Chl.a[mg/m3]', 
         'DIC[μmol/kg]', 'Alk[μmol/kg]', 'pH', 'TEP', 'PO4-[μmol/kg]', 'NH4+[μmol/kg]', 'NO2-[μmol/kg]', 'NO2-+NO3-[μmol/kg]', 
         'NO3-[μmol/kg]', 'SiO4-[μmol/kg]', 'TN', 'TP', 'ISUS nitrate[μmol/kg]', 'POC', 'DOC', 'TOC', 'PON', 'SS[mg/L]', 'COD[mg/L]', 
         'Transparency[m]', 'PCBs[μg/kg]', 'Cu[μg/kg]', 'Pb[μg/kg]', 'Zn[μg/kg]', 'Cd[μg/kg]', 'Cr6+[μg/kg]', 'As[μg/kg]']]
-</code>
-</pre>
+```
 
 
-<pre>
-<code>
+```python
 df = pd.DataFrame(df)
-</code>
-</pre>
+```
 
 
-<pre>
-<code>
+```python
 df.shape
-</code>
-</pre>
+```
 
 
-<pre>
-<code>
+```python
 df.to_csv("../data/JOISS_data_collection.csv", encoding = 'euc-kr')
-</code>
-</pre>
+```
 
 
 test
