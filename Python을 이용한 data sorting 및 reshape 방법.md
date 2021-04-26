@@ -89,10 +89,22 @@
 
 ![data_collection_8](./images/data_collection_8.png)
 <br>
+#### 1. 다운로드 폴더에 압축을 풀어 dataset이 잘 받아졌는지 확인합니다.
+#### 2. 우리가 활용할 csv 파일은 [EAST-1] 자료 5개, [폐기물 배출해역 조사] 자료 15개로 총 20개입니다.
+<br>
+<br>
+<br>
 <br>
 
 ![data_collection_9](./images/data_collection_9.png)
-
+<br>
+#### 3. 임의의 csv 파일을 1개 열어 foramt을 파악합니다.
+#### 4. 1열부터 26열까지 메타(META DATA) 정보가 들어가 있고, 27열부터 우리가 사용할 자료(RAW DATA)가 존재합니다.
+    추후에 Python에서 csv 파일을 불러올 때, META 정보가 있는 26열까지 skip하고 불러올 것이므로 이를 기억해 둡시다!
+<br>
+<br>
+<br>
+<br>
 
 
 ## Coding
