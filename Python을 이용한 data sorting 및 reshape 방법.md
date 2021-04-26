@@ -66,6 +66,8 @@ Link: [JOISS](http://JOISS.kr "JOISS link")
 #### 8. 주제분야에서 [Chemical Oceanography]-[Carbonate system]과 [Carbon, nitrogen and phosphorus]를 클릭합니다. 
 #### 9. 위 사진에 [빨간색 박스]로 표기된 [EAST-1] 자료를 클릭하여 장바구니로 보냅니다.
     이는 다양한 해양과학자료를 한 곳에 모아 data mining을 하기 위해 서로 다른 index를 한 dataset에 모으는 과정입니다.
+    [EAST-1] 자료 중 profile_chemical_rossete 혹은 profile_chemical_unkown으로 된 파일만 다운 받습니다.
+    검색 시 biological 형식과 chemical 형식이 동시에 표출되므로, 이를 주의합시다!
 <br>
 <br>
 <br>
@@ -127,6 +129,8 @@ import datetime
 #### 1. 본 튜토리얼에 필요한 Python의 모듈 및 함수를 Editor에 불러오는 코드입니다. (데이터 시각화가 편한 Jupyter notebook을 추천)
 #### 2. Pandas는 Python에서 가장 널리 사용되는 데이터 분석 라이브러리로 자세한 설치법은 아래 링크에 있습니다.
 Link: [Python library install](http://sealab.kesti.info/view/80 "python library install link")
+<br>
+<br>
 
 <pre>
 <code>
