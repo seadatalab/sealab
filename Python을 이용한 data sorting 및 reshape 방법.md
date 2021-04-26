@@ -179,11 +179,18 @@ merged_df = pd.concat(list_of_dataframes, join = 'outer')
 <br>
 
 * ### __Data reshape__
+<br>
 
 ```python
 merged_df
 ```
-
+![data_collection_10](./images/data_collection_10.PNG)
+<br>
+#### 1. Jupyter notebook은 print를 적을 필요없이 변수만 적어도 그 형태를 보여줍니다.
+#### 2. 5019 row x 121 columns로 배열이 나온다면 제대로 합쳐진 것이 맞습니다.
+<br>
+<br>
+<br>
 
 ```python
 merged_df['yyyy-mm-dd hh:mm:ss'] = pd.to_datetime(merged_df['yyyy-mm-dd hh:mm:ss'], format='%Y-%m-%d %H:%M:%S', errors='raise')
