@@ -23,7 +23,7 @@
 <br>
 
 #### 1. 먼저 가공하고 싶은 자료를 DB 사이트에 접속하여 선택합니다.<br>
-#### 2. 본 튜토리얼은 해양과학자료를 이용할 것이므로 해양과학자료 공동활용 저장소인 JOISS 사이트에 접속하겠습니다.
+#### 2. 본 튜토리얼은 해양과학자료를 이용할 것이므로 해양과학자료 공동활용 저장소인 JOISS 사이트에 접속하겠습니다. (링크는 아래에 있습니다)
 Link: [JOISS](http://JOISS.kr "JOISS link")
 <br>
 <br>
@@ -124,7 +124,7 @@ import datetime
 </code>
 </pre>
 
-#### 1. 본 튜토리얼에 필요한 Python의 모듈 및 함수를 Jupyter notebook에 불러오는 코드입니다.
+#### 1. 본 튜토리얼에 필요한 Python의 모듈 및 함수를 Editor에 불러오는 코드입니다. (데이터 시각화가 편한 Jupyter notebook을 추천)
 #### 2. Pandas는 Python에서 가장 널리 사용되는 데이터 분석 라이브러리로 자세한 설치법은 아래 링크에 있습니다.
 Link: [Python library install](http://sealab.kesti.info/view/80 "python library install link")
 
