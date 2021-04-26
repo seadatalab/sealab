@@ -129,10 +129,7 @@ import datetime
 #### 2. Pandas는 Python에서 가장 널리 사용되는 데이터 분석 라이브러리로 자세한 설치법은 아래 링크에 있습니다.
 Link: [Python library install](http://sealab.kesti.info/view/80 "python library install link")
 <br>
-<br>
-<br>
-<br>
-<br>
+
 
 ```python
 sorted(os.listdir('../data/'))
