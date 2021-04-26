@@ -57,10 +57,10 @@ Link: [JOISS](http://JOISS.kr "JOISS link")
 <br>
 
 
-![data_collection_5](./images/data_collection_5.png)
+![data_collection_5](./images/data_collection_.png)
 <br>
 <br>
-![data_collection_6](./images/data_collection_6.png)
+![data_collection_6](./images/data_collection_.png)
 <br>
 
 #### 8. 주제분야에서 [Chemical Oceanography]-[Carbonate system]과 [Carbon, nitrogen and phosphorus]를 클릭합니다. 
