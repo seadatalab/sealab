@@ -73,7 +73,14 @@
 
 ![data_collection_7](./images/data_collection_7.png)
 <br>
+#### 10. 장바구니에 다운로드하고 싶은 dataset을 모두 넣었다면, JOISS 사이트 우측 최상단에 [장바구니 아이콘]을 클릭합니다.
+#### 11. 장바구니에 담긴 dataset 중 다운로드할 항목을 클릭합니다. 이후 다운로드 아이콘을 누릅니다.
+#### 12. 여러 개 선택 시 압축파일 형태로 다운로드되니 압축을 풀어 사용하시면 됩니다.
 <br>
+<br>
+<br>
+<br>
+
 
 ![data_collection_8](./images/data_collection_8.png)
 <br>
