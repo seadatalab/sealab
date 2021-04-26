@@ -13,7 +13,10 @@
 >	> Data sorting<br>
 >	> Data reshape
 > ### Result
->	> Further study<br>
+>	> Further study
+<br>
+<br>
+
 ## Data collection
 <br>
 
