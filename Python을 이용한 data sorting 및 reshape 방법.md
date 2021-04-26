@@ -151,6 +151,8 @@ sorted(os.listdir('../data/'))
 <br>
 <br>
 
+* ### __Data sorting__
+
 ```python
 file_list = glob.glob("../data/*.csv")
 
@@ -161,15 +163,15 @@ for filename in file_list:
 merged_df = pd.concat(list_of_dataframes, join = 'outer')
 ```
 
-#### 5. glob.glob 모듈을 이용하여 경로 내 특정확장자(csv 형식)를 가진 파일을 모두 불러옵니다.
-#### 6. pandas는 pd.read_csv, pd.read_excel 등을 통해 data frame 형식으롤 불러올 수 있습니다.
-#### 7. for문에서 위 코드를 통해 경로 내 모든 csv 파일을 data frame으로 불러옵니다.
+#### 1. glob.glob 모듈을 이용하여 경로 내 특정확장자(csv 형식)를 가진 파일을 모두 불러옵니다.
+#### 2. pandas는 pd.read_csv, pd.read_excel 등을 통해 data frame 형식으롤 불러올 수 있습니다.
+#### 3. for문에서 위 코드를 통해 경로 내 모든 csv 파일을 data frame으로 불러옵니다.
     - 본 튜토리얼은 pd.read_csv('파일경로', encoding = 'euc-kr', skiprows = 26)를 이용하여 csv 파일을 불러왔습니다.
     - 여기서 encoding은 한글의 경우 UTF-8과 EUC-KR을 사용하여 불러올 수 있으며, 둘 중 error code가 안나는 것을 사용하면 됩니다.
     - skiprows는 Identifying format of dataset에서 언급한것 처럼 26열까지 메타 데이터이므로 이를 생략하고 27열부터 불러오는 기능입니다.
 
-#### 8. list.append 함수를 통해 for문에서 불러온 data frame을 list 형태로 저장해줍니다.
-#### 9. pd.concat을 통해 여러 data frame을 하나의 합집합 형태의 data frame으로 만들어줍니다.
+#### 4. list.append 함수를 통해 for문에서 불러온 data frame을 list 형태로 저장해줍니다.
+#### 5. pd.concat을 통해 여러 data frame을 하나의 합집합 형태의 data frame으로 만들어줍니다.
     - list.append를 지정하지 않으면 for문에서 작업이 끝난 마지막 1개의 data frame만 추출됩니다.
     - 이를 방지하기 위해 for문 앞에 빈 리스트를 설정해주고, for문을 돌며 리스트안에 저장되도록 하는 것입니다.
     - pandas는 concat 기능을 통해 data frame들을 합칠 수 있으며, join = 'outer'를 통해 합집합 형태로 만들 수 있습니다.
@@ -178,6 +180,8 @@ merged_df = pd.concat(list_of_dataframes, join = 'outer')
 <br>
 <br>
 <br>
+
+* ### __Data reshape__
 
 ```python
 merged_df
