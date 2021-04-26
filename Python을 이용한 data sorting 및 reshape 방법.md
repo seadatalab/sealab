@@ -26,6 +26,8 @@
 #### 2. 본 튜토리얼은 해양과학자료를 이용할 것이므로 해양과학자료 공동활용 저장소인 JOISS 사이트에 접속하겠습니다. (https://joiss.kr) <br>
 <br>
 <br>
+<br>
+<br>
 
 
 ![data_collection_2](./images/data_collection_2.png)
@@ -35,23 +37,32 @@
 #### 4. 해당 기능을 이용하기 위해선 회원가입 후 로그인을 하셔야 합니다.
 <br>
 <br>
+<br>
+<br>
 
 
 ![data_collection_3](./images/data_collection_3.png)
 <br>
 <br>
-
 ![data_collection_4](./images/data_collection_4.png)
 <br>
+
+#### 5. 주제분야에서 [Chemical Oceanography]-[Metal and metalloid concentrations]를 클릭합니다.
+#### 6. 주제항목은 [전체]를 선택, 장비는 [선택]으로 설정한 후 하단에 [검색] 아이콘을 누릅니다.
+#### 7. 총 19개의 검색된 dataset 중 [폐기물 배출해역 조사]로 시작하는 15개의 dataset만 다운로드를 위해 [ADD TO BASEKT]을 클릭합니다. 
 <br>
+<br>
+<br>
+<br>
+
 
 ![data_collection_5](./images/data_collection_5.png)
 <br>
 <br>
-
 ![data_collection_6](./images/data_collection_6.png)
 <br>
-<br>
+
+#### 8. 
 
 ![data_collection_7](./images/data_collection_7.png)
 <br>
