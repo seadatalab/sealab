@@ -21,10 +21,9 @@
 
 ![data_collection_1](./images/data_collection_1.png)
 <br>
-<br>
 
-#### 먼저 내가 가공하고 싶은 자료를 DB 사이트에 접속하여 선택합니다.<br>
-#### 우리는 해양과학자료를 이용할 것이므로 JOISS에 접속하겠습니다. (https://joiss.kr) <br>
+#### 1. 먼저 내가 가공하고 싶은 자료를 DB 사이트에 접속하여 선택합니다.<br>
+#### 2. 우리는 해양과학자료를 이용할 것이므로 JOISS에 접속하겠습니다. (https://joiss.kr) <br>
 <br>
 <br>
 
