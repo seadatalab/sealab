@@ -3,7 +3,7 @@
  
  ### 오늘은 Pyhon을 이용하여 JOISS DB에서 받은 data를 sorting하고 reshape하는 방법을 알아보겠습니다.
  	*본 튜토리얼의 순서는 다음과 같습니다.
-
+<br>
 > ### Data collection
 >	> Dataset download from JOISS<br>
 >	> Identifying format of dataset
@@ -13,10 +13,14 @@
 >	> Data reshape
 > ### Result
 >	> Further study
-
-
+<br>
+<br>
+<br>
 ## Data collection
-
+<br>
+<br>
+## Coding
+  
 <pre>
 <code>
 import numpy as np
@@ -27,15 +31,15 @@ import glob
 import datetime
 </code>
 </pre>
-
-
+  
+  
 <pre>
 <code>
 sorted(os.listdir('../data/'))
 </code>
 </pre>
-
-
+  
+  
 <pre>
 <code>
 file_list = glob.glob("../data/*.csv")
@@ -47,15 +51,15 @@ for filename in file_list:
 merged_df = pd.concat(list_of_dataframes, join = 'outer')
 </code>
 </pre>
-
-
+  
+  
 <pre>
 <code>
 merged_df
 </code>
 </pre>
-
-
+  
+  
 <pre>
 <code>
 merged_df['yyyy-mm-dd hh:mm:ss'] = pd.to_datetime(merged_df['yyyy-mm-dd hh:mm:ss'], format='%Y-%m-%d %H:%M:%S', errors='raise')
@@ -64,15 +68,15 @@ merged_df['mon/day/yr'] = merged_df['yyyy-mm-dd hh:mm:ss'].dt.strftime('%m-%d-%Y
 merged_df['hh:mm'] = merged_df['yyyy-mm-dd hh:mm:ss'].dt.strftime('%H:%M')
 </code>
 </pre>
-
-
+  
+  
 <pre>
 <code>
 merged_df.shape
 </code>
 </pre>
-
-
+  
+  
 <pre>
 <code>
 merged_df.rename(columns = {"project_name":"Cruise", "station":"Station", "bot.depth[m]":"Bot. Depth [m]", "수심(m)":"Depth [m]",
@@ -86,8 +90,8 @@ merged_df.rename(columns = {"project_name":"Cruise", "station":"Station", "bot.d
                             inplace = True)
 </code>
 </pre>
-
-
+  
+  
 <pre>
 <code>
 df = merged_df.reindex(columns = merged_df.columns.tolist() + ['Type', 'Pontential temperature [℃]', 'DO[μmol/kg]', 'DO saturation(%)'
@@ -96,22 +100,22 @@ df = merged_df.reindex(columns = merged_df.columns.tolist() + ['Type', 'Pontenti
                                                                , 'NO2-[μmol/kg]' , 'NO3-[μmol/kg]' , 'SiO4-[μmol/kg]'])
 </code>
 </pre>
-
-
+  
+  
 <pre>
 <code>
 df = df.fillna(0)
 </code>
 </pre>
-
-
+  
+  
 <pre>
 <code>
 df.shape
 </code>
 </pre>
-
-
+  
+  
 <pre>
 <code>
 df = df[['Cruise', 'Station', 'Type', 'mon/day/yr', 'hh:mm', 'Longitude [degrees_east]', 'Latitude [degrees_south]', 'Bot. Depth [m]', 
@@ -122,28 +126,28 @@ df = df[['Cruise', 'Station', 'Type', 'mon/day/yr', 'hh:mm', 'Longitude [degrees
         'Transparency[m]', 'PCBs[μg/kg]', 'Cu[μg/kg]', 'Pb[μg/kg]', 'Zn[μg/kg]', 'Cd[μg/kg]', 'Cr6+[μg/kg]', 'As[μg/kg]']]
 </code>
 </pre>
-
-
+  
+  
 <pre>
 <code>
 df = pd.DataFrame(df)
 </code>
 </pre>
-
-
+  
+  
 <pre>
 <code>
 df.shape
 </code>
 </pre>
-
-
+  
+  
 <pre>
 <code>
 df.to_csv("../data/JOISS_data_collection.csv", encoding = 'euc-kr')
 </code>
 </pre>
-
-
+  
+  
 test
 
