@@ -201,11 +201,11 @@ merged_df['mon/day/yr'] = merged_df['yyyy-mm-dd hh:mm:ss'].dt.strftime('%m-%d-%Y
 merged_df['hh:mm'] = merged_df['yyyy-mm-dd hh:mm:ss'].dt.strftime('%H:%M')
 ```
 
-#### 3. 본 튜토리얼은 JOISS에서 받은 dataset을 ODV (Ocean Data View) foramt으로 항목을 일치시키는 것이 튜토리얼의 목적 중 하나입니다.
-#### 4. 'yyyy-mm-dd hh:mm:ss' 형식으로 된 datetime을 ODV 형식인 mm-dd-YY와 hh:mm 형식으로 바꿔보겠습니다.
-#### 5. datetime 모듈을 이용하여 object 타입을 datetime64로 바꿔줍니다. (pd.to_datetime)
-#### 6. strftime method를 이용하여 datetime64를 필요한 날짜 형식으로 변환합니다. (dt.df.strftime())
-#### 7. 위 코드를 사용하면 121번째 colmun 뒤에 새로운 'mon/day/yr'와 'hh:mm' column이 형성됩니다.
+#### 3. 'yyyy-mm-dd hh:mm:ss' 형식으로 된 datetime을 ODV 형식인 mm-dd-YY와 hh:mm 형식으로 바꿔보겠습니다.
+#### 4. datetime 모듈을 이용하여 object 타입을 datetime64로 바꿔줍니다. (pd.to_datetime)
+#### 5. strftime method를 이용하여 datetime64를 필요한 날짜 형식으로 변환합니다. (dt.df.strftime())
+#### 6. 위 코드를 사용하면 121번째 colmun 뒤에 새로운 'mon/day/yr'와 'hh:mm' column이 형성됩니다.
+    - 본 튜토리얼은 JOISS에서 받은 dataset을 ODV (Ocean Data View) foramt으로 항목을 일치시키는 것이 튜토리얼의 목적 중 하나입니다.
 <br>
 <br>
 <br>
@@ -229,10 +229,10 @@ merged_df['PCBs[μg/kg]'] = (merged_df['폴리염화바이페닐-28[μg/kg]'] + 
                             merged_df['폴리염화바이페닐-180[μg/kg]'])
 ```
 
-#### 8. pd.concat을 통해 1개의 data frame으로 합쳐지면서 생긴 '중복된 항목'을 1개의 항목으로 만들어보겠습니다.
-#### 9. 염분의 경우 PSU 단위를 쓰며, 3개의 항목이 중복되었습니다.
-#### 10. 클로로필의 경우 mg/m3 단위를 쓰며, 단위환산을 하게 되면 ug/L와 같은 단위입니다. 2개의 항목이 중복되었습니다.
-#### 11. PCB의 경우 폴리염화바이페닐 뒤에 분자량이 붙으며, 하나씩 쓰기보다 이를 합산하여 PCBs로 표현합니다.
+#### 7. pd.concat을 통해 1개의 data frame으로 합쳐지면서 생긴 '중복된 항목'을 1개의 항목으로 만들어보겠습니다.
+    - 염분의 경우 PSU 단위를 쓰며, 3개의 항목이 중복되었습니다.
+    - 클로로필의 경우 mg/m3 단위를 쓰며, 단위환산을 하게 되면 ug/L와 같은 단위입니다. 2개의 항목이 중복되었습니다.
+    - PCB의 경우 폴리염화바이페닐 뒤에 분자량이 붙으며, 하나씩 쓰기보다 이를 합산하여 PCBs로 표현합니다.
 <br>
 <br>
 <br>
@@ -244,9 +244,8 @@ merged_df.shape
 ```
 ![data_collection_11](./images/data_collection_11.PNG)
 <br>
-#### 12. 기존 5019 row x 121 columns 배열을 갖고 있는 data frame에 새로운 항목이 잘 추가되었는지 중간 중간 확인해줍시다.
-#### 13. df.shape를 하면 data frame의 배열을 알려줍니다.
-#### 14. 3~7, 8~11 code를 통해 5개의 column이 새로 생성되었으므로 5019 row x 126 columns이 맞습니다.
+#### 8. 기존 5019 row x 121 columns 배열을 갖고 있는 data frame에 새로운 항목이 잘 추가되었는지 df.shape를 통해 중간 중간 확인해줍시다.
+#### 9. 3번부터 7 과정에서 5개의 column이 새로 생성되었으므로 5019 row x 126 columns이 맞습니다.
 <br>
 <br>
 <br>
@@ -265,6 +264,13 @@ merged_df.rename(columns = {"project_name":"Cruise", "station":"Station", "bot.d
                             inplace = True)
 ```
 
+#### 10. 한글로 표시된 항목명(header)을 영어로 바꾸고, 모두 ODV 형식에 맞도록 rename을 해주도록 하겠습니다.
+#### 11. df.rename(columns = {"key" : "value"}, inplace = True) 형식으로 되어있으며, key는 기존 항목명, value는 바꾸고 싶은 항목명입니다.
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ```python
 df = merged_df.reindex(columns = merged_df.columns.tolist() + ['Type', 'Pontential temperature [℃]', 'DO[μmol/kg]', 'DO saturation(%)'
@@ -273,11 +279,28 @@ df = merged_df.reindex(columns = merged_df.columns.tolist() + ['Type', 'Pontenti
                                                                , 'NO2-[μmol/kg]' , 'NO3-[μmol/kg]' , 'SiO4-[μmol/kg]'])
 ```
 
+#### 12. 기존의 column에 결측값을 갖는 새로운 column들을 추가해보겠습니다.
+#### 13. reindex라는 함수를 통해 가능하며, columns = merged_df.columns.tolist() 부분이 기존 column의 목록입니다.
+#### 14. 그 뒤에 ['a', 'b', 'c']와 같은 column list를 추가하게 되면 결측값을 데이터로 갖는 새로운 column이 추가됩니다.
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ```python
 df = df.fillna('NaN')
 ```
-
+#### 15. 이제 결측값을 NaN으로 변환해보겠습니다.
+#### 16. df.fillna() 라는 함수를 사용합니다. 이 안에 string인 'NaN'을 대입합니다.
+    - df.fillna(0)라고 하면 결측값은 모두 0로 바뀝니다.
+    - 결측값을 'NaN'으로 설정하지 않고 export할 경우 csv 파일에는 공란으로 나옵니다.
+    - 이를 방지하기 위해 string을 직접 입력시키는 것입니다.
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ```python
 df.shape
