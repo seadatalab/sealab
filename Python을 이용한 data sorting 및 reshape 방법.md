@@ -140,7 +140,7 @@ sorted(os.listdir('../data/'))
     - sorted 함수는 숫자, 영어, 한글순으로 파일 이름을 자동 정렬합니다.
     - listdir의 괄호안 경로는 JOISS에서 다운로드 한 csv 파일이 있는 경로로 설정해주시면 됩니다.
     - 본 튜토리얼의 경로인 '../data/'는  code가 있는 파일의 상위폴더와 data 파일이 속한 폴더의 상위폴더가 서로 같음을 의미합니다.
-    - code파일의 경로 -> C:\Users\admin\Documents\jupyter notebook\code
+    - code 파일의 경로 -> C:\Users\admin\Documents\jupyter notebook\code
     - data 파일의 경로 -> C:\Users\admin\Documents\jupyter notebook\data
 <br>
 <br>
