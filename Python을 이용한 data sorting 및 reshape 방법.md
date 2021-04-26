@@ -5,7 +5,8 @@
  	*본 튜토리얼의 순서는 다음과 같습니다.
 
 > ### Data collection
->	> Dataset download from JOISS, Identifying format of dataset
+>	> Dataset download from JOISS<br>
+>	> Identifying format of dataset
 > ### Coding
 >	> Data preprocessing, Data sorting, Data reshape
 > ### Result
