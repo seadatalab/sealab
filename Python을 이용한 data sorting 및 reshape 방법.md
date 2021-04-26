@@ -328,9 +328,7 @@ df = pd.DataFrame(df)
     - Further study에서 그래프화, 시각화를 할 예정이므로 data frame 형태로의 저장이 필수입니다.
 <br>
 <br>
-<br>
-<br>
-<br>
+
 
 ```python
 df.shape
@@ -340,14 +338,13 @@ df.shape
 #### 21. 기존의 data frame에서 총 48개의 항목을 추출하였기에 (5019, 48)로 나오면 이상이 없다는 뜻입니다.
 <br>
 <br>
-<br>
-<br>
-<br>
+
 
 ```python
 df.to_csv("../data/JOISS_data_collection.csv", encoding = 'euc-kr')
 ```
 #### 22. df.to_csv("경로 및 파일명", encoding)을 통해 csv 파일로 export 해줍니다.
+#### 23. 본 튜토리얼은 JOISS_data_collection.csv로 파일을 저장했습니다.
 <br>
 <br>
 <br>
@@ -357,5 +354,16 @@ df.to_csv("../data/JOISS_data_collection.csv", encoding = 'euc-kr')
 ## Result
 * ### __Further study__
 
+<br>
+![data_collection_13](./images/data_collection_13.png)
+<br>
+<br>
+
+![data_collection_14](./images/data_collection_14.png)
+<br>
+<br>
+
+![data_collection_15](./images/data_collection_15.png)
+<br>
 <br>
 
