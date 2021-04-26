@@ -355,6 +355,7 @@ df.to_csv("../data/JOISS_data_collection.csv", encoding = 'euc-kr')
 * ### __Further study__
 
 <br>
+
 ![data_collection_13](./images/data_collection_13.png)
 <br>
 <br>
