@@ -201,7 +201,16 @@ merged_df['mon/day/yr'] = merged_df['yyyy-mm-dd hh:mm:ss'].dt.strftime('%m-%d-%Y
 merged_df['hh:mm'] = merged_df['yyyy-mm-dd hh:mm:ss'].dt.strftime('%H:%M')
 ```
 
-
+#### 3. 본 튜토리얼은 JOISS에서 받은 dataset을 ODV (Ocean Data View) foramt으로 항목을 일치시키는 것이 튜토리얼의 목적 중 하나입니다.
+#### 4. 'yyyy-mm-dd hh:mm:ss' 형식으로 된 datetime을 ODV 형식인 mm-dd-YY와 hh:mm 형식으로 바꿔보겠습니다.
+#### 5. datetime 모듈을 이용하여 object 타입을 datetime64로 바꿔줍니다. (pd.to_datetime)
+#### 6. strftime method를 이용하여 datetime64를 필요한 날짜 형식으로 변환합니다. (dt.df.strftime())
+#### 7. 위 코드를 사용하면 121번째 colmun 뒤에 새로운 'mon/day/yr'와 'hh:mm' column이 형성됩니다.
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ```python
 merged_df['Salinity [PSU]'] = (merged_df['염분'] + merged_df['염분[psu]'] + merged_df['염분[‰]'])
@@ -220,6 +229,15 @@ merged_df['PCBs[μg/kg]'] = (merged_df['폴리염화바이페닐-28[μg/kg]'] + 
                             merged_df['폴리염화바이페닐-180[μg/kg]'])
 ```
 
+#### 8. pd.concat을 통해 1개의 data frame으로 합쳐지면서 생긴 '중복된 항목'을 1개의 항목으로 만들어보겠습니다.
+#### 9. 염분의 경우 PSU 단위를 쓰며, 3개의 항목이 중복되었습니다.
+#### 10. 클로로필의 경우 mg/m3 단위를 쓰며, 단위환산을 하게 되면 ug/L와 같은 단위입니다. 2개의 항목이 중복되었습니다.
+#### 11. PCB의 경우 폴리염화바이페닐 뒤에 분자량이 붙으며, 하나씩 쓰기보다 이를 합산하여 PCBs로 표현합니다.
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ```python
 merged_df.shape
