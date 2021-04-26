@@ -140,11 +140,11 @@ sorted(os.listdir('../data/'))
 
 #### 3. os.listdir method로 지정한 디렉토리 내 모든 파일과 리스트를 리턴합니다.
 #### 4. sorted 함수로 파일을 오름차순으로 정렬합니다. 이는 사업연도별로 raw data를 정리하기 위함입니다.
-** sorted 함수는 숫자, 영어, 한글순으로 파일 이름을 자동 정렬합니다.
-** listdir의 괄호안 경로는 JOISS에서 다운로드 한 csv 파일이 있는 경로로 설정해주시면 됩니다.
-** 본 튜토리얼의 경로인 '../data/'는  code가 있는 파일의 상위폴더와 data 파일이 속한 폴더의 상위폴더가 서로 같음을 의미합니다.
-** code파일의 경로 -> C:\Users\admin\Documents\jupyter notebook\code
-** data 파일의 경로 -> C:\Users\admin\Documents\jupyter notebook\data
+_sorted 함수는 숫자, 영어, 한글순으로 파일 이름을 자동 정렬합니다._
+_listdir의 괄호안 경로는 JOISS에서 다운로드 한 csv 파일이 있는 경로로 설정해주시면 됩니다._
+_본 튜토리얼의 경로인 '../data/'는  code가 있는 파일의 상위폴더와 data 파일이 속한 폴더의 상위폴더가 서로 같음을 의미합니다._
+_code파일의 경로 -> C:\Users\admin\Documents\jupyter notebook\code_
+_data 파일의 경로 -> C:\Users\admin\Documents\jupyter notebook\data_
 <br>
 <br>
 
