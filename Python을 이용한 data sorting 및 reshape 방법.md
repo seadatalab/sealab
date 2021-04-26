@@ -242,7 +242,16 @@ merged_df['PCBs[μg/kg]'] = (merged_df['폴리염화바이페닐-28[μg/kg]'] + 
 ```python
 merged_df.shape
 ```
-
+![data_collection_11](./images/data_collection_11.PNG)
+<br>
+#### 12. 기존 5019 row x 121 columns 배열을 갖고 있는 data frame에 새로운 항목이 잘 추가되었는지 중간 중간 확인해줍시다.
+#### 13. df.shape를 하면 data frame의 배열을 알려줍니다.
+#### 14. 3~7, 8~11 code를 통해 5개의 column이 새로 생성되었으므로 5019 row x 126 columns이 맞습니다.
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ```python
 merged_df.rename(columns = {"project_name":"Cruise", "station":"Station", "bot.depth[m]":"Bot. Depth [m]", "수심(m)":"Depth [m]",
@@ -266,7 +275,7 @@ df = merged_df.reindex(columns = merged_df.columns.tolist() + ['Type', 'Pontenti
 
 
 ```python
-df = df.fillna(0)
+df = df.fillna('NaN')
 ```
 
 
