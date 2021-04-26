@@ -116,14 +116,14 @@ Link: [JOISS](http://JOISS.kr "JOISS link")
 
 <br>
 
-'''python
+```python
 import numpy as np
 import pandas as pd
 import csv
 import os
 import glob
 import datetime
-'''
+```
 
 #### 1. 본 튜토리얼에 필요한 Python의 모듈 및 함수를 Editor에 불러오는 코드입니다. (데이터 시각화가 편한 Jupyter notebook을 추천)
 #### 2. Pandas는 Python에서 가장 널리 사용되는 데이터 분석 라이브러리로 자세한 설치법은 아래 링크에 있습니다.
