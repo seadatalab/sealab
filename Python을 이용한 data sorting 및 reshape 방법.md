@@ -15,6 +15,8 @@
 <br>
 
 ## Data collection
+* __Dataset download from JOISS__
+
 <br>
 
 ![data_collection_1](./images/data_collection_1.png)
