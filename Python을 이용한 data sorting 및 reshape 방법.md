@@ -361,7 +361,7 @@ df.to_csv("../data/JOISS_data_collection.csv", encoding = 'euc-kr')
 <br>
 
 #### 1. 지정한 경로에 새로운 csv 파일이 잘 저장되었는지 확인해보도록 하겠습니다.
-#### 2. C:\Users\admin\Documents\jupyter notebook\data 라는 경로에 JOISS_data_collection이란 파일이 생겼습니다.
+#### 2. C:\Users\admin\Documents\jupyter notebook\data 라는 경로에 JOISS data collection이란 파일이 생겼습니다.
 <br>
 <br>
 <br>
