@@ -57,10 +57,10 @@ Link: [JOISS](http://JOISS.kr "JOISS link")
 <br>
 
 
-![data_collection_5-1](./images/data_collection_5.png)
+![data_collection_5-1](./images/data_collection_5-1.png)
 <br>
 <br>
-![data_collection_6-1](./images/data_collection_6.png)
+![data_collection_6-1](./images/data_collection_6-1.png)
 <br>
 
 #### 8. 주제분야에서 [Chemical Oceanography]-[Carbon, nitrogen and phosphorus]과 [Carbonate system]를 클릭합니다. 
@@ -74,7 +74,7 @@ Link: [JOISS](http://JOISS.kr "JOISS link")
 <br>
 
 
-![data_collection_7-1](./images/data_collection_7.png)
+![data_collection_7-1](./images/data_collection_7-1.png)
 <br>
 #### 10. 장바구니에 다운로드하고 싶은 dataset을 모두 넣었다면, JOISS 사이트 우측 최상단에 [장바구니 아이콘]을 클릭합니다.
 #### 11. 장바구니에 담긴 dataset 중 다운로드할 항목을 클릭합니다. 이후 다운로드 아이콘을 누릅니다.
