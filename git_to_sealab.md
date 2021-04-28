@@ -60,7 +60,7 @@ Content in the first column | Content in the second column
 ------|-------------------------------------------------------------------------- 
 웹이미지|![이미지 예시](https://github.com/seadatalab/sealab/raw/master/tysong/use_xtractomatic_files/figure-gfm/unnamed-chunk-11-1.png) 
 PC이미지 |![기획팀 월별 업무계획](https://user-images.githubusercontent.com/82485659/114659226-2a612c80-9d2e-11eb-8643-4f528c837b77.jpg)
-![images업로드한파일](./images/기획팀 월별 업무계획.jpg)
+![images업로드한파일](images/기획팀 월별 업무계획.jpg)
 
 
 
