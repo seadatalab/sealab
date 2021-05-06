@@ -69,7 +69,7 @@ data01 <- read.table("Textural Classification(with gravel).csv", header = TRUE, 
 View(data01)
 ```
 
-<table class="table table-striped" style="font-size: 12px; margin-left: auto; margin-right: auto;">
+<table class="table table-striped" style="font-size: 12px;">
 <caption style="font-size: initial !important;">표 1. 불러온 저질기준 분류표(자갈이 포함된 경우 상위20개)</caption>
  <thead>
   <tr>
@@ -258,8 +258,7 @@ data02$Angle = sapply(as.character(data02$Label),function(x){switch(x,"M"=-10,"S
 View(data02)
 ```
 
-<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; ">
-  <table class="table table-striped" style="font-size: 12px; margin-left: auto; margin-right: auto;">
+  <table class="table table-striped" style="font-size: 12px;">
     <caption style="font-size: initial !important;">표 2. 15개로 구분된 저질 구분표</caption>
   <thead>
     <tr>
@@ -394,7 +393,7 @@ View(data02)
       </tr>
     </tbody>
   </table>
-</div>
+
 
 ## 저질분류 삼각 Diagram 그리기    
 
