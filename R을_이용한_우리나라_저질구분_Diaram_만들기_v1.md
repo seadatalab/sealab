@@ -69,7 +69,7 @@ data01 <- read.table("Textural Classification(with gravel).csv", header = TRUE, 
 View(data01)
 ```
 
-<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; "><table class="table table-striped" style="font-size: 12px; margin-left: auto; margin-right: auto;">
+<table class="table table-striped" style="font-size: 12px; margin-left: auto; margin-right: auto;">
 <caption style="font-size: initial !important;">표 1. 불러온 저질기준 분류표(자갈이 포함된 경우 상위20개)</caption>
  <thead>
   <tr>
@@ -243,7 +243,7 @@ View(data01)
    <td style="text-align:center;"> gmS </td>
   </tr>
 </tbody>
-</table></div>
+</table>
     
 같은 "Label" 값을 가진 데이터(점)끼리 그룹을 지어 polygon을 만들면 저질분류 Diagram에 표시될 각 구역을 구분지을 수 있다.    
     
