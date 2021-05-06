@@ -108,3 +108,4 @@ ggplot(subset(cobe %>% group_by(as.integer(format(cobe$date, "%Y")), lon, lat) %
 다음 튜토리얼에서는 제작한 래스터 파일을 애니메이션으로 제작하는 방법을 소개하겠다.
 
 이상으로 "R을 이용한 데이터프레임 셋 데이터 래스터그리기" 튜토리얼을 마치도록 하겠다.
+
