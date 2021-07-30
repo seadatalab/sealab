@@ -2,6 +2,8 @@
 <br>
 <br>
 
+<p align="center"><img src="./images/python/GOCI-II/logo.png"></p>
+
 ![title](./images/python/GOCI-II/logo.png)
 
 <br>
