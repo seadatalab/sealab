@@ -1,1 +1,0 @@
-http://www.khoa.go.kr/nosc/satellite/down/netCDFfileDownload.do?obsTime=2021-07-26+17%3A00&slot=7&stdTime=KST
