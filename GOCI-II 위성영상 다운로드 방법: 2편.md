@@ -142,7 +142,7 @@ for i, url in enumerate(urls):
 
 <br>
 
-![GOCI-II](./images/python/GOCI-II/GOCI-II.png)
+![GOCI-II](./images/python/GOCI-II/GOCI.png)
 
 <br>
 
