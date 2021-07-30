@@ -12,6 +12,8 @@
 2편에서는 1편 마지막에 `HTML 검사 및 Network 속성`에서 얻은 **다운로드 URL을 활용하는 방법**에 대해 자세히 알아보겠습니다.
 <br>
 <br>
+<br>
+<br>
 
 ### 1. GOCI-II 위성영상 URL을 텍스트 파일에 저장
 ![list](./images/python/GOCI-II/URL-list.png)
