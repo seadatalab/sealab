@@ -75,7 +75,7 @@ for i, url in enumerate(urls):
 
 
 [Requests](https://docs.python-requests.org/en/v2.9.1/) 라이브러리는 파이썬으로 HTTP 호출하는 프로그램을 작성할 때 가장 많이 사용되는 라이브러리입니다. 
-파이썬의 패키지 매니저인 pip를 활용해 다음과 같이 입력하여 `pip install requests` 패키지를 설치합니다.
+파이썬의 패키지 매니저인 pip를 활용해 cmd창에 `pip install requests`를 입력하여 패키지를 설치합니다.
 
 **requests 라이브러리**는 매우 직관적인 API를 제공하여 HTTP 요청 방식에 따라 다음과 같은 함수를 사용하면 됩니다.
 <br>
