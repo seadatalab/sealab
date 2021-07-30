@@ -66,5 +66,25 @@ for i, url in enumerate(urls):
 위 코드를 이용하면 `2021년 7월 26일 16시와 17시에` 수집된 **L1B Slot-7 GOCI-II 영상**을 받을 수 있습니다. **그 원리를 한 번 이해해볼까요?**
 
 <br>
+<br>
+<br>
+
+![requests](./images/python/GOCI-II/Requests.png)
+
+<br>
 
 
+[Requests](https://docs.python-requests.org/en/v2.9.1/) 라이브러리는 파이썬으로 HTTP 호출하는 프로그램을 작성할 때 가장 많이 사용되는 라이브러리입니다. 
+파이썬의 패키지 매니저인 pip를 활용해 다음과 같이 입력하여 `pip install requests` 패키지를 설치합니다.
+
+**requests 라이브러리**는 매우 직관적인 API를 제공하여 HTTP 요청 방식에 따라 다음과 같은 함수를 사용하면 됩니다.
+- GET: `requests.get()`
+- POST: `requests.post()`
+- PUT: `requests.put()`
+- DELETE: `requests.delete()`
+
+<br>
+
+본 튜토리얼에서는 URL을 GET하는 방식을 HTTP로 요청할 것이므로 `requests.get()`만 이해하고, 기억해주시면 됩니다.
+
+<br>
