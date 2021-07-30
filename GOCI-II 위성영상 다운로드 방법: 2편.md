@@ -2,8 +2,9 @@
 <br>
 <br>
 
+<center><img src="./images/python/GOCI-II/logo.png" width="300" height="300"></center>
 
-<p align="center"><img src="./images/python/GOCI-II/logo.png"></p>
+![ex_screenshot](./images/python/GOCI-II/logo.png)
 <br>
 <br>
 
@@ -20,15 +21,15 @@
 <br>
 
 ### 2. Python의 requests library를 이용하여 URL 다운받기
-```
+```python
 import requests
 ```
 
-```
+```python
 urls = open('GOCI_list.txt', 'r')
 ```
 
-```
+```python
 for i, url in enumerate(urls):
     r = requests.get(url, allow_redirects=True)
     arr = url.split('=')
