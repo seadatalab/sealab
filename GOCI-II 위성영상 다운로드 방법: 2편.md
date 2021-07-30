@@ -44,6 +44,9 @@ URL 중간에 `2021-07-26+16%`과 `2021-07-26+17%`이 서로 다른 것을 확�
 <br>
 
 ### 2. Python의 requests library를 이용하여 URL 다운받기
+
+<br>
+
 ```python
 import requests
 ```
@@ -60,6 +63,8 @@ for i, url in enumerate(urls):
 ```
 <br>
 
-### 그럼 이제 코드를 하나씩 이해해볼까요?
+위 코드를 이용하면 `2021년 7월 26일 16시와 17시에` 수집된 **L1B Slot-7 GOCI-II 영상**을 받을 수 있습니다. **그 원리를 한 번 이해해볼까요?**
+
 <br>
+
 
