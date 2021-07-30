@@ -17,7 +17,7 @@
 <br>
 
 ### 1. GOCI-II 위성영상 다운로드 URL을 텍스트 형식 파일에 저장하기
-![list](./images/python/GOCI-II/URL-list.png)
+![list](./images/python/GOCI-II/URL-list1.png)
 
 <br>
 국가해양위성센터에서 획득한 GOCI-II 위성영상 다운로드 URL을 위 사진처럼 메모장(텍스트 형식 파일)에 저장합니다.  
