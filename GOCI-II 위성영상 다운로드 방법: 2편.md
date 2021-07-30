@@ -2,11 +2,16 @@
 <br>
 <br>
 
-
 ![title](./images/python/GOCI-II/logo.png)
 
 <br>
 <br>
+
+[GOCI-II 위성영상 다운로드 방법: 1편 바로가기 링크](http://sealab.kesti.info/view/166)
+
+<br>
+<br>
+
 
 
 1편에서는 [국가해양위성센터](http://www.khoa.go.kr/nosc/intro/noticeList.do)에 접속하여 GOCI-II 영상 다운로드하는 방법을 알아봤습니다. 표준영상(L1B)에서 슬롯을 선택하고(Slot-7) 홈페이지에서 링크를 클릭하여 직접 다운로드하는 방법을 알아봤는데요.
