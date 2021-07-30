@@ -126,10 +126,22 @@ for i, url in enumerate(urls):
 - requests.get을 통해 url을 불러올 수 있으며(다운로드), 문법은 `requests.get(URL 주소, **kwargs)` 입니다.
 - **kwargs에 `allow_redirects=True` 옵션을 줄 수 있으며 이를 통해 끊겼을 때 재접속(다운로드)이 가능해집니다.
 - url에서 `yyyy-mm-dd+hh`만 추출하여 파일을 저장하고 싶기에 .split을 이용하겠습니다.
-- url.split('=')을 적용하게 되면, GOCI-II 영상 다운로드 URL은 `http://www.khoa.go.kr/nosc/satellite/down/netCDFfileDownload.do?obsTime`, `2021-07-26+16%3A00&slot`, `7&stdTime`, `KST`로 나뉘게 됩니다.
-- 배열은 0부터 시작하므로 1에 해당하는 `2021-07-26+16%3A00&slot`을 저장하기 위해 arr[1]을 사용하며, f'{arr[1]}.nc'로 하게되면 `2021-07-26+16%3A00&slot.nc` 이렇게 파일 이름이 저장됩니다.
+- **url.split('=')을** 적용하게 되면, GOCI-II 영상 다운로드 URL은 `http://www.khoa.go.kr/nosc/satellite/down/netCDFfileDownload.do?obsTime`, `2021-07-26+16%3A00&slot`, `7&stdTime`, `KST`로 나뉘게 됩니다.
+- 배열은 0부터 시작하므로 1에 해당하는 `2021-07-26+16%3A00&slot`을 저장하기 위해 arr[1]을 사용하며, f'{arr[1]}.nc'는 `2021-07-26+16%3A00&slot.nc`를 의미합니다.
 - open.write() 함수를 활용하여 저장해주시면 **python code가 있는 폴더에 GOCI-II 위성영상 다운로드가** 완료됩니다.
 
+---
+
 <br>
+<br>
+<br>
+<br>
+<br>
+
+### 3. 다운로드가 완료된 GOCI-II 영상 확인하기
+
+<br>
+
+
 
 
