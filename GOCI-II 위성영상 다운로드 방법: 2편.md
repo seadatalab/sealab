@@ -77,7 +77,7 @@ for i, url in enumerate(urls):
 [Requests](https://docs.python-requests.org/en/v2.9.1/) 라이브러리는 **파이썬으로 HTTP 호출하는 프로그램을 작성할 때** 가장 많이 사용되는 라이브러리입니다. 
 파이썬의 패키지 매니저인 pip를 활용해 cmd창에 `pip install requests`를 입력하여 패키지를 설치합니다.
 
-**requests 라이브러리**는 매우 직관적인 API를 제공하여 HTTP 요청 방식에 따라 다음과 같은 함수를 사용하면 됩니다.
+**Requests 라이브러리**는 매우 직관적인 API를 제공하여 HTTP 요청 방식에 따라 다음과 같은 함수를 사용하면 됩니다.
 <br>
 
 - GET: `requests.get()`
@@ -87,6 +87,15 @@ for i, url in enumerate(urls):
 
 <br>
 
-본 튜토리얼에서는 URL을 GET하는 방식을 HTTP로 요청할 것이므로 `requests.get()`만 이해하고, 기억해주시면 됩니다.
+본 튜토리얼에서는 URL을 GET하는 방식을 HTTP로 요청할 것이므로 `requests.get()`만 이해하고, 기억해주시면 됩니다. `import requests`를 통해 code editor에 requests 라이브러리를 불러와주세요.
 
 <br>
+<br>
+
+```python
+urls = open('GOCI_list.txt', 'r')
+```
+
+<br>
+
+이제 **open 함수**를 이용해 GOCI-II 영상 다운로드 URL이 있는 txt 파일을 읽어와보겠습니다.
