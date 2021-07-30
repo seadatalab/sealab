@@ -2,10 +2,6 @@
 <br>
 <br>
 
-<p align="center">
-    <img src="/images/python/GOCI-II/logo.png"/>
-</p>
-
 ![ex_screenshot](./images/python/GOCI-II/logo.png)
 
 <br>
@@ -18,7 +14,8 @@
 <br>
 
 ### 1. GOCI-II 위성영상 URL을 텍스트 파일에 저장
-![ex_screenshot](./images/python/GOCI-II/URL-list.png){: width="300px" height="300px"}
+<img src="./images/python/GOCI-II/URL-list.png" width="70%">
+
 
 <br>
 <br>
