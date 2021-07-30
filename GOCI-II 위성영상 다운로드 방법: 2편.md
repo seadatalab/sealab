@@ -89,6 +89,9 @@ for i, url in enumerate(urls):
 
 본 튜토리얼에서는 URL을 GET하는 방식을 HTTP로 요청할 것이므로 `requests.get()`만 이해하고, 기억해주시면 됩니다. `import requests`를 통해 code editor에 requests 라이브러리를 불러와주세요.
 
+---
+
+<br>
 <br>
 <br>
 
@@ -96,6 +99,14 @@ for i, url in enumerate(urls):
 urls = open('GOCI_list.txt', 'r')
 ```
 
+이제 **open 함수**를 이용해 GOCI-II 영상 다운로드 URL이 있는 txt 파일을 읽어와보겠습니다. open 함수의 문법은 f=open('파일명','파일 open type') 입니다.
 <br>
 
-이제 **open 함수**를 이용해 GOCI-II 영상 다운로드 URL이 있는 txt 파일을 읽어와보겠습니다.
+- 파일 open type은 크게 **읽기모드(r), 쓰기모드(w), 추가모드(a)**가 있습니다.
+- 우리는 파일을 읽기만 할 것이므로 `'r'`을 사용합니다.
+- urls라는 객체에 `GOCI_list.txt` 파일을 열어 읽은 후 저장되게 됩니다.
+
+<br>
+<br>
+
+
