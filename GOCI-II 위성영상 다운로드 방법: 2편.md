@@ -1,0 +1,41 @@
+> ## Python을 이용한 GOCI-II 위성영상 다운로드 방법
+<br>
+<br>
+
+
+<p align="center"><img src="./images/python/GOCI-II/logo.png"></p>
+<br>
+<br>
+
+
+1편에서는 [국가해양위선센터](http://www.khoa.go.kr/nosc/intro/noticeList.do)에 접속하여 GOCI-II 영상 다운로드하는 방법을 알아봤습니다. 표준영상(L1B)에서 슬롯을 선택하고(Slot-7) 홈페이지에서 링크를 클릭하여 직접 다운로드하는 방법을 알아봤는데요.
+2편에서는 1편 마지막에 `HTML 검사 및 Network 속성`에서 얻은 **다운로드 URL을 활용하는 방법**에 대해 자세히 알아보겠습니다.
+<br>
+<br>
+
+### 1. GOCI-II 위성영상 URL을 텍스트 파일에 저장
+![ex_screenshot](./images/python/GOCI-II/URL-list.png)
+
+<br>
+<br>
+
+### 2. Python의 requests library를 이용하여 URL 다운받기
+```
+import requests
+```
+
+```
+urls = open('GOCI_list.txt', 'r')
+```
+
+```
+for i, url in enumerate(urls):
+    r = requests.get(url, allow_redirects=True)
+    arr = url.split('=')
+    open(f'{arr[1]}.nc', 'wb').write(r.content)
+```
+<br>
+
+### 그럼 이제 코드를 하나씩 이해해볼까요?
+<br>
+
