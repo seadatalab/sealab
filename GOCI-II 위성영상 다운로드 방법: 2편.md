@@ -1,5 +1,4 @@
-## Python을 이용한 GOCI-II 위성영상 다운로드 방법
----
+# Python을 이용한 GOCI-II 위성영상 다운로드 방법
 <br>
 <br>
 
