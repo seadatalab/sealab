@@ -37,6 +37,8 @@ URL 중간에 `2021-07-26+16%`과 `2021-07-26+17%`이 서로 다른 것을 확�
 - 시간은 08시부터 17시까지 제공하고 있습니다.
 - 예를 들어, 7월 25일 8시의 GOCI-II 영상을 다운로드하고 싶다면 `2021-07-25+08%`을 이용하면 됩니다.
 
+---
+
 <br>
 <br>
 <br>
@@ -94,7 +96,7 @@ for i, url in enumerate(urls):
 <br>
 <br>
 
-이제 **open 함수**를 이용해 GOCI-II 영상 다운로드 URL이 있는 txt 파일을 읽어와보겠습니다. open 함수의 문법은 f=open('파일명','파일 open type') 입니다.
+이제 **open 함수**를 이용해 GOCI-II 영상 다운로드 URL이 있는 txt 파일을 읽어와보겠습니다. open 함수의 문법은 `f = open('파일명','파일 open type')` 입니다.
 
 
 ```python
@@ -105,7 +107,18 @@ urls = open('GOCI_list.txt', 'r')
 - 우리는 파일을 읽기만 할 것이므로 `'r'`을 사용합니다.
 - urls라는 객체에 `GOCI_list.txt` 파일을 열어 읽은 후 저장되게 됩니다.
 
+---
+
 <br>
 <br>
+
+마지막으로 **for문**을 이용하여 urls에 할당된 `url(2021-07-26 16시 자료, 2021-07-26 17시 자료)`을 각각 다운받아 **nc 형식의 파일로 저장하는 법**을 해보겠습니다.
+
+```python
+for i, url in enumerate(urls):
+    r = requests.get(url, allow_redirects=True)
+    arr = url.split('=')
+    open(f'{arr[1]}.nc', 'wb').write(r.content)
+```
 
 
