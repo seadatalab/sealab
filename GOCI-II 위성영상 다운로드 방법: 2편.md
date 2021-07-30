@@ -92,14 +92,15 @@ for i, url in enumerate(urls):
 ---
 
 <br>
-<br>
+
+이제 **open 함수**를 이용해 GOCI-II 영상 다운로드 URL이 있는 txt 파일을 읽어와보겠습니다. open 함수의 문법은 f=open('파일명','파일 open type') 입니다.
+
 <br>
 
 ```python
 urls = open('GOCI_list.txt', 'r')
 ```
 
-이제 **open 함수**를 이용해 GOCI-II 영상 다운로드 URL이 있는 txt 파일을 읽어와보겠습니다. open 함수의 문법은 f=open('파일명','파일 open type') 입니다.
 <br>
 
 - 파일 open type은 크게 **읽기모드(r), 쓰기모드(w), 추가모드(a)**가 있습니다.
