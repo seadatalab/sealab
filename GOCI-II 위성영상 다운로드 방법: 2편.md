@@ -5,11 +5,9 @@
 ![title](./images/python/GOCI-II/logo.png)
 
 <br>
-<br>
 
 [GOCI-II 위성영상 다운로드 방법: 1편 바로가기 링크](http://sealab.kesti.info/view/166)
 
-<br>
 <br>
 
 
