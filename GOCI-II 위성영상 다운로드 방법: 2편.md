@@ -14,7 +14,7 @@
 <br>
 
 ### 1. GOCI-II 위성영상 URL을 텍스트 파일에 저장
-<img src="./images/python/GOCI-II/URL-list.png" width="70%">
+<img src="./images/python/GOCI-II/URL-list.png">
 
 
 <br>
