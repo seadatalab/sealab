@@ -78,6 +78,8 @@ for i, url in enumerate(urls):
 파이썬의 패키지 매니저인 pip를 활용해 다음과 같이 입력하여 `pip install requests` 패키지를 설치합니다.
 
 **requests 라이브러리**는 매우 직관적인 API를 제공하여 HTTP 요청 방식에 따라 다음과 같은 함수를 사용하면 됩니다.
+<br>
+
 - GET: `requests.get()`
 - POST: `requests.post()`
 - PUT: `requests.put()`
