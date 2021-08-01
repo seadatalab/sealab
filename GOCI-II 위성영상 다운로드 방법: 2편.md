@@ -122,7 +122,7 @@ for i, url in enumerate(urls):
 ```
 
 - for문의 문법은 `for <원소> in <목록>` 입니다. 목록에는 **list, tuple, string, iterator, generator** 등이 올 수 있습니다.
-- 인덱스(index)와 원소를 동시에 접근하면서 루프를 돌릴 수 있는 방법이 바로 **eunemerate** 입니다.
+- 인덱스(index)와 원소를 동시에 접근하면서 루프를 돌릴 수 있는 방법이 바로 **enumerate** 입니다.
 - requests.get을 통해 url을 불러올 수 있으며(다운로드), 문법은 `requests.get(URL 주소, **kwargs)` 입니다.
 - **kwargs에 `allow_redirects=True` 옵션을 줄 수 있으며 이를 통해 끊겼을 때 재접속(다운로드)이 가능해집니다.
 - url에서 `yyyy-mm-dd+hh`만 추출하여 파일을 저장하고 싶기에 .split을 이용하겠습니다.
