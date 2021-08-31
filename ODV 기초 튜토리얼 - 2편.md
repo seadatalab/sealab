@@ -1,0 +1,23 @@
+### ODV 기초 튜토리얼 1편에 이어 2편에서는 염분과 수온 profile 그리는 방법을 알아보겠습니다.
+[ODV 기초 튜토리얼 - 1편 바로가기 링크](http://sealab.kesti.info/view/176)
+
+![odv2](./images/ODV기초_1.JPG)
+![odv2](./images/ODV기초_2.JPG)
+![odv2](./images/ODV기초_3.JPG)
+![odv2](./images/ODV기초_4.JPG)
+![odv2](./images/ODV기초_5.JPG)
+![odv2](./images/ODV기초_6.JPG)
+![odv2](./images/ODV기초_7.JPG)
+![odv2](./images/ODV기초_8.JPG)
+![odv2](./images/ODV기초_9.JPG)
+![odv2](./images/ODV기초_10.JPG)
+![odv2](./images/ODV기초_11.JPG)
+![odv2](./images/ODV기초_12.JPG)
+![odv2](./images/ODV기초_13.JPG)
+![odv2](./images/ODV기초_14.JPG)
+![odv2](./images/ODV기초_15.JPG)
+![odv2](./images/ODV기초_16.JPG)
+![odv2](./images/ODV기초_17.JPG)
+![odv2](./images/ODV기초_18.JPG)
+![odv2](./images/ODV기초_19.JPG)
+
